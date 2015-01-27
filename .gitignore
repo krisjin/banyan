@@ -1,0 +1,14 @@
+*.swp
+*.ipr
+*.iws
+*.iml
+*.db
+*.log
+*.class
+*.classpath
+*.settings
+project
+.idea
+log
+target/
+*.jar

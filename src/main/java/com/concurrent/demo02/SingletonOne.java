@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class SingletonOne {
 
-	private static SingletonOne instance = new SingletonOne();
+	private static SingletonOne instance =null;
 	private AtomicLong counts = new AtomicLong(0);
 
 	private SingletonOne() {

@@ -22,7 +22,7 @@ public class Test {
 
 				for (;;) {
 					if (System.currentTimeMillis() - startDate > 5000) {
-						System.out.println("不等了，尝试终端。");
+						System.out.println("不等了，尝试中断!");
 						rThread.interrupt();
 						break;
 					}

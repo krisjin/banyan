@@ -6,9 +6,10 @@ import java.util.concurrent.atomic.AtomicLong;
  * @author krisjin
  * @date 2015-1-29
  */
-public class SingletonOne {
+public final class SingletonOne {
 
 	private static SingletonOne instance =null;
+
 	private AtomicLong counts = new AtomicLong(0);
 
 	private SingletonOne() {

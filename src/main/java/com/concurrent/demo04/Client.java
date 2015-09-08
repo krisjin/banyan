@@ -12,14 +12,14 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Client {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         BlockingQueue queue = new LinkedBlockingQueue<File>(1000);
-        final  int N_CONSUMERS=Runtime.getRuntime().availableProcessors()/2;
-        File root=new File("d:/Downloads");
+        final int N_CONSUMERS = Runtime.getRuntime().availableProcessors() / 2;
+        File root = new File("d:/Downloads");
 
-        new CrawlerThread(queue,root).start();
+        new CrawlerThread(queue, root).start();
 
-        for(int i=0;i<N_CONSUMERS;i++){
+        for (int i = 0; i < N_CONSUMERS; i++) {
             new IndexThread(queue).start();
         }
 

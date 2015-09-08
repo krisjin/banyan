@@ -20,9 +20,9 @@ public class ProducerConsumer {
 
         Thread t1 = new Thread(new Producer());
 
-        Thread t2 = new Thread(new Consumer(),"Consume-2");
-        Thread t3 = new Thread(new Consumer(),"Consume-3");
-        Thread t4 = new Thread(new Consumer(),"Consume-4");
+        Thread t2 = new Thread(new Consumer(), "Consume-2");
+        Thread t3 = new Thread(new Consumer(), "Consume-3");
+        Thread t4 = new Thread(new Consumer(), "Consume-4");
 
         t1.start();
         try {
@@ -104,7 +104,7 @@ public class ProducerConsumer {
 
         private void consume() {
             if (!message.isEmpty()) {
-                System.out.println("Consume"+Thread.currentThread().getName() + message.pop());
+                System.out.println("Consume" + Thread.currentThread().getName() + message.pop());
                 counter.incrementAndGet();
             }
         }

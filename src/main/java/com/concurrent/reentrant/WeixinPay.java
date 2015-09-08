@@ -13,4 +13,21 @@ public class WeixinPay extends Pay {
         System.out.println("微信支付......");
         super.pay();
     }
+
+
+    public static void main(String[] args) {
+        WeixinPay weixinPay = new WeixinPay();
+        weixinPay.pay();
+    }
+}
+
+
+class Pay {
+
+    public synchronized void pay() {
+
+        System.out.println("支付父类");
+
+    }
+
 }

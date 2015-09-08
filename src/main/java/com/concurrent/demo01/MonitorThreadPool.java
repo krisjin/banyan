@@ -1,10 +1,6 @@
 package com.concurrent.demo01;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author krisjin
@@ -12,35 +8,35 @@ import java.util.concurrent.TimeUnit;
  */
 public class MonitorThreadPool {
 
-	public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
-		RejectedExecutionHandlerImpl rejected = new RejectedExecutionHandlerImpl();
+        RejectedExecutionHandlerImpl rejected = new RejectedExecutionHandlerImpl();
 
-		ThreadFactory tf = Executors.defaultThreadFactory();
+        ThreadFactory tf = Executors.defaultThreadFactory();
 
-		ThreadPoolExecutor executorPool = new ThreadPoolExecutor(300, 300, 3, TimeUnit.SECONDS,
-				new LinkedBlockingQueue<Runnable>(), tf, rejected);
+        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(300, 300, 3, TimeUnit.SECONDS,
+                new LinkedBlockingQueue<Runnable>(), tf, rejected);
 
-		MonitorThread monitor = new MonitorThread(executorPool, 3);
+        MonitorThread monitor = new MonitorThread(executorPool, 3);
 
-		Thread monitorThread = new Thread(monitor);
+        Thread monitorThread = new Thread(monitor);
 
-		monitorThread.start();
+        monitorThread.start();
 
-		for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 10000000; i++) {
 
-			executorPool.execute(new WorkThread());
+            executorPool.execute(new WorkThread());
 
-		}
+        }
 
-		Thread.sleep(5000);
-		executorPool.shutdown();
+        Thread.sleep(5000);
+        executorPool.shutdown();
 
-		while (!executorPool.isTerminated()) {
-		}
+        while (!executorPool.isTerminated()) {
+        }
 
-		Thread.sleep(3000);
-		monitor.shutdown();
-	}
+        Thread.sleep(3000);
+        monitor.shutdown();
+    }
 
 }

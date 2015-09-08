@@ -8,30 +8,30 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public final class SingletonOne {
 
-	private static SingletonOne instance =null;
+    private static SingletonOne instance = null;
 
-	private AtomicLong counts = new AtomicLong(0);
+    private AtomicLong counts = new AtomicLong(0);
 
-	private SingletonOne() {
-	}
+    private SingletonOne() {
+    }
 
-	public synchronized static SingletonOne newInstace() {
+    public synchronized static SingletonOne newInstace() {
 
-		if (instance == null) {
-			instance = new SingletonOne();
-			return instance;
-		}
+        if (instance == null) {
+            instance = new SingletonOne();
+            return instance;
+        }
 
-		return instance;
-	}
+        return instance;
+    }
 
-	protected void increment(long max) {
-		long val = 1;
-		long start = System.currentTimeMillis();
-		for (long i = val; i <= max; i++) {
-			counts.incrementAndGet();
-		}
-		long end = System.currentTimeMillis();
-		System.out.println(max + " 求和结果:" + counts.get() + "  耗时：" + (end - start) / 1000 + " s");
-	}
+    protected void increment(long max) {
+        long val = 1;
+        long start = System.currentTimeMillis();
+        for (long i = val; i <= max; i++) {
+            counts.incrementAndGet();
+        }
+        long end = System.currentTimeMillis();
+        System.out.println(max + " 求和结果:" + counts.get() + "  耗时：" + (end - start) / 1000 + " s");
+    }
 }

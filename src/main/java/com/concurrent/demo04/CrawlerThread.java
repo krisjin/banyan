@@ -30,7 +30,7 @@ public class CrawlerThread extends Thread {
                 if (f.isDirectory()) {
                     crawl(f);
                 } else if (!fileQueue.contains(f)) {
-                    System.out.println("Crawl file "+ f.getAbsoluteFile());
+                    System.out.println("Crawl file " + f.getAbsoluteFile());
                     fileQueue.offer(f);
                 }
             }

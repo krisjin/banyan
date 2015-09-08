@@ -22,7 +22,7 @@ public class HashTest {
         String name = user.get("name");
 
 
-        int hash=322&2;
+        int hash = 322 & 2;
         System.out.println(hash);
 
     }

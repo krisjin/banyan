@@ -1,15 +1,15 @@
 package com.concurrent.demo03;
 
 public class Write implements Runnable {
-	private BufferInterruptibly buffer;
+    private BufferInterruptibly buffer;
 
-	public Write(BufferInterruptibly buffer) {
-		this.buffer = buffer;
-	}
+    public Write(BufferInterruptibly buffer) {
+        this.buffer = buffer;
+    }
 
-	@Override
-	public void run() {
-		buffer.write();
-	}
+    @Override
+    public void run() {
+        buffer.write();
+    }
 
 }

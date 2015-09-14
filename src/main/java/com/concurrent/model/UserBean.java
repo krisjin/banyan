@@ -1,4 +1,4 @@
-package com.concurrent.common;
+package com.concurrent.model;
 
 /**
  * <p/>

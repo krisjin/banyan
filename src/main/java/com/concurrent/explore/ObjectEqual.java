@@ -1,6 +1,6 @@
 package com.concurrent.explore;
 
-import com.concurrent.common.UserBean;
+import com.concurrent.model.UserBean;
 
 /**
  * <p/>

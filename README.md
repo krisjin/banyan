@@ -1,6 +1,3 @@
-# Java 并发编程
-Java concurrent
-
 
 ## 并发技巧清单
 

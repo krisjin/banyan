@@ -44,4 +44,43 @@
 ## 可见性
 
 ### final
-- 初始化final地段确保可见性
+- 初始化final字段确保可见性
+
+### volatile
+- 读写volatile字段确保可见性
+
+### synchronized
+- 同步块内读写字段确保可见性
+
+### happen before
+- 遵守happen before次序可见性
+
+## 可排序性
+
+### Happen Before法则
+
+- 程序次序法则
+  如果A一定在B之前发生，happen before
+  
+- 监视器法则
+  对一个监视器的解锁一定发生在后续对同一个监视器加锁之前
+  
+- Volatile变量法则
+  写volatile变量一定发生在后续对它读之前
+  
+- 线程启动法则
+  Thread.start一定发生在线程中的动作之前
+  
+- 线程终结法则
+  线程中的任何动作一定发生在以下操作的动作之前。
+  
+        其它线程检测到这个线程已经终止，从Thread.join调用成功返回，Thread.isAlive()返回false
+        
+- 中断法则
+    一个线程调用另一个线程的interrupt一定发生在另一线程发现中断之前
+    
+- 终结法则
+  一个对象的构造函数结束一定发生在对象的finalizer之前
+  
+- 传递性
+  A发生在B之前，B发生在C之前，A一定发生在C之前

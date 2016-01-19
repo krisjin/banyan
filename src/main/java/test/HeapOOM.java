@@ -20,7 +20,6 @@ public class HeapOOM {
         }
 
     }
-
     static class OOMObject {
     }
 }

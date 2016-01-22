@@ -1,4 +1,4 @@
-package com.concurrent.demo04;
+package com.concurrent.thread;
 
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +14,6 @@ public class ProducerConsumer {
     static Stack<String> message = new Stack<String>();
 
     final static int MAX_SIZE = 10;
-
 
     public static void main(String[] args) {
 
@@ -48,14 +47,12 @@ public class ProducerConsumer {
 
 
     static class Producer implements Runnable {
-
         public void produce(String msg) {
 
             System.out.println("Producing " + msg);
             message.push(msg);
         }
 
-        @Override
         public void run() {
             int i = 0;
 
@@ -89,7 +86,7 @@ public class ProducerConsumer {
                             e.printStackTrace();
                         }
                     }
-                    consume();
+                    consumer();
                 }
 
             }
@@ -102,7 +99,7 @@ public class ProducerConsumer {
             return counter.get() >= MAX_SIZE;
         }
 
-        private void consume() {
+        private void consumer() {
             if (!message.isEmpty()) {
                 System.out.println("Consume" + Thread.currentThread().getName() + message.pop());
                 counter.incrementAndGet();

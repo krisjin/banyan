@@ -1,4 +1,4 @@
-package com.concurrent.threadpool;
+package com.concurrent.thread.pool;
 
 import java.util.concurrent.CountDownLatch;
 

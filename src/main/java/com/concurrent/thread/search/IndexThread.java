@@ -1,4 +1,4 @@
-package com.concurrent.demo04;
+package com.concurrent.thread.search;
 
 import java.io.File;
 import java.util.concurrent.BlockingQueue;
@@ -9,7 +9,7 @@ import java.util.concurrent.BlockingQueue;
  * Date: 2015/4/11
  * Time: 14:21
  */
-public class IndexThread extends Thread {
+public class IndexThread implements Runnable {
 
     private final BlockingQueue<File> queue;
 
@@ -18,10 +18,7 @@ public class IndexThread extends Thread {
         this.queue = queue;
     }
 
-
-    @Override
     public void run() {
-
         while (true) {
             try {
                 File file = queue.take();
@@ -33,7 +30,7 @@ public class IndexThread extends Thread {
     }
 
     private void index(File file) {
-        System.out.println(Thread.currentThread().getName() + " Index file " + file.getAbsolutePath() + " ................");
+        System.out.println(Thread.currentThread().getName() + " Index file " + file.getAbsolutePath() + " ...");
     }
 
 }

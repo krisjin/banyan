@@ -1,4 +1,4 @@
-package com.concurrent.demo03;
+package com.concurrent.thread.interrupt;
 
 public class Buffer {
     private Object lock;

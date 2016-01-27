@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * VM Args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
  * <p/>
  * User : krisibm@163.com
@@ -20,6 +19,7 @@ public class HeapOOM {
         }
 
     }
+
     static class OOMObject {
     }
 }

@@ -43,7 +43,7 @@ public class TimeConsumingLock implements Runnable {
     public void run() {
         for (int i = 0; i < flag; i++) {
 //           write(i);
-           write2(i);
+            write2(i);
         }
     }
 

@@ -7,19 +7,26 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 public class SemaphoreDemo {
-
+    /**
+     * 最大每秒查询率
+     */
     final static int MAX_QPS = 1000;
+    /**
+     * 信号量
+     */
     final static Semaphore semaphore = new Semaphore(MAX_QPS);
 
     public static void main(String... args) throws Exception {
+        //创建调度线程池
         Executors.newScheduledThreadPool(1).scheduleAtFixedRate(new Runnable() {
             public void run() {
                 semaphore.release(MAX_QPS / 2);
             }
 
-        }, 1000, 200, TimeUnit.MILLISECONDS);
+        }, 1000, 500, TimeUnit.MILLISECONDS);
         //lots of concurrent calls:100 * 1000
 
+        //创建固定大小线程池
         ExecutorService pool = Executors.newFixedThreadPool(100);
 
         for (int i = 100; i > 0; i--) {

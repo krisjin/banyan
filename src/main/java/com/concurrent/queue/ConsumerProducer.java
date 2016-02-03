@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class ConsumerProducer {
 
-
+    //消费者
     static class Consumer implements Runnable {
         private BlockingQueue blockingQueue;
 
@@ -31,7 +31,7 @@ public class ConsumerProducer {
         }
     }
 
-
+    //生产者
     static class Producer implements Runnable {
         private final BlockingQueue blockingQueue;
 

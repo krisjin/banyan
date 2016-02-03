@@ -1,14 +1,15 @@
-package com.concurrent.thread;
+package com.concurrent.queue;
 
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p/>
  * Date: 2015/4/11
  * Time: 12:00
  */
-public class ProducerConsumer {
+public class ProducerConsumerStack {
 
     static Stack<String> message = new Stack<String>();
 
@@ -22,12 +23,6 @@ public class ProducerConsumer {
         producer.start();
         consumer1.start();
         consumer2.start();
-
-//        try {
-//            consumer1.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
 
     }
 
@@ -57,10 +52,12 @@ public class ProducerConsumer {
     }
 
     static class Consumer implements Runnable {
+        AtomicInteger counter = new AtomicInteger();
+
         @Override
         public void run() {
-            synchronized (message) {
-                while (true) {
+            while (counter.get() <= MAX_SIZE) {
+                synchronized (message) {
                     while (message.isEmpty()) {
                         try {
                             message.wait();
@@ -75,6 +72,7 @@ public class ProducerConsumer {
 
         private void consumer() {
             System.out.println(Thread.currentThread().getName() + "　" + message.pop());
+            counter.getAndIncrement();
         }
     }
 }

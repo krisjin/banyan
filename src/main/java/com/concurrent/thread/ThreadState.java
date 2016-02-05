@@ -1,7 +1,7 @@
 package com.concurrent.thread;
 
 /**
- * 线程状态
+ * 线程状态,使用jstack命令打印堆栈信息查看
  * User: shijingui
  * Date: 2016/2/4
  */

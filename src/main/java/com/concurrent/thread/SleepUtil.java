@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
  * Date: 2016/2/4
  */
 public class SleepUtil {
+
     public static final void second(long second) {
         try {
             TimeUnit.SECONDS.sleep(second);
@@ -15,4 +16,12 @@ public class SleepUtil {
         }
     }
 
+    public static final void millisecond(long millisecond) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(millisecond);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

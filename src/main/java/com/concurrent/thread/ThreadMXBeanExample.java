@@ -8,7 +8,7 @@ import java.lang.management.ThreadMXBean;
  * User: shijingui
  * Date: 2016/2/3
  */
-public class ThreadJmxTest {
+public class ThreadMXBeanExample {
 
     public static void main(String... args) {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();

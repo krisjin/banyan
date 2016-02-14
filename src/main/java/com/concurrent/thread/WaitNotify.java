@@ -1,19 +1,24 @@
 package com.concurrent.thread;
 
+import java.util.Date;
+
 /**
- * 等待通知
+ * 线程等待通知
  * User: shijingui
  * Date: 2016/2/5
  */
 public class WaitNotify {
 
     static volatile boolean flag = true;
+
     static Object obj = new Object();
 
     public static void main(String... args) {
         Thread waitThread = new Thread(new Wait(), "WaitThread");
         waitThread.start();
+
         SleepUtil.second(2);
+
         Thread notifyThread = new Thread(new Notify(), "NotifyThread");
         notifyThread.start();
     }
@@ -25,11 +30,11 @@ public class WaitNotify {
             try {
                 while (flag) {
                     synchronized (obj) {
-                        System.out.println(Thread.currentThread().getName() + "  is waiting..... ");
+                        System.out.println(Thread.currentThread().getName() + "  is waiting..... " + new Date());
                         obj.wait();
                     }
                 }
-                System.out.println(Thread.currentThread().getName() + "  is done.... ");
+                System.out.println(Thread.currentThread().getName() + "  is done.... " + new Date());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -41,11 +46,12 @@ public class WaitNotify {
         @Override
         public void run() {
             synchronized (obj) {
-                //获取obj的锁，然后进行通知，通知时不会释放obj的锁
+                //获取obj的锁，然后进行通知，通知时不会释放obj的锁,类似于过早通知
+                //只有当前线程释放了obj锁后，Wait才能从wait方法返回
                 obj.notifyAll();
-                System.out.println(Thread.currentThread().getName() + " is notify done....");
-//                SleepUtil.second(1);
                 flag = false;
+                System.out.println(Thread.currentThread().getName() + " is notify done...." + new Date());
+                SleepUtil.second(5);
             }
         }
     }

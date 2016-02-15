@@ -28,8 +28,9 @@ public class WaitNotify {
         @Override
         public void run() {
             try {
-                while (flag) {
-                    synchronized (obj) {
+                synchronized (obj) {
+                    //当条件不满足时，继续wait,同时释放obj的锁
+                    while (flag) {
                         System.out.println(Thread.currentThread().getName() + "  is waiting..... " + new Date());
                         obj.wait();
                     }

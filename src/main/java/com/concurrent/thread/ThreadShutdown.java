@@ -1,5 +1,7 @@
 package com.concurrent.thread;
 
+import com.concurrent.util.SleepUtil;
+
 /**
  * 安全的终结线程
  * User: shijingui

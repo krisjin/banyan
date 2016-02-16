@@ -12,8 +12,13 @@ public class CallableFuture {
     public static void main(String[] args) throws InterruptedException {
         //创建一个缓冲线程池
         ExecutorService executorService = Executors.newCachedThreadPool();
+
+        //创建一个任务，实现了Callable接口
         Task task = new Task();
+
+        //执行任务
         Future<Integer> future = executorService.submit(task);
+
         executorService.shutdown();
         TimeUnit.MILLISECONDS.sleep(100);
 

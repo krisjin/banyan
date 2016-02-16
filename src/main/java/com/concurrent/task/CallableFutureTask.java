@@ -9,7 +9,9 @@ import java.util.concurrent.*;
 public class CallableFutureTask {
 
     public static void main(String[] args) throws InterruptedException {
+
         Task task = new Task();
+
         FutureTask<Integer> futureTask = new FutureTask<Integer>(task);
 
         //第一种执行方式
@@ -27,6 +29,7 @@ public class CallableFutureTask {
         try {
             futureTask.cancel(true);
             System.out.println(futureTask.isCancelled());
+
             Integer result = futureTask.get();
             System.out.println("task execute result is : " + result);
         } catch (InterruptedException e) {

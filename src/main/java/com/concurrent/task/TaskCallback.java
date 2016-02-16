@@ -1,5 +1,6 @@
 package com.concurrent.task;
 
+
 public abstract class TaskCallback {
 
     /**

@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-
 public class DefaultTaskPromise implements TaskPromise {
 
     @SuppressWarnings("rawtypes")

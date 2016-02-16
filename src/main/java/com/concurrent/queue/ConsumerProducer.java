@@ -43,7 +43,7 @@ public class ConsumerProducer {
         public void run() {
             for (int i = 0; i < 100; i++) {
                 try {
-                    //阻塞是生产消息
+                    //生产消息(阻塞)
                     blockingQueue.put(i + ":message");
                     System.out.println("生产消息：" + i + ":message");
                 } catch (InterruptedException e) {

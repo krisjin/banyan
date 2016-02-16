@@ -15,7 +15,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.1</version>
-            <scope>test</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

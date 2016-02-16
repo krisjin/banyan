@@ -1,4 +1,4 @@
-package com.concurrent.task;
+package com.concurrent.task.async;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -22,7 +22,8 @@ public class DefaultTaskPromise implements TaskPromise {
 
     private volatile ConcurrentMap<String, Object> attrs;
 
-    private static interface ResultHolder {
+    //结果
+    private interface ResultHolder {
         boolean isSuccess();
 
         boolean isFailure();
@@ -30,6 +31,7 @@ public class DefaultTaskPromise implements TaskPromise {
         Object getResult();
     }
 
+    //成功
     private static final class Success implements ResultHolder {
 
         final Object value;
@@ -54,6 +56,7 @@ public class DefaultTaskPromise implements TaskPromise {
         }
     }
 
+    //失败
     private static final class Failure implements ResultHolder {
 
         Throwable t;
@@ -242,7 +245,7 @@ public class DefaultTaskPromise implements TaskPromise {
     @Override
     public TaskPromise setFailure(Throwable cause) {
         if (!tryFailure(cause)) {
-            throw new IllegalStateException("Already complted future: " + this);
+            throw new IllegalStateException("Already completed future: " + this);
         }
         return this;
     }

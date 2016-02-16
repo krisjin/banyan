@@ -1,4 +1,4 @@
-package com.concurrent.task;
+package com.concurrent.task.async;
 
 
 public interface TaskPromise extends TaskFuture {

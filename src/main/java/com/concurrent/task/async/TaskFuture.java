@@ -1,4 +1,4 @@
-package com.concurrent.task;
+package com.concurrent.task.async;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;

@@ -37,15 +37,15 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
      */
     private List<Worker> workerList = Collections.synchronizedList(new ArrayList<Worker>());
 
-    private int worker = DEFAULT_WORKERS_NUMBER;
+    private int workerNum = DEFAULT_WORKERS_NUMBER;
 
     public DefaultThreadPool() {
         initializeWorker(DEFAULT_WORKERS_NUMBER);
     }
 
     public DefaultThreadPool(int threadNum) {
-        worker = threadNum > MAX_WORKERS_NUMBER ? MAX_WORKERS_NUMBER : threadNum < MIN_WORKERS_NUMBER ? MIN_WORKERS_NUMBER : threadNum;
-        initializeWorker(worker);
+        workerNum = threadNum > MAX_WORKERS_NUMBER ? MAX_WORKERS_NUMBER : threadNum < MIN_WORKERS_NUMBER ? MIN_WORKERS_NUMBER : threadNum;
+        initializeWorker(workerNum);
     }
 
 
@@ -62,22 +62,41 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 
     @Override
     public void shutdown() {
-
+        for (Worker worker : workerList) {
+            worker.shutdown();
+        }
     }
 
     @Override
     public void addWorkers(int workersNum) {
-
+        int addNum = workersNum;
+        if (workersNum + this.workerNum > MAX_WORKERS_NUMBER) {
+            addNum = MAX_WORKERS_NUMBER - workersNum;
+        }
+        synchronized (jobs) {
+            initializeWorker(workersNum);
+            this.workerNum = addNum;
+        }
     }
 
     @Override
-    public void removeWorkers(int workNum) {
-
+    public void removeWorkers(int workerNum) {
+        if (workerNum >= this.workerNum) {
+            throw new IllegalArgumentException("can not remove beyond workerNum. now num is " + this.workerNum);
+        }
+        synchronized (jobs) {
+            int count = 0;
+            while (count < workerNum) {
+                workerList.get(count).shutdown();
+                count++;
+            }
+            this.workerNum = this.workerNum - workerNum;
+        }
     }
 
     @Override
     public int getJobSize() {
-        return 0;
+        return jobs.size();
     }
 
     public void initializeWorker(int num) {
@@ -90,9 +109,31 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
     }
 
     class Worker implements Runnable {
+        private volatile boolean running = true;
+
         @Override
         public void run() {
+            Job job = null;
+            while (jobs.isEmpty()) {
+                try {
+                    jobs.wait();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+                job = jobs.removeFirst();
+                if (job != null) {
+                    try {
+                        job.run();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
 
+        public void shutdown() {
+            running = false;
         }
     }
 }

@@ -14,7 +14,7 @@ public class MultiThread {
     public static void main(String[] args) {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         //不需要获取同步的monitor 和 synchronizer信息，仅获取线程和线程堆栈信息。
-        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
+        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(true, false);
         for (ThreadInfo threadInfo : threadInfos) {
             String tName = threadInfo.getThreadName();
             long tId = threadInfo.getThreadId();

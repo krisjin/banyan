@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Main {
 
     public static void main(String[] args) {
-        AtomicInteger num = new AtomicInteger(1000000);
+        AtomicInteger num = new AtomicInteger(100000);
 
         Thread calculateThread = new Thread(new CalculateThread(num));
         calculateThread.setName("CalculateThread");

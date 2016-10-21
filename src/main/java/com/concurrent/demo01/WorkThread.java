@@ -12,7 +12,6 @@ public class WorkThread implements Runnable {
 
     public void run() {
         System.out.println(Thread.currentThread().getName() + " counts:" + atomInteger.incrementAndGet());
-//		atomInteger.incrementAndGet();
     }
 
 }

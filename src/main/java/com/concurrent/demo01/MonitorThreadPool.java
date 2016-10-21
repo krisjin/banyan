@@ -14,8 +14,7 @@ public class MonitorThreadPool {
 
         ThreadFactory tf = Executors.defaultThreadFactory();
 
-        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(300, 300, 3, TimeUnit.SECONDS,
-                new LinkedBlockingQueue<Runnable>(), tf, rejected);
+        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(300, 300, 3, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(), tf, rejected);
 
         MonitorThread monitor = new MonitorThread(executorPool, 3);
 

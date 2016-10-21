@@ -11,13 +11,13 @@ public class ThreadJoin {
         Thread threadA = new ThreadA();
         Thread threadB = new ThreadB();
 
-        threadA.start();
-//        try {
-//            threadA.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-        threadB.start();
+        try {
+            threadA.start();
+            threadA.join();
+            threadB.start();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }

@@ -9,15 +9,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class MonitorThread implements Runnable {
 
     private ThreadPoolExecutor executor;
-
     private int seconds;
-
     private boolean run = true;
 
     public MonitorThread(ThreadPoolExecutor executor, int delay) {
-
         this.executor = executor;
-
         this.seconds = delay;
     }
 

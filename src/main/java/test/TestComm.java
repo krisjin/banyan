@@ -1,6 +1,7 @@
 package test;
 
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * <p/>
@@ -21,6 +22,13 @@ public class TestComm {
         System.out.println(i);
         Map<Integer, String> enumMap = EnumStaticMethod.getEnumMap();
         System.out.println(enumMap.size());
+        Stack stack = new Stack();
+        stack.add("name");
+        stack.add("sex");
+
+        Object object=stack.pop();
+        System.out.println(object);
+
     }
 
 

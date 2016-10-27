@@ -15,13 +15,17 @@ import java.util.Vector;
  * Date: 2016/10/26
  */
 public class MemoryLeakTest {
-    static Vector vector = new Vector(10);
+
 
     /**
-     *
+     * 在循环里申请创建对象，将创建好的对象放到Vector中，然后将对象的引用设置为null,释放引用。
+     * 如果只是释放引用本身，Vector仍然对该对象有引用，所以垃圾回收并不会回收。
+     * 简单的释放所有的对象，将Vector对象引用设置null;
+     * 这样以来存在的对象就处于不可达状态。垃圾回收执行时就会回收这部分内存。
      */
     @Test
     public void staticCollection() {
+        Vector vector = new Vector(10);
         for (int i = 0; i < 1000000; i++) {
             Object object = new Object();
             vector.add(object);

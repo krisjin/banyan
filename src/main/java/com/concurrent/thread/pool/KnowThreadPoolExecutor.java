@@ -41,7 +41,7 @@ import java.util.concurrent.*;
 public class KnowThreadPoolExecutor {
 
     public static void main(String[] args) {
-        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(10, 10, 0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(), new NamedThreadFactory("TestThread", false));
+        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(1, 1, 0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(1), new NamedThreadFactory("TestThread", false),new ThreadPoolExecutor.AbortPolicy());
 
         executorPool.execute(new Runnable() {
             @Override
@@ -57,7 +57,6 @@ public class KnowThreadPoolExecutor {
 
 
         Future future = executorPool.submit(new Callable() {
-
             @Override
             public Object call() throws Exception {
                 System.out.println("执行任务.........");

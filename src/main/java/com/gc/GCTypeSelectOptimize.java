@@ -18,6 +18,7 @@ import java.util.List;
  * <p/>
  * 第一个配置（大堆，大的老年代，CMS GC）每秒能吞食8.2头猪
  * 第二个配置（小堆，大的新生代，Parellel GC）每秒可以吞食9.2头猪
+ * -Xms512m -Xmx512m  -XX:+UseParallelGC -Xmn384m
  * 使用jstat 命令，jstat -gc -t -h10 pid 1s
  * User: shijingui
  * Date: 2016/11/3

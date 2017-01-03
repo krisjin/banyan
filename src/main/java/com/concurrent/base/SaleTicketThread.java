@@ -12,9 +12,8 @@ public class SaleTicketThread implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i <= 100; i++) {
+        for (int i = 0; i <= 10; i++) {
             if (ticketNum > 0) {
-
                 System.out.println(Thread.currentThread().getName() + " priority " + Thread.currentThread().getPriority() + " sale ticket,current ticket num is " + ticketNum--);
             }
         }
@@ -23,9 +22,9 @@ public class SaleTicketThread implements Runnable {
     //主线程
     public static void main(String[] args) {
         SaleTicketThread saleTicketThread = new SaleTicketThread();
-        new Thread(saleTicketThread).start();
-        new Thread(saleTicketThread).start();
-        new Thread(saleTicketThread).start();
+        new Thread(saleTicketThread, "saler_1").start();
+        new Thread(saleTicketThread, "saler_2").start();
+        new Thread(saleTicketThread, "saler_3").start();
 
     }
 }

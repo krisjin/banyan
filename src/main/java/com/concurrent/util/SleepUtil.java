@@ -3,11 +3,17 @@ package com.concurrent.util;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 休眠工具类
  * User: shijingui
  * Date: 2016/2/4
  */
 public class SleepUtil {
 
+    /**
+     * 以秒单位休眠
+     *
+     * @param second
+     */
     public static final void second(long second) {
         try {
             TimeUnit.SECONDS.sleep(second);
@@ -16,6 +22,11 @@ public class SleepUtil {
         }
     }
 
+    /**
+     * 以毫秒单位休眠
+     *
+     * @param millisecond
+     */
     public static final void millisecond(long millisecond) {
         try {
             TimeUnit.MILLISECONDS.sleep(millisecond);
@@ -23,5 +34,5 @@ public class SleepUtil {
             e.printStackTrace();
         }
     }
-    
+
 }

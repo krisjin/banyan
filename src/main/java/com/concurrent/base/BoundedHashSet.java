@@ -8,9 +8,8 @@ import java.util.concurrent.Semaphore;
 /**
  * 使用Semaphore为容器设置边界
  * <p/>
- * User : krisibm@163.com
- * Date: 2015/9/15
- * Time: 21:34
+ * @User : krisibm@163.com
+ * @Date: 2015/9/15
  */
 public class BoundedHashSet<T> {
 

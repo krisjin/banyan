@@ -24,7 +24,7 @@ public class ConnectionPool {
         }
     }
 
-    public void realeaseConnection() throws InterruptedException {
+    public void releaseConnection() throws InterruptedException {
         synchronized (pool) {
             while (pool.size() >= MAX_SIZE) {
                 pool.wait();

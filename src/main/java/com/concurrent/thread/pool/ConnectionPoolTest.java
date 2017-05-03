@@ -46,7 +46,7 @@ public class ConnectionPoolTest {
             while (true) {
                 SleepUtil.second(1);
                 try {
-                    pool.realeaseConnection();
+                    pool.releaseConnection();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

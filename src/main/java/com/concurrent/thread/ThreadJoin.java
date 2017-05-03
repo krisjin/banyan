@@ -6,7 +6,6 @@ package com.concurrent.thread;
  */
 public class ThreadJoin {
 
-
     public static void main(String[] args) {
         Thread threadA = new ThreadA();
         Thread threadB = new ThreadB();

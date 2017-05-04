@@ -7,7 +7,6 @@ import java.util.Vector;
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/10
- * Time: 21:11
  */
 public class BetterVector<E> extends Vector<E> {
 

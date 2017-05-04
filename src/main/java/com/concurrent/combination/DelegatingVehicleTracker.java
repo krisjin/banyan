@@ -12,13 +12,12 @@ import java.util.concurrent.ConcurrentMap;
  * <p/>
  * User : krisibm@163.com
  * Date: 2015/9/9
- * Time: 22:44
  */
 public class DelegatingVehicleTracker {
 
     private final ConcurrentMap<String, Point> locations;
 
-    private final Map<String, Point> unmodifyableMap;
+    private final Map<String, Point> unModifyAbleMap;
 
     /**
      * 构造函数初始化，保证线程的安全性。
@@ -27,11 +26,11 @@ public class DelegatingVehicleTracker {
      */
     public DelegatingVehicleTracker(Map<String, Point> map) {
         locations = new ConcurrentHashMap<String, Point>(map);
-        unmodifyableMap = Collections.unmodifiableMap(locations);
+        unModifyAbleMap = Collections.unmodifiableMap(locations);
     }
 
     public Map<String, Point> getLocations() {
-        return unmodifyableMap;
+        return unModifyAbleMap;
     }
 
     public Point getLocation(String id) {
@@ -42,7 +41,6 @@ public class DelegatingVehicleTracker {
         if (locations.replace(id, new Point(x, y)) == null) {
             throw new IllegalArgumentException("invalid vehicle name : " + id);
         }
-
     }
 
 }

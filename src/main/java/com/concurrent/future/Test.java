@@ -16,6 +16,5 @@ public class Test {
         SleepUtil.second(1);
         System.out.println("其它业务执行完毕...");
         System.out.println("data=" + data.getResult());
-
     }
 }

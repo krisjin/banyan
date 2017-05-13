@@ -48,7 +48,7 @@ public class KnowThreadPoolExecutor {
             public void run() {
                 System.out.println("执行任务.........");
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

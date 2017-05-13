@@ -3,6 +3,7 @@ package com.concurrent.masterworker;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
@@ -20,7 +21,7 @@ public class Master {
     //worker进程队列
     protected Map<String, Thread> threadMap = new HashMap<String, Thread>();
     //子任务处理结果集
-    protected Map<String, Object> resultmap = new HashMap<String, Object>();
+    protected Map<String, Object> resultMap = new ConcurrentHashMap<String, Object>();
 
     //are all the sub task completed
     public boolean isComplete() {
@@ -41,7 +42,7 @@ public class Master {
      */
     public Master(Worker worker, int countWorker) {
         worker.setWorkQueue(workQueue);
-        worker.setResultMap(resultmap);
+        worker.setResultMap(resultMap);
         for (int i = 0; i < countWorker; i++) {
             threadMap.put(Integer.toString(i), new Thread(worker, Integer.toString(i)));
 
@@ -62,8 +63,8 @@ public class Master {
      *
      * @return
      */
-    public Map<String, Object> getResultmap() {
-        return resultmap;
+    public Map<String, Object> getResultMap() {
+        return resultMap;
     }
 
     /**

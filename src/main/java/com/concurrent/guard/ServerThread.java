@@ -18,7 +18,7 @@ public class ServerThread extends Thread {
     public void run() {
         while (true) {
             final Request request = requestQueue.getRequest();//得到请求
-            SleepUtil.millisecond(100);
+            SleepUtil.millisecond(100);//simulation request process cost
             System.out.println(Thread.currentThread().getName() + " handles " + request);
         }
     }

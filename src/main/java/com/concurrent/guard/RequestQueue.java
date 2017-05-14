@@ -22,7 +22,7 @@ public class RequestQueue {
     }
 
     public synchronized void addRequest(Request request) {
-        queue.add(request);
-        notifyAll();
+        queue.add(request);//add new request
+        notifyAll();//notify getRequest方法
     }
 }

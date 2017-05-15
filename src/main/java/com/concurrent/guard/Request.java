@@ -1,5 +1,7 @@
 package com.concurrent.guard;
 
+import com.concurrent.future.Data;
+
 /**
  * 请求对象
  * User shijingui
@@ -7,6 +9,15 @@ package com.concurrent.guard;
  */
 public class Request {
     protected String name;
+    private Data response;
+
+    public synchronized Data getResponse() {
+        return response;
+    }
+
+    public synchronized void setResponse(Data response) {
+        this.response = response;
+    }
 
     public Request(String name) {
         this.name = name;

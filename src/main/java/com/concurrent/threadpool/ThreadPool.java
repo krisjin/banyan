@@ -35,12 +35,36 @@ public class ThreadPool {
     }
 
 
-    protected synchronized void add(PThread pThread){
-        if (!isShutdown){
+    protected synchronized void add(PThread pThread) {
+        if (!isShutdown) {
             idleThreads.add(pThread);
-        }else{
+        } else {
 //            pThread.shut();
         }
     }
 
+
+    public synchronized void shutdown() {
+        isShutdown = true;
+        for (int i = 0; i < idleThreads.size(); i++) {
+            PThread idleThread = (PThread) idleThreads.get(i);
+            idleThread.shutdown();
+        }
+    }
+
+
+    public synchronized void start(Runnable runnable) {
+        PThread thread = null;
+        if (idleThreads.size() > 0) {
+            int lastIndex = idleThreads.size() - 1;
+            thread = idleThreads.get(lastIndex);
+
+            idleThreads.remove(lastIndex);
+            thread.setTarget(runnable);
+        } else {
+            threadCount.incrementAndGet();
+            thread = new PThread(runnable, "Thread #" + threadCount.get(), this);
+            thread.start();
+        }
+    }
 }

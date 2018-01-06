@@ -3,6 +3,8 @@ package org.loadbalance;
 import java.util.*;
 
 /**
+ * 吞吐量遇到，随机算法的效果越接近于轮训算法的效果
+ *
  * @author shijingui on 2018/1/6
  */
 public class RoundRobin {
@@ -15,8 +17,8 @@ public class RoundRobin {
         serverWeightMap.put("192.168.1.102", 1);
         serverWeightMap.put("192.168.1.103", 2);
         serverWeightMap.put("192.168.1.104", 2);
-        serverWeightMap.put("192.168.1.105", 4);
-        serverWeightMap.put("192.168.1.106", 4);
+        serverWeightMap.put("192.168.1.105", 3);
+        serverWeightMap.put("192.168.1.106", 3);
 
     }
 
@@ -34,7 +36,14 @@ public class RoundRobin {
         Map<String, Integer> serverMap = new HashMap<String, Integer>();
         serverMap.putAll(serverWeightMap);
         Set<String> ipSet = serverMap.keySet();
-        List<String> ipList = new ArrayList<String>(ipSet);
+        List<String> ipList = new ArrayList<>();
+
+        for (String ip : ipSet) {//加权重计算
+            Integer weight = serverWeightMap.get(ip);
+            for (int i = 0; i < weight; i++)
+                ipList.add(ip);
+        }
+
 
         String serverIp;
         synchronized (pos) {

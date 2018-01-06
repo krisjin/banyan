@@ -24,5 +24,11 @@ public class WeakRef {
         public String toString() {
             return "Weak ref";
         }
+
+        @Override
+        protected void finalize() throws Throwable {
+            super.finalize();
+            System.out.println("called...");
+        }
     }
 }

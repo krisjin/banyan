@@ -19,6 +19,9 @@ public class BitCalu {
         int c = 6 >> 1;
         System.out.println(c);
 
+        //左移(<<)就是将数据的每一位进行左移，超出舍弃，空位补0。相当于原数据乘以2。
+        int d = 1 << 3;
+        System.out.println(d);
 
     }
 }

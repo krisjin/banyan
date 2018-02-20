@@ -7,6 +7,18 @@ import org.concurrent.domain.Message;
  * Date: 2017/1/3
  */
 public class GenericService {
+    public static void main(String[] args) {
+        GenericService genericService = new GenericService();
+        try {
+            Message m = genericService.getObject(Message.class);
+            System.out.println(m.getMsg());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 泛型方法
      *
@@ -20,18 +32,5 @@ public class GenericService {
         //创建泛型对象
         T t = c.newInstance();
         return t;
-    }
-
-
-    public static void main(String[] args) {
-        GenericService genericService = new GenericService();
-        try {
-            Message m = genericService.getObject(Message.class);
-            System.out.println(m.getMsg());
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
     }
 }

@@ -9,6 +9,15 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class ConsumerProducer {
 
+    public static void main(String[] args) {
+        BlockingQueue queue = new LinkedBlockingDeque();
+        Consumer consumer = new Consumer(queue);
+        Producer producer = new Producer(queue);
+        new Thread(producer).start();
+        new Thread(consumer).start();
+
+    }
+
     //消费者
     static class Consumer implements Runnable {
         private BlockingQueue blockingQueue;
@@ -51,15 +60,5 @@ public class ConsumerProducer {
                 }
             }
         }
-    }
-
-
-    public static void main(String[] args) {
-        BlockingQueue queue = new LinkedBlockingDeque();
-        Consumer consumer = new Consumer(queue);
-        Producer producer = new Producer(queue);
-        new Thread(producer).start();
-        new Thread(consumer).start();
-
     }
 }

@@ -9,8 +9,8 @@ import java.util.*;
  */
 public class RoundRobin {
 
-    private static Map<String, Integer> serverWeightMap = new HashMap<String, Integer>();
     static Integer pos = 0;
+    private static Map<String, Integer> serverWeightMap = new HashMap<String, Integer>();
 
     static {
         serverWeightMap.put("192.168.1.101", 1);

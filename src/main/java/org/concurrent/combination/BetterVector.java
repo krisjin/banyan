@@ -10,20 +10,19 @@ import java.util.Vector;
  */
 public class BetterVector<E> extends Vector<E> {
 
-    public synchronized boolean putIfAbsent(E e) {
-        boolean absent = !contains(e);
-        if (absent) {
-            add(e);
-        }
-        return absent;
-    }
-
-
     public static void main(String[] args) {
         BetterVector<String> betterVector = new BetterVector<String>();
 
         betterVector.putIfAbsent("kris");
         System.out.println(betterVector.size());
 
+    }
+
+    public synchronized boolean putIfAbsent(E e) {
+        boolean absent = !contains(e);
+        if (absent) {
+            add(e);
+        }
+        return absent;
     }
 }

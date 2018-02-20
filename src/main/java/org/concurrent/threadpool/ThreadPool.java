@@ -23,10 +23,6 @@ public class ThreadPool {
 
     }
 
-    public Integer getSize() {
-        return threadCount.get();
-    }
-
     public synchronized static ThreadPool getInstance() {
         if (instance == null) {
             instance = new ThreadPool();
@@ -34,6 +30,9 @@ public class ThreadPool {
         return instance;
     }
 
+    public Integer getSize() {
+        return threadCount.get();
+    }
 
     protected synchronized void add(PThread pThread) {
         if (!isShutdown) {

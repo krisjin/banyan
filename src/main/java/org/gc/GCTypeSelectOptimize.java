@@ -24,9 +24,9 @@ import java.util.List;
  * Date: 2016/11/3
  */
 public class GCTypeSelectOptimize {
+    private static final int MAX_Object = 1000;
     private static volatile List objectList = new ArrayList<>();
     private static volatile int objAddCount = 0;
-    private static final int MAX_Object = 1000;
     private static int bytes = 1 * 1024 * 1024;//1M
 
     public static void main(String[] args) {

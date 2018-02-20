@@ -13,11 +13,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class SeparationLock {
 
-    private int seg = 16;
-
     private final Map[] maps = null;
-
     private final ReentrantReadWriteLock[] lock = null;
+    private int seg = 16;
 
     public SeparationLock(int seg) {
         this.seg = seg;

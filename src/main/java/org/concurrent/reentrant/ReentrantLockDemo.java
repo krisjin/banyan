@@ -12,6 +12,12 @@ public class ReentrantLockDemo implements Runnable {
 
     private ReentrantLock lock = new ReentrantLock();
 
+    public static void main(String[] args) {
+        ReentrantLockDemo demo02 = new ReentrantLockDemo();
+        new Thread(demo02).start();
+        new Thread(demo02).start();
+    }
+
     public void get() {
         lock.lock();
         System.out.println(Thread.currentThread().getId());
@@ -25,16 +31,9 @@ public class ReentrantLockDemo implements Runnable {
         lock.unlock();
     }
 
-
     @Override
     public void run() {
         get();
-    }
-
-    public static void main(String[] args) {
-        ReentrantLockDemo demo02 = new ReentrantLockDemo();
-        new Thread(demo02).start();
-        new Thread(demo02).start();
     }
 
 }

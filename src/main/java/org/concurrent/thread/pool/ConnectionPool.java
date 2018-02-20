@@ -8,8 +8,8 @@ import java.util.LinkedList;
  */
 public class ConnectionPool {
 
-    private LinkedList<Connection> pool = new LinkedList<Connection>();
     private static final int MAX_SIZE = 20;
+    private LinkedList<Connection> pool = new LinkedList<Connection>();
 
     /**
      * 初始化指定大小的连接池

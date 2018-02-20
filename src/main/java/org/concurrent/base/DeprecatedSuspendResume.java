@@ -11,46 +11,6 @@ public class DeprecatedSuspendResume implements Runnable {
 
     private volatile int secondVal;
 
-    @Override
-    public void run() {
-
-    }
-
-    public boolean valEqual() {
-        return firstVal == secondVal;
-    }
-
-    private void workMethod() {
-        int val = 1;
-        while (true) {
-            stepOne(val);
-            stepTwo(val);
-            val++;
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-
-    //赋值后，休眠300毫秒，从而使线程有机会在stepOne操作和stepTwo操作之间被挂起
-    private void stepOne(int newVal) {
-        firstVal = newVal;
-        try {
-            //模拟长时间运行的情况
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void stepTwo(int newVal) {
-        secondVal = newVal;
-    }
-
     public static void main(String[] args) {
         DeprecatedSuspendResume dsr = new DeprecatedSuspendResume();
         Thread t = new Thread(dsr);
@@ -75,5 +35,44 @@ public class DeprecatedSuspendResume implements Runnable {
             }
         }
         System.exit(0); //中断应用程序
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    public boolean valEqual() {
+        return firstVal == secondVal;
+    }
+
+    private void workMethod() {
+        int val = 1;
+        while (true) {
+            stepOne(val);
+            stepTwo(val);
+            val++;
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    //赋值后，休眠300毫秒，从而使线程有机会在stepOne操作和stepTwo操作之间被挂起
+    private void stepOne(int newVal) {
+        firstVal = newVal;
+        try {
+            //模拟长时间运行的情况
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void stepTwo(int newVal) {
+        secondVal = newVal;
     }
 }

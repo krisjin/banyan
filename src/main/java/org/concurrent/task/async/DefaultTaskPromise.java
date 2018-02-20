@@ -22,65 +22,6 @@ public class DefaultTaskPromise implements TaskPromise {
 
     private volatile ConcurrentMap<String, Object> attrs;
 
-    //结果
-    private interface ResultHolder {
-        boolean isSuccess();
-
-        boolean isFailure();
-
-        Object getResult();
-    }
-
-    //成功
-    private static final class Success implements ResultHolder {
-
-        final Object value;
-
-        Success(Object value) {
-            this.value = value;
-        }
-
-        @Override
-        public boolean isSuccess() {
-            return true;
-        }
-
-        @Override
-        public boolean isFailure() {
-            return false;
-        }
-
-        @Override
-        public Object getResult() {
-            return value;
-        }
-    }
-
-    //失败
-    private static final class Failure implements ResultHolder {
-
-        Throwable t;
-
-        Failure(Throwable t) {
-            this.t = t;
-        }
-
-        @Override
-        public boolean isSuccess() {
-            return false;
-        }
-
-        @Override
-        public boolean isFailure() {
-            return true;
-        }
-
-        @Override
-        public Throwable getResult() {
-            return t;
-        }
-    }
-
     @Override
     public boolean isSuccess() {
         ResultHolder result = this.result;
@@ -330,5 +271,64 @@ public class DefaultTaskPromise implements TaskPromise {
             return null;
         }
         return attributes.remove(key);
+    }
+
+    //结果
+    private interface ResultHolder {
+        boolean isSuccess();
+
+        boolean isFailure();
+
+        Object getResult();
+    }
+
+    //成功
+    private static final class Success implements ResultHolder {
+
+        final Object value;
+
+        Success(Object value) {
+            this.value = value;
+        }
+
+        @Override
+        public boolean isSuccess() {
+            return true;
+        }
+
+        @Override
+        public boolean isFailure() {
+            return false;
+        }
+
+        @Override
+        public Object getResult() {
+            return value;
+        }
+    }
+
+    //失败
+    private static final class Failure implements ResultHolder {
+
+        Throwable t;
+
+        Failure(Throwable t) {
+            this.t = t;
+        }
+
+        @Override
+        public boolean isSuccess() {
+            return false;
+        }
+
+        @Override
+        public boolean isFailure() {
+            return true;
+        }
+
+        @Override
+        public Throwable getResult() {
+            return t;
+        }
     }
 }

@@ -21,10 +21,14 @@ public class PThread extends Thread {
         return target;
     }
 
+    public synchronized void setTarget(Runnable target) {
+        this.target = target;
+        notifyAll();// set new task,notify run method,start execute this task
+    }
+
     public boolean isShutdown() {
         return isShutdown;
     }
-
 
     public boolean isIdle() {
         return isIdle;
@@ -51,12 +55,6 @@ public class PThread extends Thread {
             }
             isIdle = false;
         }
-    }
-
-
-    public synchronized void setTarget(Runnable target) {
-        this.target = target;
-        notifyAll();// set new task,notify run method,start execute this task
     }
 
     public synchronized void shutdown() {

@@ -11,9 +11,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ProducerConsumerStack {
 
-    static Stack<String> message = new Stack<String>();
-
     final static int MAX_SIZE = 10;
+    static Stack<String> message = new Stack<String>();
 
     public static void main(String[] args) {
         Thread producer = new Thread(new Producer(), "Producer-1");

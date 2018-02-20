@@ -14,6 +14,7 @@ public class ServerThread extends Thread {
 
     /**
      * structure a server thread
+     *
      * @param requestQueue accept request queue
      * @param name
      */

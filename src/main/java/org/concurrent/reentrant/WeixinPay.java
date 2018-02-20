@@ -8,16 +8,15 @@ package org.concurrent.reentrant;
  */
 public class WeixinPay extends Pay {
 
+    public static void main(String[] args) {
+        WeixinPay weixinPay = new WeixinPay();
+        weixinPay.pay();
+    }
+
     @Override
     public synchronized void pay() {
         System.out.println("微信支付......");
         super.pay();
-    }
-
-
-    public static void main(String[] args) {
-        WeixinPay weixinPay = new WeixinPay();
-        weixinPay.pay();
     }
 }
 

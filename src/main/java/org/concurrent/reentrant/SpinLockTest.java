@@ -13,6 +13,12 @@ public class SpinLockTest implements Runnable {
     //    private SpinLock lock = new SpinLock();
     private SpinLock2 lock = new SpinLock2();
 
+    public static void main(String[] args) {
+        SpinLockTest spinLockTest = new SpinLockTest();
+        new Thread(spinLockTest).start();
+        new Thread(spinLockTest).start();
+    }
+
     public void get() {
         lock.lock();
         System.out.println(Thread.currentThread().getId());
@@ -29,11 +35,5 @@ public class SpinLockTest implements Runnable {
     @Override
     public void run() {
         get();
-    }
-
-    public static void main(String[] args) {
-        SpinLockTest spinLockTest = new SpinLockTest();
-        new Thread(spinLockTest).start();
-        new Thread(spinLockTest).start();
     }
 }

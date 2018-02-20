@@ -17,5 +17,4 @@ public interface TaxPayerBailoutDb {
     public TaxPayerRecord get(String id);
 
 
-
 }

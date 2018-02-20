@@ -12,13 +12,13 @@ public class SoftRef {
         MyObject myObject = new MyObject("soft.......................");
         ReferenceQueue<MyObject> referenceQueue = new ReferenceQueue<MyObject>();
 
-        SoftReference<MyObject> softReference = new SoftReference<MyObject>(myObject,referenceQueue);
+        SoftReference<MyObject> softReference = new SoftReference<MyObject>(myObject, referenceQueue);
         myObject = null;
         System.gc();
         MyObject myObject1 = softReference.get();
         System.out.println(myObject1.name);
 
-        byte[] bytes = new byte[1024 *1314* 2];
+        byte[] bytes = new byte[1024 * 1314 * 2];
         System.out.println(softReference.get());
     }
 

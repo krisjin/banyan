@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class RandomLoad {
     static Map<String, Integer> serverWeightMap = new HashMap<String, Integer>();
-
+    static int randomSize = serverWeightMap.size();
 
     static {
         serverWeightMap.put("192.168.1.100", 1);
@@ -16,8 +16,6 @@ public class RandomLoad {
         serverWeightMap.put("192.168.1.103", 1);
         serverWeightMap.put("192.168.1.104", 50);
     }
-
-    static int randomSize = serverWeightMap.size();
 
     public static void main(String[] args) {
         Map<String, Integer> serverCount = new HashMap<>();

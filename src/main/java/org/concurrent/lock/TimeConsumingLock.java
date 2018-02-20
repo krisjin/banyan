@@ -20,6 +20,22 @@ public class TimeConsumingLock implements Runnable {
         this.flag = flag;
     }
 
+    public static void main(String[] args) {
+        TimeConsumingLock timeConsumingLock = new TimeConsumingLock(5000000);
+        Thread thread = new Thread(timeConsumingLock);
+        long startTime = System.currentTimeMillis();
+
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long costTime = System.currentTimeMillis() - startTime;
+        System.out.println(costTime);
+
+    }
+
     public synchronized void write(Object key) {
         if (null == key) {
             return;
@@ -27,7 +43,6 @@ public class TimeConsumingLock implements Runnable {
         map.put(key, "value");
 
     }
-
 
     public synchronized void write2(Object key) {
         if (null == key) {
@@ -45,21 +60,5 @@ public class TimeConsumingLock implements Runnable {
 //           write(i);
             write2(i);
         }
-    }
-
-    public static void main(String[] args) {
-        TimeConsumingLock timeConsumingLock = new TimeConsumingLock(5000000);
-        Thread thread = new Thread(timeConsumingLock);
-        long startTime = System.currentTimeMillis();
-
-        thread.start();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        long costTime = System.currentTimeMillis() - startTime;
-        System.out.println(costTime);
-
     }
 }

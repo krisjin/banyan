@@ -23,17 +23,6 @@ public class Master {
     //子任务处理结果集
     protected Map<String, Object> resultMap = new ConcurrentHashMap<String, Object>();
 
-    //are all the sub task completed
-    public boolean isComplete() {
-        for (Map.Entry<String, Thread> entry : threadMap.entrySet()) {
-            if (entry.getValue().getState() != Thread.State.TERMINATED) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     /**
      * structure a master worker,need  a worker process logic
      *
@@ -47,6 +36,17 @@ public class Master {
             threadMap.put(Integer.toString(i), new Thread(worker, Integer.toString(i)));
 
         }
+    }
+
+    //are all the sub task completed
+    public boolean isComplete() {
+        for (Map.Entry<String, Thread> entry : threadMap.entrySet()) {
+            if (entry.getValue().getState() != Thread.State.TERMINATED) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

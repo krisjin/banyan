@@ -10,14 +10,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class BoundedBufferQueue<E> {
 
-    private Object[] buffer;
-
     private final ReentrantLock lock;
-
     private final Condition notEmpty;
-
     private final Condition notFull;
-
+    private Object[] buffer;
     private int count;
 
     private int putIndex;

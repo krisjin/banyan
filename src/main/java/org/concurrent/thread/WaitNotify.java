@@ -10,9 +10,7 @@ import java.util.Date;
  * Date: 2016/2/5
  */
 public class WaitNotify {
-
     static volatile boolean flag = true;
-
     static Object obj = new Object();
 
     public static void main(String... args) {

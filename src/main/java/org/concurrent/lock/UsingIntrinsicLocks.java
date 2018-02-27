@@ -6,18 +6,18 @@ import java.util.concurrent.Executors;
 /**
  * Every Java object has an intrinsic lock (or a monitor lock) associated with
  * it.
- * 
+ *
  * Every Java object can be used as a lock.
- * 
+ *
  * Intrinsic Locks are mutually exclusive, so one only thread can 'hold' the
  * lock at time when it's using the synchronization mechanism.
- * 
+ *
  * The lock is freed when the synchronized method/block ends.
- * 
+ *
  * Synchronize serializes access for what is locked and guarantee memory
  * visibility for the changes that happened inside the synchronized scope to all
  * threads.
- * 
+ *
  * Intrinsic locks are reentrant: if you are holding it, you can acquire it
  * again, without deadlocking.
  */
@@ -27,7 +27,7 @@ public class UsingIntrinsicLocks {
 
 	/**
 	 * When used in method signature, synchronized use 'this' as a lock.
-	 * 
+	 *
 	 * Instead of 'this', other objects variables can be used
 	 */
 	public synchronized void mySynchronizedMethod() {

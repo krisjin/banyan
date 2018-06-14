@@ -4,6 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
+ *
+ * Executors.newFixedThreadPool
  * @author krisjin
  * @date 2015-1-27
  */

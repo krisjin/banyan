@@ -17,12 +17,10 @@ public class HashLoadBalance {
         serverIpList.add("192.168.1.102");
         serverIpList.add("192.168.1.103");
         serverIpList.add("192.168.1.104");
-
     }
 
     public static void main(String[] args) {
         String remoteIp = "abc.com";
-
         for (int i = 0; i < 100; i++) {
             System.out.println(getIp(remoteIp));
         }
@@ -31,7 +29,6 @@ public class HashLoadBalance {
 
 
     static String getIp(String remoteIp) {
-
         int hashCode = "dfafd".hashCode();
         int serverPost = hashCode % serverIpList.size();
         return serverIpList.get(serverPost);

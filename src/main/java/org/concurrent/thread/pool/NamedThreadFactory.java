@@ -23,7 +23,7 @@ public class NamedThreadFactory implements ThreadFactory {
     /**
      * 构造函数，默认非守护线程
      *
-     * @param prefix 前缀，后面会自动加上-T-
+     * @param prefix 前缀，后面会自动加上-SortMain-
      */
     public NamedThreadFactory(String prefix) {
         this(prefix, false);
@@ -32,13 +32,13 @@ public class NamedThreadFactory implements ThreadFactory {
     /**
      * 构造函数
      *
-     * @param prefix 前缀，后面会自动加上-T-
+     * @param prefix 前缀，后面会自动加上-SortMain-
      * @param daemon 是否守护线程，true的话随主线程退出而退出，false的话则要主动退出
      */
     public NamedThreadFactory(String prefix, boolean daemon) {
         SecurityManager s = System.getSecurityManager();
         group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
-        namePrefix = prefix + "-" + poolCount.getAndIncrement() + "-T-";
+        namePrefix = prefix + "-" + poolCount.getAndIncrement() + "-SortMain-";
         isDaemon = daemon;
     }
 

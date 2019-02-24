@@ -1,6 +1,8 @@
 package org.concurrent.thread.join;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * User: shijingui
@@ -9,21 +11,23 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Main {
 
     public static void main(String[] args) {
-        AtomicInteger num = new AtomicInteger(100000);
 
-        Thread calculateThread = new Thread(new CalculateThread(num));
-        calculateThread.setName("CalculateThread");
+        final List<Ware> wareList = Collections.synchronizedList(new ArrayList<Ware>());
 
-        Thread resultThread = new Thread(new ResultThread(calculateThread));
-        resultThread.setName("ResultThread");
 
-        calculateThread.start();
+        List<Thread> threadList = Collections.synchronizedList(new ArrayList<Thread>());
+        for (int i = 0; i < 10; i++) {
+            Thread calculate = new Thread(new ApiTask(wareList));
+            threadList.add(calculate);
+            calculate.start();
+        }
+        Thread resultThread = new Thread(new ResultThread(threadList, wareList));
+
         resultThread.start();
         try {
             resultThread.join();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(num.get());
     }
 }

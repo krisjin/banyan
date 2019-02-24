@@ -58,17 +58,17 @@ import java.util.function.Supplier;
  * <p>
  * = Mapping values =
  * <p>
- * completableFuture.thenApply(Function<? super T,? extends U> fn);
+ * completableFuture.thenApply(Function<? super SortMain,? extends U> fn);
  * <p>
- * completableFuture.thenApplyAsync(Function<? super T,? extends U> fn);
+ * completableFuture.thenApplyAsync(Function<? super SortMain,? extends U> fn);
  * <p>
- * completableFuture.thenApplyAsync(Function<? super T,? extends U> fn, Executor
+ * completableFuture.thenApplyAsync(Function<? super SortMain,? extends U> fn, Executor
  * executor);
  * <p>
  * <p>
  * = Callback on completion =
  * <p>
- * completableFuture.thenAccept(Consumer<? super T> block);
+ * completableFuture.thenAccept(Consumer<? super SortMain> block);
  * <p>
  * completableFuture.thenRun(Runnable action);
  * <p>
@@ -84,28 +84,28 @@ import java.util.function.Supplier;
  * <p>
  * Chain one future dependent on the other
  * <p>
- * completableFuture.thenCompose(Function<? super T,CompletableFuture<U>> fn);
+ * completableFuture.thenCompose(Function<? super SortMain,CompletableFuture<U>> fn);
  * // flatMap
  * <p>
  * <p>
  * = Mapping values from Two Futures =
  * <p>
  * completableFuture.thenCombine(CompletableFuture<? extends U> other,
- * BiFunction<? super T,? super U,? extends V> fn) ex.:
+ * BiFunction<? super SortMain,? super U,? extends V> fn) ex.:
  * <p>
  * <p>
  * = Waiting for first CompletableFuture to complete =
  * <p>
  * Two services, one fast and the other slow. Fastest always wins.
  * <p>
- * completableFuture.acceptEither(CompletableFuture<? extends T> other,
- * Consumer<? super T> block);
+ * completableFuture.acceptEither(CompletableFuture<? extends SortMain> other,
+ * Consumer<? super SortMain> block);
  * <p>
  * <p>
  * = Transforming first completed =
  * <p>
- * completableFuture.applyToEither(CompletableFuture<? extends T> other,
- * Function<? super T,U> fn)
+ * completableFuture.applyToEither(CompletableFuture<? extends SortMain> other,
+ * Function<? super SortMain,U> fn)
  * <p>
  * <p>
  * = Combining multiple CompletableFuture together =

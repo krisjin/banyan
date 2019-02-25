@@ -11,12 +11,12 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class SortTask implements Runnable {
 
-    private final int[] nums;
+    private final int[] numArr;
     private List<int[]> resultData;
     private CyclicBarrier cyclicBarrier;
 
-    public SortTask(CyclicBarrier cyclicBarrier, final int[] nums, List<int[]> resultData) {
-        this.nums = nums;
+    public SortTask(CyclicBarrier cyclicBarrier, final int[] numArr, List<int[]> resultData) {
+        this.numArr = numArr;
         this.resultData = resultData;
         this.cyclicBarrier = cyclicBarrier;
     }
@@ -24,10 +24,9 @@ public class SortTask implements Runnable {
     @Override
     public void run() {
 
-        sort(nums, 0, nums.length - 1);
+        sort(numArr, 0, numArr.length - 1);
         synchronized (resultData) {
-            resultData.add(nums);
-//            System.out.println(Thread.currentThread().getName() + ": " + Arrays.toString(nums));
+            resultData.add(numArr);
         }
         try {
             cyclicBarrier.await();

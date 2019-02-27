@@ -1,0 +1,2 @@
+使用synchronized可以实现线程间的同步互斥，JUC中的ReentrantLock类也能达到相同的效果，并且在
+扩展功能上也更加强大，比如具有嗅探锁定，多路分支通知等功能，而且在使用上比synchronized更加灵活

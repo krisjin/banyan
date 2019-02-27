@@ -1,7 +1,7 @@
 package org.optimization;
 
 /**
- * @author shijingui on 2018/1/9
+ * @author krisjin on 2018/1/9
  */
 public class ArrayTest {
 

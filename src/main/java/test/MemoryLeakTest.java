@@ -11,7 +11,7 @@ import java.util.Vector;
  * 如何判定内存泄露：
  * 这些对象是可达的，即在有向图中，存在通路可以与其相连；其次，这些对象是无用的，即程序以后不会再使用这些对象。
  * 如果对象满足这两个条件，这些对象就可以判定为Java中的内存泄漏，这些对象不会被GC所回收，然而它却占用内存。
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/26
  */
 public class MemoryLeakTest {

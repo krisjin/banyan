@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/16
  */
 public class Test {

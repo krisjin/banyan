@@ -4,7 +4,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
 /**
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class WeakRef {
 

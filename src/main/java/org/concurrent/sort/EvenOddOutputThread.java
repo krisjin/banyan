@@ -1,7 +1,7 @@
 package org.concurrent.sort;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/2/24
  */
 public class EvenOddOutputThread {

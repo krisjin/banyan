@@ -20,7 +20,7 @@ import java.util.List;
  * 第二个配置（小堆，大的新生代，Parellel GC）每秒可以吞食9.2头猪
  * -Xms512m -Xmx512m  -XX:+UseParallelGC -Xmn384m
  * 使用jstat 命令，jstat -gc -t -h10 pid 1s
- * User: shijingui
+ * User: krisjin
  * Date: 2016/11/3
  */
 public class GCTypeSelectOptimize {

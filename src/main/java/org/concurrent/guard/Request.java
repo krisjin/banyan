@@ -4,7 +4,7 @@ import org.concurrent.future.Data;
 
 /**
  * 请求对象
- * User shijingui
+ * User krisjin
  * Date 2017/5/13
  */
 public class Request {

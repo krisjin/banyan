@@ -2,7 +2,7 @@ package org.concurrent.reentrant;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/7
  * Time: 22:48
  */

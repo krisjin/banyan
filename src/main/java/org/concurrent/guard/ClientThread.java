@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/5/13
  */
 public class ClientThread extends Thread {

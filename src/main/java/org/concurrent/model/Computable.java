@@ -3,7 +3,7 @@ package org.concurrent.model;
 /**
  * 计算接口
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/15
  * Time: 22:29
  */

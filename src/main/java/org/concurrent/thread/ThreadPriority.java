@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 并等待下次分配。线程分配到的时间片多少也决定了线程使用处理器资源的多少。而线程优先级就是决定线程需要多或者少分配一些处理器资源的线程属性。
  * 设置线程优先级时，针对频繁阻塞（休眠或者IO操作）的线程需要设置较高的优先级，而偏重计算（需要较多CPU时间或者偏运算）的线程则设置较低的优先级
  * 确保处理器不会被独占
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/4
  */
 public class ThreadPriority {

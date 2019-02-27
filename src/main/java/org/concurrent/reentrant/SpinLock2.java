@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * 采用计数次进行统计，解决了自旋锁的死锁问题，该自旋锁即为可重入锁。
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 16:21
  */

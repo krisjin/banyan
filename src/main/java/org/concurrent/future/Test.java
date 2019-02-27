@@ -3,7 +3,7 @@ package org.concurrent.future;
 import org.concurrent.util.SleepUtil;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/5/6
  */
 public class Test {

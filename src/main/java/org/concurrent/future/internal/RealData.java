@@ -5,7 +5,7 @@ import org.concurrent.util.SleepUtil;
 import java.util.concurrent.Callable;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/5/10
  */
 public class RealData implements Callable<String> {

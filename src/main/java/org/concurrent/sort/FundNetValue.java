@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/2/25
  */
 public class FundNetValue {

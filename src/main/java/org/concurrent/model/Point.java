@@ -3,7 +3,7 @@ package org.concurrent.model;
 /**
  * 不可变的Point类,所以是线程安全的。
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/9
  * Time: 22:42
  */

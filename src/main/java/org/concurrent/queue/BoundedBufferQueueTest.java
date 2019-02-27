@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/16
  */
 public class BoundedBufferQueueTest {

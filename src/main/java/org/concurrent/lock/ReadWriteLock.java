@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 读写锁
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/24
  */
 public class ReadWriteLock {

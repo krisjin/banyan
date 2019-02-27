@@ -6,7 +6,7 @@ package org.concurrent.interrupt;
  * 它就会注意到待决中断的存在，并抛出 InterruptException。于是执行跳转到 catch 块，
  * 并打印出线程被中断的信息。最后，计算并打印出时间差。
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 14:43
  */

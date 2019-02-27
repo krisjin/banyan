@@ -3,7 +3,7 @@ package test;
 /**
  * 多线程一定快吗
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/10/10
  * Time: 14:58
  */

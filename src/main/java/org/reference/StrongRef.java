@@ -4,7 +4,7 @@ package org.reference;
  * 强引用是java引用类型中最高级级别的，这种引用类型不会被jvm回收，即使内存空间不够用了
  * 也不会释放，直接报OOM。
  *
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class StrongRef {
 

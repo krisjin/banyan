@@ -3,7 +3,7 @@ package org.concurrent.base;
 import java.util.Date;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/1
  */
 public class ThreadLocalExample {

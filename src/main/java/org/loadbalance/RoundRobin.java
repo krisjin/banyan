@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 吞吐量遇到，随机算法的效果越接近于轮训算法的效果
  *
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class RoundRobin {
 

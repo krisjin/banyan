@@ -3,7 +3,7 @@ package org.loadbalance;
 import java.util.*;
 
 /**
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class RandomLoad {
     static Map<String, Integer> serverWeightMap = new HashMap<String, Integer>();

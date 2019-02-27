@@ -9,7 +9,7 @@ import java.util.concurrent.FutureTask;
 
 /**
  * Future模式的核心在于去除了主函数的等待时间，利用原来等待的时间处理其它逻辑
- * User shijingui
+ * User krisjin
  * Date 2017/5/10
  */
 public class Test {

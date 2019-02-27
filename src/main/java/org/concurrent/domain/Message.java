@@ -1,7 +1,7 @@
 package org.concurrent.domain;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/11
  */
 public class Message {

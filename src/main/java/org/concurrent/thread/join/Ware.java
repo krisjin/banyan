@@ -1,7 +1,7 @@
 package org.concurrent.thread.join;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/2/23
  *  
  */

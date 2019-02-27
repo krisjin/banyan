@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 默认线程池
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/19
  */
 public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> {

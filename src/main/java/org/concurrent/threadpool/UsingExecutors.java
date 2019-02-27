@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 调度线程池使用
  *
- * @author shijingui on 2017/5/20
+ * @author krisjin on 2017/5/20
  */
 public class UsingExecutors {
 

@@ -1,7 +1,7 @@
 package test.domain;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/7/12
  */
 public class Detail {

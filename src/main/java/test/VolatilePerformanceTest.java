@@ -3,7 +3,7 @@ package test;
 import org.junit.Test;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/21
  */
 public class VolatilePerformanceTest {

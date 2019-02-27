@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * request object collection
- * User shijingui
+ * User krisjin
  * Date 2017/5/13
  */
 public class RequestQueue {

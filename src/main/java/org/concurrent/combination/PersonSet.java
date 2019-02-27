@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * 通过线程封闭机制来确保线程安全
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/9
  * Time: 22:09
  */

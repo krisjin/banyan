@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/18
  */
 public class ApiTask implements Runnable {

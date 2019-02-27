@@ -3,7 +3,7 @@ package org.concurrent.base;
 /**
  * 非线程安全
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/15
  * Time: 14:47
  */

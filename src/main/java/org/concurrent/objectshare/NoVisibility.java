@@ -3,7 +3,7 @@ package org.concurrent.objectshare;
 /**
  * 存在可变的共享变量，非线程安全类。
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 21:14
  */

@@ -2,7 +2,7 @@ package org.concurrent.optimize.one;
 
 /**
  * 纳税人救助数据库
- * User: shijingui
+ * User: krisjin
  * Date: 2016/3/19
  */
 public interface TaxPayerBailoutDb {

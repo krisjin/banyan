@@ -5,7 +5,7 @@ import java.util.Stack;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/10/12
  * Time: 9:57
  */

@@ -5,7 +5,7 @@ import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/3
  */
 public class ThreadMXBeanExample {

@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 15:56
  */

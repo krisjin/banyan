@@ -1,7 +1,7 @@
 package org.concurrent.threadpool;
 
 /**
- * @author shijingui on 2017/5/20
+ * @author krisjin on 2017/5/20
  */
 public class MyThread implements Runnable {
 

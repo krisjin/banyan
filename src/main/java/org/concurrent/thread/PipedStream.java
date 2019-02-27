@@ -5,7 +5,7 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/14
  */
 public class PipedStream {

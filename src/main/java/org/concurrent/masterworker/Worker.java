@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * Worker进程
  *
- * @author shijingui on 2017/5/13
+ * @author krisjin on 2017/5/13
  */
 public class Worker implements Runnable {
 

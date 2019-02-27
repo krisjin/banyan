@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/15
  * Time: 22:31
  */

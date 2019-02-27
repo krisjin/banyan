@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 /**
  * 计算结果缓存
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/15
  * Time: 22:37
  */

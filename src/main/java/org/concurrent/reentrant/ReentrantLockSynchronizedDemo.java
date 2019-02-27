@@ -3,7 +3,7 @@ package org.concurrent.reentrant;
 /**
  * synchronized 可重入锁
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 15:52
  */

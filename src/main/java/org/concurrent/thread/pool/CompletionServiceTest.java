@@ -5,7 +5,7 @@ import org.concurrent.util.SleepUtil;
 import java.util.concurrent.*;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2017/3/7
  */
 public class CompletionServiceTest {

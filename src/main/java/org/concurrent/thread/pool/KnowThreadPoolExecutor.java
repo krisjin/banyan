@@ -35,7 +35,7 @@ import java.util.concurrent.*;
  * .<p/>
  * TimeUnit（线程活动保持时间的单位）：可选的单位有天（DAYS），小时（HOURS），分钟（MINUTES），
  * 毫秒(MILLISECONDS)，微秒(MICROSECONDS, 千分之一毫秒)和毫微秒(NANOSECONDS, 千分之一微秒)。
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/28
  */
 public class KnowThreadPoolExecutor {

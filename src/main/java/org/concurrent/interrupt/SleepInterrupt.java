@@ -2,7 +2,7 @@ package org.concurrent.interrupt;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 13:17
  */

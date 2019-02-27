@@ -4,7 +4,7 @@ import org.concurrent.util.SleepUtil;
 
 /**
  * 安全的终结线程
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/5
  */
 public class ThreadShutdown {

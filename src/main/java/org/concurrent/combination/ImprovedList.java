@@ -8,7 +8,7 @@ import java.util.ListIterator;
 /**
  * 通过组合方式实现“若没有则添加”，在类中自己实现原子操作，增加同步。
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/10
  * Time: 21:53
  */

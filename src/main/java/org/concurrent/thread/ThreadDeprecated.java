@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 线程过时的方法
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/5
  */
 public class ThreadDeprecated {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class HashLoadBalance {
 

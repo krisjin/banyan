@@ -6,7 +6,7 @@ import org.concurrent.util.SleepUtil;
 
 /**
  * server side thread
- * User shijingui
+ * User krisjin
  * Date 2017/5/13
  */
 public class ServerThread extends Thread {

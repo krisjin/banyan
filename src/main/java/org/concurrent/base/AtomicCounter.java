@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author shijingui on 2018/2/21
+ * @author krisjin on 2018/2/21
  */
 public class AtomicCounter {
 

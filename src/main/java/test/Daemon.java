@@ -2,7 +2,7 @@ package test;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/10/16
  * Time: 15:40
  */

@@ -1,7 +1,7 @@
 package org.concurrent.masterworker;
 
 /**
- * @author shijingui on 2017/5/13
+ * @author krisjin on 2017/5/13
  */
 public class PlusWorker extends Worker {
 

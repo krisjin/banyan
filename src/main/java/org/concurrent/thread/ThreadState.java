@@ -4,7 +4,7 @@ import org.concurrent.util.SleepUtil;
 
 /**
  * 线程状态,使用jstack命令打印堆栈信息查看
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/4
  */
 public class ThreadState {

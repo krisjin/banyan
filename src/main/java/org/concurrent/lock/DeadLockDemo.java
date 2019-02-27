@@ -17,7 +17,7 @@ package org.concurrent.lock;
  * ——大部分CPU开销用在“系统态”：线程上下文切换和系统调用，都会导致CPU在“系统态”运行。换而言之，虽然系统很忙碌，但是CPU用在用户态的比例较小。应用程序
  * 得不到充分的CPU资源。
  * ——随着CPU数目的增多，系统的性能反而下降。因为CPU数目多，同时运行的线程就越多。可能就造成更频繁的线程上下文切换和系统态的CPU开销，从而导致更糟糕的性能。
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/10/12
  */
 public class DeadLockDemo {

@@ -4,7 +4,7 @@ package org.optimization;
  * 使用局部变量对好处，调用方法时传递的参数及在调用中创建的临时标亮都保存在栈中，速度较快。
  * 其它变量，如静态变量，实例变量等，都在堆中创建，速度较慢。
  *
- * @author shijingui on 2018/1/6
+ * @author krisjin on 2018/1/6
  */
 public class LocalVar {
     static int a;

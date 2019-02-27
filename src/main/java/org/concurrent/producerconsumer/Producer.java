@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author shijingui on 2017/5/17
+ * @author krisjin on 2017/5/17
  */
 public class Producer implements Runnable {
     private volatile boolean isRunning = true;

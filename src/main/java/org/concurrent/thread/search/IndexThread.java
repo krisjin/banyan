@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/4/11
  * Time: 14:21
  */

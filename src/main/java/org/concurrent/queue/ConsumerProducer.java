@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/19
  */
 public class ConsumerProducer {

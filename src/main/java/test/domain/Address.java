@@ -3,7 +3,7 @@ package test.domain;
 import java.util.List;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/7/12
  */
 public class Address {

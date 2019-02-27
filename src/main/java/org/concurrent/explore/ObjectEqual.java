@@ -4,7 +4,7 @@ import org.concurrent.model.UserBean;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/7/15
  * Time: 9:04
  */
@@ -18,11 +18,11 @@ public class ObjectEqual {
 
         userBean.setAge(12);
         userBean.setName("jingui");
-        userBean.setEmail("krisibm@163.com");
+        userBean.setEmail("krisjin");
 
         userBean1.setAge(12);
         userBean1.setName("jingui");
-        userBean1.setEmail("krisibm@163.com");
+        userBean1.setEmail("krisjin");
 
         int code = userBean.hashCode();
         int code1 = userBean1.hashCode();

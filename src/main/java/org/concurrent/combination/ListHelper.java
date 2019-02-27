@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 客户端加锁机制，通过客户端加锁实现“若没则添加”
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/10
  * Time: 21:19
  */

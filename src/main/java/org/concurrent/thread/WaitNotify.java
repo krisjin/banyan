@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * 线程等待通知
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/5
  */
 public class WaitNotify {

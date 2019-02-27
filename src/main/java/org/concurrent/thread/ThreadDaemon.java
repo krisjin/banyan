@@ -7,7 +7,7 @@ import org.concurrent.util.SleepUtil;
  * Daemon线程是一种守护型线程，因为它主要用作程序中后台调度与支持性工作。
  * 这意味着当一个Java虚拟机中没有一个非守护线程时，Java虚拟机将退出。
  * 在构建守护线程时不能依赖finally块中的操作来确保执行关闭和清理资源的逻辑。
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/5
  */
 public class ThreadDaemon {

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 有界阻塞缓冲队列
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/16
  */
 public class BoundedBufferQueue<E> {

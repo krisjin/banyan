@@ -4,7 +4,7 @@ import org.concurrent.util.SleepUtil;
 
 /**
  * 中断可以理解为线程的一个表示位属性
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/5
  */
 public class ThreadInterrupted {

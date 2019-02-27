@@ -5,7 +5,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/2/24
  *  
  */

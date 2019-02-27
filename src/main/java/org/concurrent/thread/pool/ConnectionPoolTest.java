@@ -5,7 +5,7 @@ import org.concurrent.util.SleepUtil;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/18
  */
 public class ConnectionPoolTest {

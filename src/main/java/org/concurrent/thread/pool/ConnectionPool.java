@@ -3,7 +3,7 @@ package org.concurrent.thread.pool;
 import java.util.LinkedList;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/17
  */
 public class ConnectionPool {

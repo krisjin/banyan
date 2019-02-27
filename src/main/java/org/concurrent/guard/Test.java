@@ -1,7 +1,7 @@
 package org.concurrent.guard;
 
 /**
- * User shijingui
+ * User krisjin
  * Date 2017/5/14
  */
 public class Test {

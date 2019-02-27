@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  * ReservedOsMemory      保留的操作系统内存
  * ThreadStackSize      线程栈的大小
  * <p/>
- * User: shijingui
+ * User: krisjin
  * Date: 2016/10/25
  */
 public class NativeOutOfMemoryErrorTest {

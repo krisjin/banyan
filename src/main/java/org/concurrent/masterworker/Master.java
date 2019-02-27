@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * 并整合最终处理结果。
  * Master-Worker模式是将一种串行任务并行化的方法，被分解的子任务在系统中可以被并行处理。同时，如果有需要，Master进程
  * 不需要等待所有子任务都完成计算，就可以根据已有的部分结果集计算最终结果。
- * User shijingui
+ * User krisjin
  * Date 2017/5/12
  */
 public class Master {

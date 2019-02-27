@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.concurrent.*;
 
 /**
- * @author shijingui on 2018/2/21
+ * @author krisjin on 2018/2/21
  */
 public class ConcurrentCollection {
 

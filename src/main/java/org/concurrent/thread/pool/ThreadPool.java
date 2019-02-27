@@ -1,7 +1,7 @@
 package org.concurrent.thread.pool;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/2/19
  */
 public interface ThreadPool<Job extends Runnable> {

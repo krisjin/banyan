@@ -4,7 +4,7 @@ package org.concurrent.objectshare;
  * 1.不要在构造函数中使用this应用逸出
  * 2.使用工程方法来防止this引用在构造函数中逸出
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/8
  * Time: 22:29
  */

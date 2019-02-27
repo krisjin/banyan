@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * @author shijingui on 2017/5/17
+ * @author krisjin on 2017/5/17
  */
 public class Consumer implements Runnable {
     private BlockingQueue<String> queue;

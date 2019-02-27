@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author shijingui on 2017/5/19
+ * @author krisjin on 2017/5/19
  */
 public class ThreadPool {
 

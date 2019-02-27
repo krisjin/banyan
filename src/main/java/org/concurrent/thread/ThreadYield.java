@@ -1,7 +1,7 @@
 package org.concurrent.thread;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/8/25
  */
 public class ThreadYield {

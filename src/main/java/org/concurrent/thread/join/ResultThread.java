@@ -3,7 +3,7 @@ package org.concurrent.thread.join;
 import java.util.List;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2016/9/18
  */
 public class ResultThread implements Runnable {

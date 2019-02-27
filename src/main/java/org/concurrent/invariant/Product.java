@@ -1,7 +1,7 @@
 package org.concurrent.invariant;
 
 /**
- * @author shijingui on 2017/5/15
+ * @author krisjin on 2017/5/15
  */
 public final class Product {//确保没有子类
 

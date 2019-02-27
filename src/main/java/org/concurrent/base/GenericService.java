@@ -3,7 +3,7 @@ package org.concurrent.base;
 import org.concurrent.domain.Message;
 
 /**
- * User: shijingui
+ * User: krisjin
  * Date: 2017/1/3
  */
 public class GenericService {

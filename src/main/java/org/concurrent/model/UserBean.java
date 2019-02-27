@@ -2,7 +2,7 @@ package org.concurrent.model;
 
 /**
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/7/15
  * Time: 9:08
  */

@@ -18,7 +18,7 @@ package org.concurrent.lock;
  * </p>
  * <p/>
  * <p/>
- * User: shijingui
+ * User: krisjin
  * Date: 2016/1/26
  */
 public class DeadLockAvoid {

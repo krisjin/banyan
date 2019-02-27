@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * VM Args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/10/14
  * Time: 22:37
  */

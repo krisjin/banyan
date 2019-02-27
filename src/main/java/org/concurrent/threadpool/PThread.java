@@ -1,7 +1,7 @@
 package org.concurrent.threadpool;
 
 /**
- * @author shijingui on 2017/5/19
+ * @author krisjin on 2017/5/19
  */
 public class PThread extends Thread {
 

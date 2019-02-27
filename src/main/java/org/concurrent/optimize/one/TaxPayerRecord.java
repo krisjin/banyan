@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 纳税人记录
- * User: shijingui
+ * User: krisjin
  * Date: 2016/3/19
  */
 public class TaxPayerRecord {

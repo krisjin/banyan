@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
- * @author shijingui on 2017/5/17
+ * @author krisjin on 2017/5/17
  */
 public class Test {
 

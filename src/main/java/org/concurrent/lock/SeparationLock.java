@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * 分离锁,使用{@link ReentrantReadWriteLock}
  * <p/>
- * User : krisibm@163.com
+ * User : krisjin
  * Date: 2015/9/14
  * Time: 9:29
  */

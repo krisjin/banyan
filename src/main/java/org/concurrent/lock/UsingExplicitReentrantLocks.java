@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Alternative mechanism for Intrinsic Locks, but with the same guarantees on
  * serialization and visibility;
  *
- * A Lock interface with multiple implementations with some differences in
+ * Demo1Main Lock interface with multiple implementations with some differences in
  * behavior; it offers cancellation, fairness and others facilities.
  * 
  * Fair in constructor:

@@ -24,7 +24,7 @@ public class CompletionServiceTest {
                 public String call() throws Exception {
                     SleepUtil.second(2);
                     System.out.println(Thread.currentThread().getName() + " 休息了 ");
-                    return "A";
+                    return "Demo1Main";
                 }
             });
         }

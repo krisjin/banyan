@@ -6,8 +6,8 @@ package org.concurrent.lock;
  * 例如，如果线程1锁住了A，然后尝试对B进行加锁，同时线程2已经锁住了B，接着尝试对A进行加锁，这时死锁就发生了。线程1永远得不到B，
  * 线程2也永远得不到A，并且它们永远也不会知道发生了这样的事情。为了得到彼此的对象（A和B），它们将永远阻塞下去。这种情况就是一个死锁。
  * 如下情况：
- * Thread 1 locks A ,waits for B
- * Thread 2 locks B ,waits for A
+ * Thread 1 locks Demo1Main ,waits for B
+ * Thread 2 locks B ,waits for Demo1Main
  * </p>
  * 热锁：
  * 热锁往往也是导致系统性能瓶颈的主要因素，其表现特征为多个线程对临界区或锁的竞争。可能出现：
@@ -21,7 +21,7 @@ package org.concurrent.lock;
  * Date: 2015/10/12
  */
 public class DeadLockDemo {
-    private static String A = "A";
+    private static String A = "Demo1Main";
     private static String B = "B";
 
     public static void main(String[] args) {

@@ -35,7 +35,7 @@ public class UsingExplicitReadWriteLocks {
 
     // Equivalent to Intrinsic Locks
     private ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-    private String myContent = "A long default content......";
+    private String myContent = "Demo1Main long default content......";
 
     /**
      * Simplest way to use the read mode

@@ -23,10 +23,10 @@ public class DeprecatedSuspendResume implements Runnable {
         }
         for (int i = 0; i < 10; i++) {
             //挂起线程
-//            t.suspend();
+//            methodA.suspend();
             System.out.println("dsr.valEqual()=" + dsr.valEqual());
             //恢复线程
-//            t.resume();
+//            methodA.resume();
             try {
                 //线程随机休眠0~2秒
                 Thread.sleep((long) (Math.random() * 2000.0));

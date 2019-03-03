@@ -24,7 +24,7 @@ public class UsingLatches {
 		Runnable r = () -> {
 			try {
 				Thread.sleep(1000);
-				System.out.println("Service in " + Thread.currentThread().getName() + " initialized.");
+				System.out.println("TaskService in " + Thread.currentThread().getName() + " initialized.");
 				latch.countDown();
 			} catch (InterruptedException e) {
 				e.printStackTrace();

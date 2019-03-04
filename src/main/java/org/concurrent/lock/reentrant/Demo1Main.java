@@ -1,7 +1,7 @@
 package org.concurrent.lock.reentrant;
 
 /**
- * @author shijingui on 2019/3/2
+ * @author krisjin on 2019/3/2
  */
 public class Demo1Main {
 

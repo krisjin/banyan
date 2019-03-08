@@ -14,13 +14,14 @@ public class WaitNotify {
     static Object obj = new Object();
 
     public static void main(String... args) {
-        Thread waitThread = new Thread(new Wait(), "WaitThread");
-        waitThread.start();
+        Thread wait = new Thread(new Wait());
+        wait.setName("等待 - ");
+        wait.start();
+//        SleepUtil.second(2);
 
-        SleepUtil.second(2);
-
-        Thread notifyThread = new Thread(new Notify(), "NotifyThread");
-        notifyThread.start();
+        Thread notify = new Thread(new Notify());
+        notify.setName("通知 - ");
+        notify.start();
     }
 
 

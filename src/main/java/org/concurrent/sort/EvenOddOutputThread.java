@@ -10,7 +10,7 @@ public class EvenOddOutputThread {
     //初始奇数现成先输出
     private volatile boolean flag = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //加锁类
         EvenOddOutputThread evenOddOutputThread = new EvenOddOutputThread();
@@ -55,7 +55,6 @@ public class EvenOddOutputThread {
                         }
                     }
                 }
-
             }
         }
     }

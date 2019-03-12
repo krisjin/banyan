@@ -16,10 +16,10 @@ public class RealData implements Callable<String> {
     }
 
     @Override
-    public String call() throws Exception {
+    public String call() {
         StringBuilder sb = new StringBuilder(10);
         for (int i = 0; i < 20; i++) {
-            sb.append(data);
+            sb.append(data).append(",");
         }
         SleepUtil.second(1);
         System.out.println("业务逻辑执行完成...");

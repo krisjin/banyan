@@ -1,9 +1,9 @@
 package test;
 
-import org.concurrent.lock.reentrant.ProducerConsumerQueue;
+import org.banyan.concurrent.lock.reentrant.ProducerConsumerQueue;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/3/4
  *  
  */

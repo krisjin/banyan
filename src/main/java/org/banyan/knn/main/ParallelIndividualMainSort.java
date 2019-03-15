@@ -18,9 +18,9 @@ public class ParallelIndividualMainSort {
     public static void main(String[] args) {
 
         BankMarketingLoader loader = new BankMarketingLoader();
-        List<BankMarketing> train = loader.load("data\\bank.data");
+        List<BankMarketing> train = loader.load("/usr/local/gitrep/banyan/target/classes/data/bank.data");
         System.out.println("Train: " + train.size());
-        List<BankMarketing> test = loader.load("data\\bank.test");
+        List<BankMarketing> test = loader.load("/usr/local/gitrep/banyan/target/classes/data/bank.test");
         System.out.println("Test: " + test.size());
         double currentTime = 0.0;
         int success = 0, mistakes = 0;

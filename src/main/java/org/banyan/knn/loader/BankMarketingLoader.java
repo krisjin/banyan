@@ -30,8 +30,7 @@ public class BankMarketingLoader {
         Path file = Paths.get(dataPath);
         List<BankMarketing> dataSet = new ArrayList<>();
         try (InputStream in = Files.newInputStream(file);
-             BufferedReader reader =
-                     new BufferedReader(new InputStreamReader(in))) {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 String data[] = line.split(";");

@@ -14,11 +14,12 @@ public class AtomicCounter {
         AtomicInteger counter = new AtomicInteger();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
-                    counter.incrementAndGet();
+
+                    System.out.println(Thread.currentThread().getName() + " : " + counter.incrementAndGet());
                 }
             });
 

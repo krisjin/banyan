@@ -20,5 +20,20 @@ public class ThreadMXBeanExample {
             System.out.println(threadInfo.toString());
 //            System.out.println("Thread id:" + threadId + " ;Thread name:" + threadName + "; Thread state:" + state.name());
         }
+
+    threads();
+    }
+
+
+    private static void threads(){
+
+        Thread[] t = new Thread[Thread.activeCount()];
+
+
+        int threadCount = Thread.enumerate(t);
+
+        for (int i=0;i<threadCount;i++) {
+            System.out.println(t[i]);
+        }
     }
 }

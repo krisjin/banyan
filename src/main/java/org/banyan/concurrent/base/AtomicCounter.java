@@ -10,6 +10,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class AtomicCounter {
 
+    public static int num;
+
     public static void main(String[] args) throws InterruptedException {
         AtomicInteger counter = new AtomicInteger();
 
@@ -26,6 +28,27 @@ public class AtomicCounter {
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
 
-        System.out.println(counter.get());
+//        System.out.println(counter.get());
+
+        t();
+    }
+
+
+    public static void t() {
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+        for (int i = 0; i < 100; i++) {
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    synchronized (AtomicInteger.class) {
+                        ++num;
+                    }
+                }
+            });
+        }
+
+
+        executorService.shutdown();
     }
 }

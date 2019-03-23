@@ -20,17 +20,16 @@ public class HashLoadBalance {
     }
 
     public static void main(String[] args) {
-        String remoteIp = "abc.com";
+        String remoteIp = "afafdkl;fksafksakfai0efeasfef";
         for (int i = 0; i < 100; i++) {
             System.out.println(getIp(remoteIp));
         }
-
     }
 
 
     static String getIp(String remoteIp) {
-        int hashCode = "dfafd".hashCode();
-        int serverPost = hashCode % serverIpList.size();
+        int hashCode = remoteIp.hashCode();
+        int serverPost = Math.abs(hashCode % serverIpList.size());
         return serverIpList.get(serverPost);
     }
 

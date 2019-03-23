@@ -1,9 +1,7 @@
 package org.banyan.knn.data;
 
 /**
- * Abstract class that defines the basic elements of an example to the knn algoritm
- *
- * @author author
+ * 抽象类，用于定义KNN算法示例的基本元素
  */
 public abstract class Sample {
 

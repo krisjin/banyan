@@ -9,8 +9,8 @@ public class ThreadYield {
         Thread producer = new Producer();
         Thread consumer = new Consumer();
 
-        producer.setPriority(Thread.MIN_PRIORITY); //Min Priority
-        consumer.setPriority(Thread.MAX_PRIORITY); //Max Priority
+//        producer.setPriority(Thread.MIN_PRIORITY);
+//        consumer.setPriority(Thread.MAX_PRIORITY);
 
         producer.start();
         consumer.start();
@@ -20,6 +20,7 @@ public class ThreadYield {
         @Override
         public void run() {
             for (int i = 1; i <= 5; i++) {
+
                 System.out.println("Producer : Produced Item " + i);
                 Thread.yield();
             }

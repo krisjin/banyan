@@ -1,7 +1,7 @@
 package org.banyan.knn.data;
 
 /**
- * This class implements the example of the Bank Marketing problem with all the attributes.
+ * 该类实现了 Bank Marketing 问题示例的所有属性
  *
  * @author author
  */

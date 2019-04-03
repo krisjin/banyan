@@ -1,7 +1,5 @@
 package org.banyan.concurrent.example.one;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * User:shijingui
  * Date:2019/4/3
@@ -9,35 +7,26 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class EvenOddTest {
 
-
+    static int num = 1;
 
     static Object lock = new Object();
 
     public static void main(String[] args) {
-
-        AtomicInteger num = new AtomicInteger(1);
-        new Thread(new EvenOddTest.Odd(num)).start();
-        new Thread(new EvenOddTest.Even(num)).start();
-
+        new Thread(new EvenOddTest.Odd()).start();
+        new Thread(new EvenOddTest.Even()).start();
     }
 
 
     static class Odd implements Runnable {
-        AtomicInteger num;
-
-        public Odd(AtomicInteger num) {
-            this.num = num;
-        }
-
         @Override
         public void run() {
 
             synchronized (lock) {
-                while (num.get() <= 100) {
-                    if (num.get() % 2 != 0) {
-                        System.out.println("奇数:" + num.get());
+                while (num <= 100) {
+                    if (num % 2 != 0) {
+                        System.out.println("奇数:" + num);
                         lock.notify();
-                        num.incrementAndGet();
+                        ++num;
                     } else {
                         try {
                             lock.wait();
@@ -52,21 +41,16 @@ public class EvenOddTest {
 
 
     static class Even implements Runnable {
-        AtomicInteger num;
-
-        public Even(AtomicInteger num) {
-            this.num = num;
-        }
 
         @Override
         public void run() {
 
             synchronized (lock) {
-                while (num.get() <= 100) {
-                    if (num.get() % 2 == 0) {
-                        System.out.println("偶数:" + num.get());
+                while (num <= 100) {
+                    if (num % 2 == 0) {
+                        System.out.println("偶数:" + num);
                         lock.notify();
-                        num.incrementAndGet();
+                        ++num;
                     } else {
                         try {
                             lock.wait();

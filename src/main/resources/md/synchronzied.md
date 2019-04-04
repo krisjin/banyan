@@ -20,3 +20,16 @@
 - volatile能保线程的可见性，但不能保证原子性；而synchronized可以保证原子性，也可以保证可见性，
   因为他会将私有内存和公共内存中的数据做同步。
   
+  
+  
+  
+  
+  
+  
+  
+  参考：
+  
+  https://www.jianshu.com/p/73b9a8466b9c
+  
+  
+  https://crossoverjie.top/2018/05/24/netty/Netty(1)TCP-Heartbeat/

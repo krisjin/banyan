@@ -20,7 +20,7 @@ import java.util.Vector;
  * @author krisjin on 2019/4/26
  */
 public class BiasedLock {
-    public static List<Integer> numberList = new Vector<Integer>();
+    public static List<Integer> numberList = new Vector<>();
 
     public static void main(String[] args) throws InterruptedException {
         long begin = System.currentTimeMillis();

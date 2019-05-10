@@ -12,7 +12,7 @@ public class PThread extends Thread {
     private boolean isIdle = false;
 
     public PThread(Runnable target, String name, ThreadPool threadPool) {
-        super();
+        super(name);
         this.threadPool = threadPool;
         this.target = target;
     }
@@ -23,7 +23,8 @@ public class PThread extends Thread {
 
     public synchronized void setTarget(Runnable target) {
         this.target = target;
-        notifyAll();// set new task,notify run method,start execute this task
+        //设置了任务之后，通知run方法，开始执行这个任务
+        notifyAll();
     }
 
     public boolean isShutdown() {
@@ -36,16 +37,16 @@ public class PThread extends Thread {
 
     @Override
     public void run() {
-
+        //只要没有关闭，就一直不结束该线程
         while (!isShutdown) {
             isIdle = false;
             if (target != null) {
                 target.run();
             }
+            //任务结束了到闲置状态
             isIdle = true;
-
-
             try {
+                //任务结束后不关闭线程，而是放入线程池空闲对列
                 threadPool.add(this);
                 synchronized (this) {
                     wait();//thread is idle ,wait new thread
@@ -61,4 +62,5 @@ public class PThread extends Thread {
         isShutdown = true;
         notifyAll();
     }
+
 }

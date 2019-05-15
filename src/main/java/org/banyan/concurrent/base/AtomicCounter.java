@@ -20,15 +20,12 @@ public class AtomicCounter {
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
-
                     System.out.println(Thread.currentThread().getName() + " : " + counter.incrementAndGet());
                 }
             });
 
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
-
-//        System.out.println(counter.get());
 
         t();
     }

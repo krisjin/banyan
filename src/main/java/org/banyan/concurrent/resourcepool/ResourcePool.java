@@ -7,6 +7,9 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 一些资源可能是有限的，并且确保并发编程中的限制是重要的。
+ * 建立限制资源使用的机制。 它会阻止 用户没有可用的时候。 它使用Semaphores实现并发线程安全池。
+ *
  * @author krisjin on 2019/5/15
  */
 public class ResourcePool<T> {

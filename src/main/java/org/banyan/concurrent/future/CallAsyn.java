@@ -16,7 +16,6 @@ public class CallAsyn {
             @Override
             public String call() throws Exception {
                 TimeUnit.SECONDS.sleep(10);
-
                 return "Hello World!";
             }
         });

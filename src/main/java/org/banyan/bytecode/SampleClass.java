@@ -25,5 +25,7 @@ public class SampleClass {
 
         System.out.println(i3 == i4);
 
+        System.out.println(2&2);
+
     }
 }

@@ -7,9 +7,7 @@ import java.util.Date;
  * Date: 2016/2/1
  */
 public class ThreadLocalExample {
-
     static volatile int count = 0;
-//    static AtomicInteger count = new AtomicInteger();
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(new MyRunnable(), "Thread-01");

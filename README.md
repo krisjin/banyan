@@ -167,3 +167,10 @@ final域能确保初始化过程中的安全性
 |指针q和p指向同一个目标时可能会出现数据竞争| *q+=2 | *p+=1 |
 |foo函数可能使用参数对一个共享变量进行修改|foo(1) | foo(2) |
 |即使在指令集，硬件还是会将【edi】对更新操作扩展成独立对对读操作和写操作改|add [edi],1 | add [edi] ,2|
+
+
+
+
+
+
+{"class":"com.jd.jr.cupid.zebra.api.vo.QueryFeatureRequest","resIdList":["4162","4277","4246","4244","4256","4248","4245","4230","4177","4253","4176","4237","4172","4171","4239","4235","4236","4121","4165","4166"],"modelId":1,"needFeatureNum":38,"timeout":-1,"userId":"xiaoguizi001","featureDimKey":"REC_USER_RES_${userId}_${resId}","attrTimeKey":"CLICK_M_5"}

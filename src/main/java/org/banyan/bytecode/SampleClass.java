@@ -11,7 +11,6 @@ public class SampleClass {
 
     private static String staticMember;
 
-
     public static void main(String[] args) {
         Integer i1 = new Integer(123);
         Integer i2 = new Integer(123);

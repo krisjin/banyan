@@ -44,8 +44,6 @@ public class AtomicCounter {
                 }
             });
         }
-
-
         executorService.shutdown();
     }
 }

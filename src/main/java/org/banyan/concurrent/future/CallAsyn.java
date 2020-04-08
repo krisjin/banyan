@@ -8,11 +8,8 @@ import java.util.concurrent.*;
 public class CallAsyn {
 
     public static void main(String[] args) {
-
         ExecutorService es = Executors.newCachedThreadPool();
-
         Future<String> future = es.submit(new Callable<String>() {
-
             @Override
             public String call() throws Exception {
                 TimeUnit.SECONDS.sleep(10);
@@ -29,7 +26,6 @@ public class CallAsyn {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         es.shutdown();
     }
 }

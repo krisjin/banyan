@@ -28,13 +28,9 @@ public class Syntest {
     }
 
     public static void aa() {
-
         AtomicInteger num = new AtomicInteger(1);
-
         num.compareAndSet(num.get(), 2);
-
         num.incrementAndGet();
         System.out.println();
-
     }
 }

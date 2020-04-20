@@ -10,6 +10,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Syntest {
 
 
+    private volatile String vol = "11";
+
     public static synchronized void synTest() {
     }
 

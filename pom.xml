@@ -100,6 +100,12 @@
             <version>2.6.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.chrisnewland</groupId>
+            <artifactId>jitwatch</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -114,6 +120,23 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>org.adoptopenjdk.jitwatch.launch.LaunchUI</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
+
     </build>
 </project>

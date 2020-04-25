@@ -6,12 +6,9 @@ import com.github.benmanes.caffeine.cache.Caffeine;
 import java.util.concurrent.TimeUnit;
 
 public class Demo {
-
-
     public static void main(String[] args) {
         test1();
     }
-
 
     public static void test1() {
         Cache<String, double[][]> cache = Caffeine.newBuilder()
@@ -21,14 +18,12 @@ public class Demo {
 
         String key = "name";
 
-
         double[][] v = cache.getIfPresent(key);
         double[][] v1 = new double[0][0];
 
         if (null == v) {
             cache.put(key, v1);
         }
-
 
         while (true) {
 
@@ -42,8 +37,6 @@ public class Demo {
 
 
         }
-
-
 //
 //        double[][] d1 = {{1, 2}, {3, 4}};
 //        double[][] d2 = new double[d1.length][d1[0].length];

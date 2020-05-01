@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
  */
 public class ShareObj {
     static class ShareCounter {//共享计数器对象
-        public int counter = 0;
+        public volatile int counter = 0;
     }
 
 
@@ -21,7 +21,7 @@ public class ShareObj {
         }
 
         public void run() {
-            System.err.println(Thread.currentThread().getName() + ", ++before, " + shareCounter.counter);
+            System.err.println(Thread.currentThread().getName() + ", ++before, " + shareCounter.counter++);
             shareCounter.counter++;
             System.err.println(Thread.currentThread().getName() + ", ++after,  " + shareCounter.counter + "\n");
         }
@@ -31,11 +31,11 @@ public class ShareObj {
         ShareCounter shareCounter = new ShareCounter();
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
             executorService.submit(new Task(shareCounter));
 
         try {
-            Thread.currentThread().join(500);
+            Thread.currentThread().join(500);//测试使用
             System.err.println(shareCounter.counter);
         } catch (InterruptedException e) {
             e.printStackTrace();

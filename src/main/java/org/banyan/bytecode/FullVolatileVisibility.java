@@ -8,13 +8,12 @@ public class FullVolatileVisibility {
 
     private String varA;
     private String varB;
-    private volatile String varC;
+    private volatile String varC;//声明volatile
 
     public void readVar() {
         String strVar = this.varC;//我在开始
         strVar += varA;
         strVar += varB;
-
     }
 
     public void updateVar(String varA, String varB, String varC) {
@@ -22,6 +21,5 @@ public class FullVolatileVisibility {
         this.varB = varB;
         this.varC = varC;//我在最后
     }
-
 
 }

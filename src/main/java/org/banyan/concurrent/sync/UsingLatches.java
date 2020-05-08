@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * In CountDownLatch, each event adds 1. When ready, countDown() is called,
  * decrementing by counter by 1. await() method releases when counter is 0.
  * 
- * Single use synchronizer.
+ * LazyInitSingleton use synchronizer.
  */
 public class UsingLatches {
 

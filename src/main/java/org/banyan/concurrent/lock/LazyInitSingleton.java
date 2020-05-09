@@ -10,14 +10,6 @@ public class LazyInitSingleton {
     private LazyInitSingleton() {
     }
 
-//    public static synchronized LazyInitSingleton getInstance() {
-//        if (instance == null) {
-//            instance = new LazyInitSingleton();
-//        }
-//        return instance;
-//    }
-
-
     public static LazyInitSingleton getInstance() {
         if (instance == null) {
             synchronized (LazyInitSingleton.class) {

@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executors;
 
 /**
  * Master-Worker 是一种使用多线程进行数据处理的结构。多个Worker进程协作处理用户请求，Master进程负责维护Worker进程，
@@ -45,7 +46,6 @@ public class Master {
                 return false;
             }
         }
-
         return true;
     }
 

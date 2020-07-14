@@ -1,5 +1,7 @@
 package test;
 
+import com.jd.jr.socrates.dil.dig.predict.ModelPredictFactory;
+
 import java.util.Map;
 import java.util.Stack;
 
@@ -26,11 +28,12 @@ public class TestComm {
         stack.add("name");
         stack.add("sex");
 
-        Object object=stack.pop();
+        Object object = stack.pop();
         System.out.println(object);
 
-    }
+        ModelPredictFactory.getInstance(null);
 
+    }
 
     public static void gc() {
         System.gc();

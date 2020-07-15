@@ -33,7 +33,6 @@ public class BenchmarkTest {
                 .forks(1)
                 .warmupIterations(5)
                 .measurementIterations(5)
-                .measurementIterations(5)
                 .build();
 
         new Runner(options).run();

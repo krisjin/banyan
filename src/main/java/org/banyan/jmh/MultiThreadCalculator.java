@@ -7,11 +7,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class MultithreadCalculator implements Calculator {
+public class MultiThreadCalculator implements Calculator {
     private final int nThreads;
     private final ExecutorService pool;
 
-    public MultithreadCalculator(int nThreads) {
+    public MultiThreadCalculator(int nThreads) {
         this.nThreads = nThreads;
         this.pool = Executors.newFixedThreadPool(nThreads);
     }

@@ -54,7 +54,7 @@ public class SecondBenchmark {
     public void prepare() {
         numbers = IntStream.rangeClosed(1, length).toArray();
         singleThreadCalc = new SinglethreadCalculator();
-        multiThreadCalc = new MultithreadCalculator(Runtime.getRuntime().availableProcessors());
+        multiThreadCalc = new MultiThreadCalculator(Runtime.getRuntime().availableProcessors());
     }
 
     @TearDown

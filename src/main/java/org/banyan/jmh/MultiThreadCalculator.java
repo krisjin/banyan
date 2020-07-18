@@ -38,9 +38,9 @@ public class MultiThreadCalculator implements Calculator {
 
     public long sum(int[] numbers) {
         int chunk = numbers.length / nThreads;
-
         int from, to;
         List<SumTask> tasks = new ArrayList<SumTask>();
+
         for (int i = 1; i <= nThreads; i++) {
             if (i == nThreads) {
                 from = (i - 1) * chunk;

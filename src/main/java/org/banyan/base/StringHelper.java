@@ -10,6 +10,7 @@ public class StringHelper {
 
 
         internTest();
+//        iterningEmpty();
 
     }
 
@@ -20,7 +21,7 @@ public class StringHelper {
 
         String[] newStrs = strs.split(" ");
 
-        String aaa = newStrs[2].intern();
+//        String aaa = newStrs[2].intern();
 
         String s1 = "now";
         String s2 = "now";
@@ -33,10 +34,19 @@ public class StringHelper {
 
         String s = "this is string";
 
-        String s1="";
+        String emptyStr = s.substring(0, 0);
+
+        String emptyStr2 = emptyStr.length() == 0 ? "" : emptyStr;
+
+        String e4 = "this";
+        String e5 = e4.intern();
+        String e3 = s.substring(0, 4);
 
 
+        System.err.println(emptyStr == "");
+        System.err.println(emptyStr2 == "");
 
+        System.err.println(e3 == e5);
 
 
     }

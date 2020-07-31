@@ -105,6 +105,12 @@
             <artifactId>jitwatch</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/it.unimi.dsi/fastutil -->
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+            <version>8.3.0</version>
+        </dependency>
 
     </dependencies>
 

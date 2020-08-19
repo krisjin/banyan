@@ -1,5 +1,7 @@
 package test.domain;
 
+import java.io.File;
+
 /**
  * User:krisjin
  * Date:2020-04-14
@@ -16,4 +18,10 @@ public class T {
     }
 
 
+    public static void main(String[] args) {
+        if (new File("/usr/local/gitrep/banyan/src/main/java/test/domain/Addrss.java").exists()){
+            System.out.println(1);
+        }
+
+    }
 }

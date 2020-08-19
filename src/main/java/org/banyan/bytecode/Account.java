@@ -16,7 +16,4 @@ public class Account {
         this.money = 111.11;
     }
 
-
-
-
 }

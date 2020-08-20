@@ -8,10 +8,9 @@ public class Norm {
         return d;
     }
 
-
     public static void main(String[] args) {
-        System.err.println(lineNorm(1000,1015,15));
-        System.err.println(70/1000);
+        System.err.println(lineNorm(-800,10,-1000));
+        System.err.println(100d/1100d);
     }
 
 }

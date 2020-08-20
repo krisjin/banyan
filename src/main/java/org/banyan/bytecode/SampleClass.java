@@ -8,7 +8,6 @@ package org.banyan.bytecode;
 public class SampleClass {
 
     private String member;
-
     private static String staticMember;
 
     public static void main(String[] args) {

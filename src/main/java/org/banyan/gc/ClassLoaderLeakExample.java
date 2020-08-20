@@ -84,8 +84,7 @@ public class ClassLoaderLeakExample {
                 return super.loadClass(name, resolve);
             }
             try {
-                Path path = Paths.get(LoadedInChildClassLoader.class.getName()
-                        + ".class");
+                Path path = Paths.get(LoadedInChildClassLoader.class.getName() + ".class");
                 byte[] classBytes = Files.readAllBytes(path);
                 Class<?> c = defineClass(name, classBytes, 0, classBytes.length);
                 if (resolve) {
@@ -106,8 +105,7 @@ public class ClassLoaderLeakExample {
      */
     static void loadAndDiscard() throws Exception {
         ClassLoader childClassLoader = new ChildOnlyClassLoader();
-        Class<?> childClass = Class.forName(
-                LoadedInChildClassLoader.class.getName(), true, childClassLoader);
+        Class<?> childClass = Class.forName(LoadedInChildClassLoader.class.getName(), true, childClassLoader);
         childClass.newInstance();
         // When this method returns, there will be no way to reference
         // childClassLoader or childClass at all, but they will still be
@@ -124,8 +122,7 @@ public class ClassLoaderLeakExample {
         // creating a new instance of this static final field on each iteration!
         static final byte[] moreBytesToLeak = new byte[1024 * 1024 * 10];
 
-        private static final ThreadLocal<LoadedInChildClassLoader> threadLocal
-                = new ThreadLocal<>();
+        private static final ThreadLocal<LoadedInChildClassLoader> threadLocal = new ThreadLocal<>();
 
         public LoadedInChildClassLoader() {
             // Stash a reference to this class in the ThreadLocal

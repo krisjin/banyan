@@ -1,6 +1,5 @@
 package test;
 
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +10,7 @@ import java.util.List;
  * Date: 2016/10/21
  */
 public class DateTimePerformanceTest {
-    @Test
+
     public void test() {
         long time = System.nanoTime();
         long timeTest = System.currentTimeMillis();

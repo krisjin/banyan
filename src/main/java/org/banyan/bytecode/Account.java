@@ -5,8 +5,6 @@ package org.banyan.bytecode;
  * Date:2020-05-07
  */
 public class Account {
-
-
     private final String name;
     private double money;
 

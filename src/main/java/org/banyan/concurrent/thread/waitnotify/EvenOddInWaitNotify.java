@@ -1,26 +1,25 @@
-package org.banyan.concurrent.example.one;
+package org.banyan.concurrent.thread.waitnotify;
+
+import lombok.SneakyThrows;
 
 /**
  * User:shijingui
  * Date:2019/4/3
  *  
  */
-public class EvenOddTest {
+public class EvenOddInWaitNotify {
 
     static int num = 1;
-
     static Object lock = new Object();
 
     public static void main(String[] args) {
-        new Thread(new EvenOddTest.Odd()).start();
-        new Thread(new EvenOddTest.Even()).start();
+        new Thread(new EvenOddInWaitNotify.Odd()).start();
+        new Thread(new EvenOddInWaitNotify.Even()).start();
     }
 
-
     static class Odd implements Runnable {
-        @Override
+        @SneakyThrows
         public void run() {
-
             synchronized (lock) {
                 while (num <= 100) {
                     if (num % 2 != 0) {
@@ -28,23 +27,16 @@ public class EvenOddTest {
                         lock.notify();
                         ++num;
                     } else {
-                        try {
-                            lock.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        lock.wait();
                     }
                 }
             }
         }
     }
 
-
     static class Even implements Runnable {
-
-        @Override
+        @SneakyThrows
         public void run() {
-
             synchronized (lock) {
                 while (num <= 100) {
                     if (num % 2 == 0) {
@@ -52,15 +44,10 @@ public class EvenOddTest {
                         lock.notify();
                         ++num;
                     } else {
-                        try {
-                            lock.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        lock.wait();
                     }
                 }
             }
-
         }
     }
 }

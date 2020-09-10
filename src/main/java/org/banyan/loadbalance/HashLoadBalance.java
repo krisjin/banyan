@@ -7,9 +7,14 @@ import java.util.List;
  * @author krisjin on 2018/1/6
  */
 public class HashLoadBalance {
-
-
     static List<String> serverIpList = new ArrayList<>();
+
+    public static void main(String[] args) {
+        String userId = "kris";
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getIp(userId));
+        }
+    }
 
     static {
         serverIpList.add("192.168.1.100");
@@ -18,14 +23,6 @@ public class HashLoadBalance {
         serverIpList.add("192.168.1.103");
         serverIpList.add("192.168.1.104");
     }
-
-    public static void main(String[] args) {
-        String remoteIp = "afafdkl;fksafksakfai0efeasfef";
-        for (int i = 0; i < 100; i++) {
-            System.out.println(getIp(remoteIp));
-        }
-    }
-
 
     static String getIp(String remoteIp) {
         int hashCode = remoteIp.hashCode();

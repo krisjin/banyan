@@ -1,7 +1,7 @@
 package org.banyan.concurrent.sync;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/3/12
  */
 public class SynObjectMain {

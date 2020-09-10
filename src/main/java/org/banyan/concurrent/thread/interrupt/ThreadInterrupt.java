@@ -1,7 +1,7 @@
 package org.banyan.concurrent.thread.interrupt;
 
 /**
- * @User shijingui
+ * @User krisjin
  * @date 2020/8/26
  */
 public class ThreadInterrupt {

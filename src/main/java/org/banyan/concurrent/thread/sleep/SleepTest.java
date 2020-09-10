@@ -3,7 +3,7 @@ package org.banyan.concurrent.thread.sleep;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/4/7
  *  
  */

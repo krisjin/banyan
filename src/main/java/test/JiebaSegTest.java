@@ -4,7 +4,7 @@ import com.huaban.analysis.jieba.JiebaSegmenter;
 import org.junit.Test;
 
 /**
- * @User shijingui
+ * @User krisjin
  * @date 2020/9/3
  */
 public class JiebaSegTest {

@@ -3,9 +3,8 @@ package org.banyan.concurrent.thread.waitnotify;
 import lombok.SneakyThrows;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/4/3
- *  
  */
 public class EvenOddInWaitNotify {
 

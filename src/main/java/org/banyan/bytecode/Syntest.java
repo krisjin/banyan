@@ -3,7 +3,7 @@ package org.banyan.bytecode;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * User:shijingui
+ * User:krisjin
  * Date:2019/4/3
  *  
  */

@@ -7,16 +7,10 @@ package org.banyan.base;
 public class StringHelper {
 
     public static void main(String[] args) {
-
-
         internTest();
-//        iterningEmpty();
-
     }
 
-
     public static void internTest() {
-
         String strs = "what is now ?";
 
         String[] newStrs = strs.split(" ");

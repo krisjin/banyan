@@ -104,7 +104,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-<!--            <scope>test</scope>-->
+            <!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>com.huaban</groupId>
@@ -112,7 +112,11 @@
             <version>1.0.2</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.jd.jr.jseg</groupId>
+            <artifactId>jseg</artifactId>
+            <version>0.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>

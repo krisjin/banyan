@@ -4,13 +4,11 @@
 
     <groupId>com.banyan</groupId>
     <artifactId>banyan</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <h2.version>1.4.195</h2.version>
         <ignite.version>2.8.1</ignite.version>
-        <jimdb.version>1.4.5-SNAPSHOT</jimdb.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <google.guava>28.1-jre</google.guava>
@@ -25,31 +23,6 @@
         </dependency>
 
         <!--test-->
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
-            <version>2.4.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-core</artifactId>
-            <version>${ignite.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-spring</artifactId>
-            <version>${ignite.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-indexing</artifactId>
-            <version>${ignite.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-slf4j</artifactId>
-            <version>${ignite.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -70,30 +43,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.openjdk.jmh</groupId>
-            <artifactId>jmh-generator-annprocess</artifactId>
-            <version>1.22</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjdk.jmh</groupId>
-            <artifactId>jmh-core</artifactId>
-            <version>1.22</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-            <version>2.6.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.chrisnewland</groupId>
             <artifactId>jitwatch</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/it.unimi.dsi/fastutil -->
         <dependency>
             <groupId>it.unimi.dsi</groupId>
             <artifactId>fastutil</artifactId>
@@ -105,17 +58,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <!--            <scope>test</scope>-->
-        </dependency>
-        <dependency>
-            <groupId>com.huaban</groupId>
-            <artifactId>jieba-analysis</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.jd.jr.jseg</groupId>
-            <artifactId>jseg</artifactId>
-            <version>0.0.2</version>
         </dependency>
     </dependencies>
 

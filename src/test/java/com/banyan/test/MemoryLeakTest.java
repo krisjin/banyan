@@ -1,11 +1,12 @@
 package com.banyan.test;
 
-import org.junit.Test;
 import com.banyan.test.domain.User;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
+
 
 /**
  * 如何判定内存泄露：
@@ -15,7 +16,6 @@ import java.util.Vector;
  * Date: 2016/10/26
  */
 public class MemoryLeakTest {
-
 
     /**
      * 在循环里申请创建对象，将创建好的对象放到Vector中，然后将对象的引用设置为null,释放引用。

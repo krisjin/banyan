@@ -3,6 +3,8 @@ package org.banyan.concurrent.future.internal;
 import org.banyan.concurrent.util.SleepUtil;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * User krisjin
@@ -10,6 +12,7 @@ import java.util.concurrent.Callable;
  */
 public class RealData implements Callable<String> {
     private String data;
+    ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
     public RealData(String data) {
         this.data = data;

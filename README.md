@@ -199,6 +199,3 @@ final域能确保初始化过程中的安全性
 
 
 
-
-
-{"class":"com.jd.jr.cupid.zebra.api.vo.QueryFeatureRequest","resIdList":["4162","4277","4246","4244","4256","4248","4245","4230","4177","4253","4176","4237","4172","4171","4239","4235","4236","4121","4165","4166"],"modelId":1,"needFeatureNum":38,"timeout":-1,"userId":"xiaoguizi001","featureDimKey":"REC_USER_RES_${userId}_${resId}","attrTimeKey":"CLICK_M_5"}

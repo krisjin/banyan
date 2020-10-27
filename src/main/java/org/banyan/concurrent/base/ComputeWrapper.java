@@ -11,11 +11,11 @@ import java.util.concurrent.*;
  * Date: 2015/9/15
  * Time: 22:37
  */
-public class ComputeWarpper<A, V> implements Computable<A, V> {
+public class ComputeWrapper<A, V> implements Computable<A, V> {
     private final ConcurrentMap<A, Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();
     private final Computable<A, V> c;
 
-    public ComputeWarpper(Computable<A, V> c) {
+    public ComputeWrapper(Computable<A, V> c) {
         this.c = c;
     }
 
@@ -30,9 +30,7 @@ public class ComputeWarpper<A, V> implements Computable<A, V> {
                         return c.compute(arg);
                     }
                 };
-
                 FutureTask<V> futureTask = new FutureTask<V>(eval);
-
                 f = cache.putIfAbsent(arg, futureTask);
                 if (f == null) {
                     f = futureTask;

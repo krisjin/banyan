@@ -9,5 +9,5 @@ package org.banyan.concurrent.model;
  */
 public interface Computable<A, V> {
 
-    public V compute(A arg) throws InterruptedException;
+    V compute(A arg) throws InterruptedException;
 }

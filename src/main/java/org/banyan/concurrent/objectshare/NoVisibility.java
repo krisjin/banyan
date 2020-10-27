@@ -8,17 +8,14 @@ package org.banyan.concurrent.objectshare;
  * Time: 21:14
  */
 public class NoVisibility {
-
     private static boolean ready;
     private static int number;
-
 
     public static void main(String[] args) {
         new ReaderThread().start();
         new ReaderThread().start();
         ready = true;
         number = 31;
-
     }
 
     private static class ReaderThread extends Thread {
@@ -27,7 +24,6 @@ public class NoVisibility {
             while (!ready) {
                 Thread.yield();
             }
-
             System.out.println("read number : " + number);
         }
     }

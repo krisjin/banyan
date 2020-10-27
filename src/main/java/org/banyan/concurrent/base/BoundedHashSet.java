@@ -13,24 +13,23 @@ import java.util.concurrent.Semaphore;
  * @Date: 2015/9/15
  */
 public class BoundedHashSet<T> {
-
     private final Set<T> set;
-    private final Semaphore sem;
+    private final Semaphore semaphore;
 
     public BoundedHashSet(int bound) {
         this.set = Collections.synchronizedSet(new HashSet<T>());
-        this.sem = new Semaphore(bound);
+        this.semaphore = new Semaphore(bound);
     }
 
     public boolean add(T o) throws InterruptedException {
-        sem.acquire();
         boolean result = false;
         try {
+            semaphore.acquire();
             result = set.add(o);
             return result;
         } finally {
             if (!result) {
-                sem.release();
+                semaphore.release();
             }
         }
     }
@@ -38,8 +37,22 @@ public class BoundedHashSet<T> {
     public boolean remove(T o) {
         boolean result = set.remove(o);
         if (result) {
-            sem.release();
+            semaphore.release();
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        int i = 1;
+        while (true) {
+            if (i % 100 == 0) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            i++;
+        }
     }
 }

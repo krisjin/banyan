@@ -14,14 +14,16 @@ public class AtomicCounter {
     public static void main(String[] args) throws InterruptedException {
         AtomicInteger counter = new AtomicInteger();
         ExecutorService executorService = Executors.newCachedThreadPool();
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++) {
             executorService.execute(new Runnable() {
                 public void run() {
                     System.out.println(Thread.currentThread().getName() + " : " + counter.incrementAndGet());
                 }
             });
+        }
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
+
         t();
     }
 

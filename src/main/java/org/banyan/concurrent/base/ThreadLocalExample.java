@@ -1,37 +1,41 @@
 package org.banyan.concurrent.base;
 
-import java.util.Date;
-
 /**
  * User: krisjin
  * Date: 2016/2/1
  */
 public class ThreadLocalExample {
-    static volatile int count = 0;
+    ThreadLocal<String> pinThreadLocal = new ThreadLocal<>();
+
+    public void setPin(String pin) {
+        pinThreadLocal.set(pin + ": " + Thread.currentThread().getId() + ": " + Thread.currentThread().getName());
+    }
+
+    public String getPin() {
+        return pinThreadLocal.get();
+    }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread t1 = new Thread(new MyRunnable(), "Thread-01");
-        Thread t2 = new Thread(new MyRunnable(), "Thread-02");
+        ThreadLocalExample threadLocalExample = new ThreadLocalExample();
+        threadLocalExample.setPin("2020");
+        System.out.println(threadLocalExample.getPin());
 
+        Thread t1 = new Thread(new MyRunnable(threadLocalExample));
         t1.start();
         t1.join();
-        t2.start();
-        t2.join();
+        System.out.println(threadLocalExample.getPin());
     }
 
     static class MyRunnable implements Runnable {
-        ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>();
+        ThreadLocalExample threadLocalExample;
 
-        @Override
+        public MyRunnable(ThreadLocalExample threadLocalExample) {
+            this.threadLocalExample = threadLocalExample;
+        }
+
         public void run() {
-            threadLocal.set((int) (Math.random() * 10));
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(Thread.currentThread().getName() + " value is " + threadLocal.get() + " , count is " + ++count + " ,date is " + new Date());
-
+            threadLocalExample.setPin("2021");
+            System.out.println(threadLocalExample.getPin());
         }
     }
 }

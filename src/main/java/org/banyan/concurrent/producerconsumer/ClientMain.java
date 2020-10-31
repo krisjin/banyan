@@ -8,30 +8,23 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * @author krisjin on 2017/5/17
  */
-public class Test {
+public class ClientMain {
 
     public static void main(String[] args) throws InterruptedException {
-        BlockingDeque<String> queue = new LinkedBlockingDeque<>();
-
-        Producer p1 = new Producer(queue);
-        Producer p2 = new Producer(queue);
-
-        Consumer c1 = new Consumer(queue);
-        Consumer c2 = new Consumer(queue);
-
+        BlockingDeque<Object> queue = MessageQueue.get();
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-        executorService.execute(p1);
-        executorService.execute(p2);
-        executorService.execute(c1);
-        executorService.execute(c2);
+        Producer producer = new Producer(queue);
+        Consumer consumer = new Consumer(queue);
+
+        executorService.execute(producer);
+        executorService.execute(consumer);
 
         Thread.sleep(1000);
+        producer.stop();
+        consumer.stop();
 
-        p1.stop();
-        p2.stop();
 
         executorService.shutdownNow();
-
     }
 }

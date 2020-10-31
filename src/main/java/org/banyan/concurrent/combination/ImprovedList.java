@@ -13,9 +13,7 @@ import java.util.ListIterator;
  * Time: 21:53
  */
 public class ImprovedList<T> implements List<T> {
-
     private final List<T> list;
-
     public ImprovedList(List<T> list) {
         this.list = list;
     }

@@ -6,7 +6,7 @@ import org.junit.Test;
  * User: krisjin
  * Date: 2016/10/21
  */
-public class VolatilePerformanceTest {
+public class VolatilePerformanceClientMain {
     private long num;
     private volatile long volatileNum;
     private int size = 10000000;
@@ -24,7 +24,7 @@ public class VolatilePerformanceTest {
         System.out.println((-time + (time = System.nanoTime())) + "    普通写+取系统时间");
 
         for (int i = 0; i < size; i++) {
-            synchronized (VolatilePerformanceTest.class) {
+            synchronized (VolatilePerformanceClientMain.class) {
             }
         }
         System.out.println((-time + (time = System.nanoTime())) + "    空的同步块(synchronized)");

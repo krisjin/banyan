@@ -6,7 +6,7 @@ import java.util.concurrent.CountDownLatch;
  * @author krisjin
  * @date 2020/11/2
  */
-public class ThreadLocalExam2 {
+public class TLExam2 {
 
     public static void main(String[] args) throws InterruptedException {
         int threads = 3;

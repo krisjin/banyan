@@ -34,7 +34,6 @@ public class TLExam3 {
         new Thread(new ChildThread(tlExam3)).start();
     }
 
-
     static class ChildThread implements Runnable {
         private TLExam3 tlExam3;
 

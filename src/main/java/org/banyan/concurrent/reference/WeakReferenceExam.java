@@ -8,12 +8,12 @@ import java.lang.ref.WeakReference;
  */
 public class WeakReferenceExam {
     //execute gc , weak reference is collection
-    static WeakReference<String> name = new WeakReference(new String("krs"));
+    static WeakReference<String> name = new WeakReference(new String("kris"));
 
     public static void main(String[] args) {
         System.gc();
         if (name.get() != null) {
-            System.err.println("没有回收");
+            System.err.println("没回收");
         } else {
             System.out.println("已回收");
         }

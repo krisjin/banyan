@@ -23,47 +23,51 @@ public class TLExam2 {
                 countDownLatch.countDown();
             }, "thread - " + i).start();
         }
-
         countDownLatch.await();
     }
 
     private static class InnerClass {
+        private static ThreadLocal<StringBuilder> strTL = new ThreadLocal<StringBuilder>() {
+            protected StringBuilder initialValue() {
+                return new StringBuilder();
+            }
+        };
+
         /**
-         *
          * @param newStr
          */
         public void add(String newStr) {
-            StringBuilder str = Counter.counter.get();
-            Counter.counter.set(str.append(newStr));
+            StringBuilder str = strTL.get();
+            strTL.set(str.append(newStr));
         }
 
         public void print() {
             System.out.printf("Thread name:%s , ThreadLocal hashcode:%s, Instance hashcode:%s, Value:%s\n",
                     Thread.currentThread().getName(),
-                    Counter.counter.hashCode(),
-                    Counter.counter.get().hashCode(),
-                    Counter.counter.get().toString());
+                    strTL.hashCode(),
+                    strTL.get().hashCode(),
+                    strTL.get().toString());
         }
 
         public void set(String words) {
-            Counter.counter.set(new StringBuilder(words));
+            strTL.set(new StringBuilder(words));
             System.out.printf("Set, Thread name:%s , ThreadLocal hashcode:%s,  Instance hashcode:%s, Value:%s\n",
                     Thread.currentThread().getName(),
-                    Counter.counter.hashCode(),
-                    Counter.counter.get().hashCode(),
-                    Counter.counter.get().toString());
+                    strTL.hashCode(),
+                    strTL.get().hashCode(),
+                    strTL.get().toString());
         }
     }
 
-    /**
-     * String Builder 计数
-     */
-    private static class Counter {
-        private static ThreadLocal<StringBuilder> counter = new ThreadLocal<StringBuilder>() {
-            protected StringBuilder initialValue() {
-                return new StringBuilder();
-            }
-        };
-    }
+//    /**
+//     * String Builder 计数
+//     */
+//    private static class Counter {
+//        private static ThreadLocal<StringBuilder> counter = new ThreadLocal<StringBuilder>() {
+//            protected StringBuilder initialValue() {
+//                return new StringBuilder();
+//            }
+//        };
+//    }
 
 }

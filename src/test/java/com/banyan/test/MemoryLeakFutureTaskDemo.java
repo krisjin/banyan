@@ -15,7 +15,7 @@ import java.util.Vector;
  * User: krisjin
  * Date: 2016/10/26
  */
-public class MemoryLeakTest {
+public class MemoryLeakFutureTaskDemo {
 
     /**
      * 在循环里申请创建对象，将创建好的对象放到Vector中，然后将对象的引用设置为null,释放引用。

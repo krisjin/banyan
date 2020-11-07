@@ -1,32 +1,30 @@
-package org.banyan.concurrent.future;
+package org.banyan.concurrent.future.simple;
 
 /**
  * User krisjin
  * Date 2017/5/6
  */
-public class FutureData implements Data {
-    protected RealData realData = null;//FutureData是RealData的包装
+public class FutureBizData {
+    protected BizData bizData = null;//FutureData是RealData的包装
     protected boolean isReady = false;
 
-    public synchronized void setRealData(RealData realData) {
+    public synchronized void setBizData(BizData bizData) {
         if (isReady) {
             return;
         }
-        this.realData = realData;
+        this.bizData = bizData;
         isReady = true;
         notifyAll();//RealData已经被注入，通知getResult()
     }
 
-
-    @Override
     public synchronized String getResult() {//会等待RealData构造完成
         while (!isReady) {
             try {
                 wait();//一直等待，直到RealData被注入
             } catch (InterruptedException e) {
-
+                e.printStackTrace();
             }
         }
-        return realData.getResult();
+        return bizData.getResult();
     }
 }

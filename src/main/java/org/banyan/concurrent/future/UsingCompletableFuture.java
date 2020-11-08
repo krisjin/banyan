@@ -5,131 +5,135 @@ import java.util.concurrent.*;
 import java.util.function.Supplier;
 
 /**
+ * <pre>
  * CompletableFuture is a Future that may be manually completed. It combines a
  * Future interface with the CompletionState interface, supporting dependent
  * actions that trigger upon its completion, similarly to a callback.
- * <p>
+ *
  * Important: Specify an Executor for async methods when available. All async
  * methods without an explicit Executor argument are performed using the
  * ForkJoinPool.commonPool();
- * <p>
+ *
  * Important 2: Mostly of the CompletableFuture methods returns a new
  * CompletableFuture.
- * <p>
+ *
  * == Quick terminology guide ==
- * <p>
+ *
  * = Async =
- * <p>
+ *
  * xxxAsync(...); // Async method executed in the ForkJoinPool.commonPool();
- * <p>
+ *
  * xxxAsync(..., Executor executor); // Executed in the specified Executor, good
  * for Java EE.
- * <p>
+ *
+ *
  * = supply x run =
- * <p>
+ *
  * supplyAsync(Supplier<U> supplier); // will complete asynchronously by calling
  * supplier.
- * <p>
+ *
  * runAsync(Runnable runnable); // will complete after the runnable executions;
- * <p>
+ *
+ *
  * = thenApply x thenAccept x thenRun
- * <p>
+ *
  * thenApply: transforms a value to another type;
- * <p>
+ *
  * thenAccept: accepts a consumer to the result value;
- * <p>
+ *
  * thenRun: accepts a Runnable to be executed after the result is ready;
- * <p>
- * <p>
+ *
+ *
  * == Quick API guide ==
- * <p>
+ *
  * = Creating =
- * <p>
+ *
  * new CompletableFuture<>();
- * <p>
+ *
  * CompletableFuture.supplyAsync(Supplier<U>supplier);
- * <p>
+ *
  * CompletableFuture.supplyAsync(Supplier<U> supplier, Executor executor);
- * <p>
+ *
  * CompletableFuture.runAsync(Runnable runnable);
- * <p>
+ *
  * CompletableFuture.runAsync(Runnable runnable, Executor executor);
- * <p>
- * <p>
+ *
+ *
  * = Mapping values =
- * <p>
- * completableFuture.thenApply(Function<? super SortMain,? extends U> fn);
- * <p>
- * completableFuture.thenApplyAsync(Function<? super SortMain,? extends U> fn);
- * <p>
- * completableFuture.thenApplyAsync(Function<? super SortMain,? extends U> fn, Executor
+ *
+ * completableFuture.thenApply(Function<? super T,? extends U> fn);
+ *
+ * completableFuture.thenApplyAsync(Function<? super T,? extends U> fn);
+ *
+ * completableFuture.thenApplyAsync(Function<? super T,? extends U> fn, Executor
  * executor);
- * <p>
- * <p>
+ *
+ *
  * = Callback on completion =
- * <p>
- * completableFuture.thenAccept(Consumer<? super SortMain> block);
- * <p>
+ *
+ * completableFuture.thenAccept(Consumer<? super T> block);
+ *
  * completableFuture.thenRun(Runnable action);
- * <p>
- * <p>
+ *
+ *
  * = Error handling =
- * <p>
+ *
  * completableFuture.exceptionally(ex -> ex.getMessage());
- * <p>
+ *
  * completableFuture.handle((value, ex) -> {if value != null... else {}})
- * <p>
- * <p>
+ *
+ *
  * = Pipeline =
- * <p>
+ *
  * Chain one future dependent on the other
- * <p>
- * completableFuture.thenCompose(Function<? super SortMain,CompletableFuture<U>> fn);
+ *
+ * completableFuture.thenCompose(Function<? super T,CompletableFuture<U>> fn);
  * // flatMap
- * <p>
- * <p>
+ *
+ *
  * = Mapping values from Two Futures =
- * <p>
+ *
  * completableFuture.thenCombine(CompletableFuture<? extends U> other,
- * BiFunction<? super SortMain,? super U,? extends V> fn) ex.:
- * <p>
- * <p>
+ * BiFunction<? super T,? super U,? extends V> fn) ex.:
+ *
+ *
  * = Waiting for first CompletableFuture to complete =
- * <p>
+ *
  * Two services, one fast and the other slow. Fastest always wins.
- * <p>
- * completableFuture.acceptEither(CompletableFuture<? extends SortMain> other,
- * Consumer<? super SortMain> block);
- * <p>
- * <p>
+ *
+ * completableFuture.acceptEither(CompletableFuture<? extends T> other,
+ * Consumer<? super T> block);
+ *
+ *
  * = Transforming first completed =
- * <p>
- * completableFuture.applyToEither(CompletableFuture<? extends SortMain> other,
- * Function<? super SortMain,U> fn)
- * <p>
- * <p>
+ *
+ * completableFuture.applyToEither(CompletableFuture<? extends T> other,
+ * Function<? super T,U> fn)
+ *
+ *
  * = Combining multiple CompletableFuture together =
- * <p>
+ *
  * CompletableFuture.allOf(CompletableFuture<?>... cfs)
- * <p>
+ *
  * CompletableFuture.anyOf(CompletableFuture<?>... cfs)
- * <p>
- * <p>
+ *
+ *
  * = Get-Complete value =
- * <p>
+ *
  * CompletableFuture.get() // block
- * <p>
+ *
  * CompletableFuture.complete() // complete future's lifecycle
- * <p>
+ *
  * CompletableFuture.obtrudeValue() // ignores complete
- * <p>
+ *
  * CompletableFuture.join() // same as get
- * <p>
+ *
  * CompletableFuture.getNow(valueIfAbsent) // immediately return
- * <p>
+ *
  * CompletableFuture.completeExceptionally() // completes throwing a exception
- * <p>
+ *
  * CompletableFuture.completeExceptionally(ex) // completes with a exception
+ * </pre>
  */
 public class UsingCompletableFuture {
 

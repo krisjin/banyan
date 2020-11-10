@@ -27,7 +27,6 @@ public class AtomicCounter {
         t();
     }
 
-
     public static void t() {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 100; i++) {

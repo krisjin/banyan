@@ -11,9 +11,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
         final List<Ware> wareList = Collections.synchronizedList(new ArrayList<Ware>());
-
 
         List<Thread> threadList = Collections.synchronizedList(new ArrayList<Thread>());
         for (int i = 0; i < 10; i++) {

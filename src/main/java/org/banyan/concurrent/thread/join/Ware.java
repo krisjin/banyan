@@ -6,7 +6,6 @@ package org.banyan.concurrent.thread.join;
  *  
  */
 public class Ware {
-
     private double price;
 
     public double getPrice() {

@@ -1,35 +1,34 @@
 package org.banyan.concurrent.thread;
 
 /**
- * User: krisjin
- * Date: 2016/8/25
+ * @author krisjin
+ * @date 2020/11/19
  */
 public class ThreadJoin {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.err.println(Thread.currentThread().getName() + " thread execute end...");
+            }
+        });
 
-    public static void main(String[] args) {
-        Thread threadA = new ThreadA();
-        Thread threadB = new ThreadB();
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.err.println(Thread.currentThread().getName() + " thread execute end...");
+            }
+        });
 
-        try {
-            threadA.start();
-            threadA.join();
-            threadB.start();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        t1.setName("t1");
+        t1.start();
 
+        t2.setName("t2");
+        t2.start();
 
-    }
+        t1.join();
+        t2.join();
 
-    static class ThreadA extends Thread {
-        public void run() {
-            System.out.println("ThreadA execute done...");
-        }
-    }
-
-    static class ThreadB extends Thread {
-        public void run() {
-            System.out.println("ThreadB execute done...");
-        }
+        System.err.println("main thread execute end...");
     }
 }

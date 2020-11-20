@@ -27,7 +27,7 @@ public class UnsafeDemo {
         //Unsafe创建
         Unsafe unsafe = getUnsafe();
         Num num3 = (Num) unsafe.allocateInstance(Num.class);
-        System.out.println("反射创建: n=" + num3.getN());
+        System.out.println("Unsafe创建: n=" + num3.getN());
 
         //使用Unsafe修改内存数据
         Field nField = num3.getClass().getDeclaredField("n");

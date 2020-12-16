@@ -2,13 +2,10 @@ package org.banyan.concurrent.reentrant;
 
 /**
  * synchronized 可重入锁
- * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 15:52
  */
 public class ReentrantLockSynchronizedDemo implements Runnable {
-
 
     public static void main(String[] args) {
         ReentrantLockSynchronizedDemo demo01 = new ReentrantLockSynchronizedDemo();

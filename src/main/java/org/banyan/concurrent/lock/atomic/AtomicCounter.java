@@ -1,4 +1,4 @@
-package org.banyan.concurrent.base;
+package org.banyan.concurrent.lock.atomic;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

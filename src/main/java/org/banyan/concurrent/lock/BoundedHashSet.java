@@ -1,4 +1,4 @@
-package org.banyan.concurrent.base;
+package org.banyan.concurrent.lock;
 
 import java.util.Collections;
 import java.util.HashSet;

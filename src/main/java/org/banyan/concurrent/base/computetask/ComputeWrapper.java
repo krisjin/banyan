@@ -1,6 +1,4 @@
-package org.banyan.concurrent.base;
-
-import org.banyan.concurrent.model.Computable;
+package org.banyan.concurrent.base.computetask;
 
 import java.util.concurrent.*;
 
@@ -9,7 +7,6 @@ import java.util.concurrent.*;
  * <p/>
  * User : krisjin
  * Date: 2015/9/15
- * Time: 22:37
  */
 public class ComputeWrapper<A, V> implements Computable<A, V> {
     private final ConcurrentMap<A, Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();
@@ -43,5 +40,11 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void main(String[] args) {
+//        ComputeWrapper computeWrapper  = new ComputeWrapper<>();
+
+
     }
 }

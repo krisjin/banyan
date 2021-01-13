@@ -11,8 +11,13 @@ public class Client {
         ComputeDefault computeDefault = new ComputeDefault();
         ComputeWrapper<Integer, Integer> computeWrapper = new ComputeWrapper<Integer, Integer>(computeDefault);
         try {
-            computeWrapper.compute(11);
-        } catch (InterruptedException e) {
+            int val = computeWrapper.compute(11);
+            System.out.println("--" + val);
+            Thread.sleep(4000);
+
+            val = computeWrapper.compute(11); //第二次从缓存去结果
+            System.out.println(val);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

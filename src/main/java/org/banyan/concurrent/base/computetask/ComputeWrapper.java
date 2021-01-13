@@ -4,7 +4,6 @@ import java.util.concurrent.*;
 
 /**
  * 计算结果缓存
- * <p/>
  * User : krisjin
  * Date: 2015/9/15
  */
@@ -17,34 +16,29 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
     }
 
     @Override
-    public V compute(final A arg) throws InterruptedException {
+    public V compute(final A arg) throws InterruptedException, ExecutionException {
         while (true) {
             Future<V> f = cache.get(arg);
             if (f == null) {
-                Callable<V> eval = new Callable<V>() {
+                Callable<V> callable = new Callable<V>() {
                     @Override
                     public V call() throws Exception {
                         return c.compute(arg);
                     }
                 };
-                FutureTask<V> futureTask = new FutureTask<V>(eval);
+                FutureTask<V> futureTask = new FutureTask<V>(callable);
                 f = cache.putIfAbsent(arg, futureTask);
                 if (f == null) {
                     f = futureTask;
                     futureTask.run();
                 }
-            }
-            try {
                 return f.get();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+            } else {
+                System.out.println("###################cache hit###################");
+                return f.get();
             }
+
         }
     }
 
-    public static void main(String[] args) {
-//        ComputeWrapper computeWrapper  = new ComputeWrapper<>();
-
-
-    }
 }

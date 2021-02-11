@@ -204,6 +204,6 @@ final域能确保初始化过程中的安全性
 
 https://github.com/LeonardoZ/java-concurrency-patterns
 https://github.com/PacktPublishing/Mastering-Concurrency-Programming-with-Java-9-Second-Edition.git
-
+http://tutorials.jenkov.com/java-nio/selectors.html
 
 

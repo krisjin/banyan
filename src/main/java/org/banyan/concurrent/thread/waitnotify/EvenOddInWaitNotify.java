@@ -25,7 +25,11 @@ public class EvenOddInWaitNotify {
                         ++num;
                         lock.notify();
                     } else {
-                        lock.wait();
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -42,7 +46,11 @@ public class EvenOddInWaitNotify {
                         ++num;
                         lock.notify();
                     } else {
-                        lock.wait();
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

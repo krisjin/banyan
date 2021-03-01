@@ -9,25 +9,6 @@ import java.util.concurrent.*;
  */
 public class ConcurrentCollection {
 
-
-    /**
-     * Map for Concurrent access. Sacrifices some aspects of synchronization to
-     * achieve better performance.
-     * <p>
-     * Locks it's values with Lock Striping.
-     * <p>
-     * Lock Striping divides the protected region through several locks.
-     * <p>
-     * - Don't throw ConcurrentModificationException
-     * <p>
-     * - size() and isEmpty() can be incorrect. Don't rely on them.
-     * <p>
-     * - Supports atomic operations, don't need client side locking.
-     * <p>
-     * - Readers can access concurrently, and iterator have weak consistency.
-     * <p>
-     * - Just a few Writers can modify it.
-     */
     public static void usingConcurrentHashMap() {
         ExecutorService executor = Executors.newCachedThreadPool();
         System.out.println("=== ConcurrentHashMap ===");
@@ -51,7 +32,6 @@ public class ConcurrentCollection {
                 executor.execute(() -> System.out.println("Printed " + valuesPerUuid.values().toString()));
             }
         }
-
         // Finishing
         executor.shutdown();
         try {

@@ -7,9 +7,7 @@ package org.banyan.concurrent.sync;
  */
 public class SynObject {
 
-
     public synchronized void synMethod() {
-
         for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName() + ":syn method:" + i);
         }

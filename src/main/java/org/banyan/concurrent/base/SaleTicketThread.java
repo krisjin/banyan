@@ -2,7 +2,6 @@ package org.banyan.concurrent.base;
 
 /**
  * 非线程安全
- * <p/>
  * User : krisjin
  * Date: 2015/9/15
  * Time: 14:47

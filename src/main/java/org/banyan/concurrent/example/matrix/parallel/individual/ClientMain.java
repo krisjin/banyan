@@ -5,7 +5,6 @@ import org.banyan.concurrent.example.matrix.MatrixGenerator;
 /**
  * User:krisjin
  * Date:2019/3/11
- *  
  */
 public class ClientMain {
 

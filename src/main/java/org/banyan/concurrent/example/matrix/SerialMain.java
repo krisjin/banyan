@@ -3,7 +3,6 @@ package org.banyan.concurrent.example.matrix;
 /**
  * User:krisjin
  * Date:2019/3/10
- *  
  */
 public class SerialMain {
 

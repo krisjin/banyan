@@ -5,9 +5,9 @@ import java.util.UUID;
 import java.util.concurrent.*;
 
 /**
- * @author krisjin on 2018/2/21
+ * @author krisjin
  */
-public class ConcurrentCollection {
+public class ConcurrentCollectionTest {
 
     public static void usingConcurrentHashMap() {
         ExecutorService executor = Executors.newCachedThreadPool();
@@ -29,7 +29,7 @@ public class ConcurrentCollection {
                 });
             } else {
                 // read
-                executor.execute(() -> System.out.println("Printed " + valuesPerUuid.values().toString()));
+                executor.execute(() -> System.out.println("Printed " + valuesPerUuid.values().toString() + "==" + valuesPerUuid.size()));
             }
         }
         // Finishing

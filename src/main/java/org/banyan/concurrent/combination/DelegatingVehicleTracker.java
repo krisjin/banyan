@@ -9,14 +9,12 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * 将线程安全委托给ConcurrentHashMap
- * <p/>
  * User : krisjin
  * Date: 2015/9/9
  */
 public class DelegatingVehicleTracker {
 
     private final ConcurrentMap<String, Point> locations;
-
     private final Map<String, Point> unModifyAbleMap;
 
     /**

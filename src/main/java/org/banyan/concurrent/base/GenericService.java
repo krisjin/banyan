@@ -11,6 +11,7 @@ public class GenericService {
         GenericService genericService = new GenericService();
         try {
             Message m = genericService.getObject(Message.class);
+            m.setMsg("iiiiii");
             System.out.println(m.getMsg());
         } catch (InstantiationException e) {
             e.printStackTrace();

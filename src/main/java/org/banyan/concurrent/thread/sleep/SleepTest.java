@@ -8,14 +8,10 @@ import java.util.concurrent.locks.ReentrantLock;
  *  
  */
 public class SleepTest {
-
     ReentrantLock lock = new ReentrantLock();
-
-
     Thread threadA = new Thread() {
 
         public void run() {
-
             System.err.println("Thread A start sleep... ");
             try {
                 Thread.sleep(1000);
@@ -37,6 +33,5 @@ public class SleepTest {
             }
         }
     };
-
 
 }

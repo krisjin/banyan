@@ -3,10 +3,8 @@ package org.banyan.concurrent.interrupt;
 /**
  * 可以在 Thread 对象上调用 isInterrupted()方法来检查任何线程的中断状态。这里需要注意：线程一旦被中断，
  * isInterrupted()方法便会返回 true，而一旦 sleep()方法抛出异常，它将清空中断标志，此时isInterrupted()方法将返回 false。
- * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 15:01
  */
 public class InterruptCheck {
 

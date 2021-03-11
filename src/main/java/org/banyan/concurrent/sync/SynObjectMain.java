@@ -6,7 +6,6 @@ package org.banyan.concurrent.sync;
  */
 public class SynObjectMain {
 
-
     public static void main(String[] args) {
         SynObject synObject = new SynObject();
         Thread t1 = new Thread(new Runnable() {
@@ -29,7 +28,6 @@ public class SynObjectMain {
                 synObject.normal();
             }
         });
-
 
         t1.start();
         t2.start();

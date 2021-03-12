@@ -1,14 +1,11 @@
 package org.banyan.concurrent.interrupt;
 
 /**
- * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 13:17
  */
 public class SleepInterrupt implements Runnable {
     public static void main(String[] args) {
-
         SleepInterrupt sleepInterrupt = new SleepInterrupt();
         Thread thread = new Thread(sleepInterrupt);
         thread.start();

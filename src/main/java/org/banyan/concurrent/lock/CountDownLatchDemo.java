@@ -18,13 +18,42 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchDemo {
 
     public static void main(String[] args) {
+        test1();
+    }
 
-        //创建减少的latch, 初始参数是10
-        CountDownLatch countDownLatch = new CountDownLatch(10);
-        for (int i = 0; i < 10; i++) {
-            countDownLatch.countDown();
+
+    public static void test1() {
+
+        CountDownLatch countDownLatch = new CountDownLatch(2);
+
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.err.println("t1 done...");
+                countDownLatch.countDown();
+            }
+        });
+
+
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.err.println("t2 done...");
+                countDownLatch.countDown();
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
+        System.err.println("main done...");
 
     }
+
 }

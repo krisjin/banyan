@@ -19,13 +19,16 @@ public class CountDownLatchDemo {
 
     public static void main(String[] args) {
         demo1();
-    }
 
+
+    }
 
     /**
      *
      */
     public static void demo1() {
+
+        //创建一个控制线程间等待的 thread count down latch
         CountDownLatch countDownLatch = new CountDownLatch(2);
 
         Thread t1 = new Thread(new Runnable() {

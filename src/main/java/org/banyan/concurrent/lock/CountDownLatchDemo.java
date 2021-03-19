@@ -18,12 +18,14 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchDemo {
 
     public static void main(String[] args) {
-        test1();
+        demo1();
     }
 
 
-    public static void test1() {
-
+    /**
+     *
+     */
+    public static void demo1() {
         CountDownLatch countDownLatch = new CountDownLatch(2);
 
         Thread t1 = new Thread(new Runnable() {
@@ -33,7 +35,6 @@ public class CountDownLatchDemo {
                 countDownLatch.countDown();
             }
         });
-
 
         Thread t2 = new Thread(new Runnable() {
             @Override
@@ -46,14 +47,12 @@ public class CountDownLatchDemo {
         t1.start();
         t2.start();
 
-
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.err.println("main done...");
-
     }
 
 }

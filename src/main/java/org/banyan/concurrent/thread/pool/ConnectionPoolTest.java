@@ -9,14 +9,10 @@ import java.util.concurrent.CountDownLatch;
  * Date: 2016/2/18
  */
 public class ConnectionPoolTest {
-
     private static ConnectionPool pool = new ConnectionPool(10);
-
     private static CountDownLatch startSign = new CountDownLatch(1);
 
-
     public static void main(String[] args) {
-
         for (int i = 0; i < 5; i++) {
             Thread consumerThread = new Thread(new Consumer(startSign), "ConsumerThread-" + i);
             consumerThread.start();
@@ -31,7 +27,6 @@ public class ConnectionPoolTest {
 
     static class Producer implements Runnable {
         CountDownLatch startSign;
-
         public Producer(CountDownLatch startSign) {
             this.startSign = startSign;
         }

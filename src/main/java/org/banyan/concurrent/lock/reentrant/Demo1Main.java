@@ -1,17 +1,14 @@
 package org.banyan.concurrent.lock.reentrant;
 
 /**
- * @author krisjin on 2019/3/2
+ * @author krisjin
  */
 public class Demo1Main {
-
 
     /**
      * 在当前执行的任务，每个任务现场都是顺序执行的
      * 共享对象，不同的线程调用各自的方法
      * 一个线程获取lock之后，其它的线程只能等待，直到锁被释放
-     *
-     * @param args
      */
     public static void main(String[] args) {
         Demo1Service service = new Demo1Service();

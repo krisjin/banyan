@@ -6,7 +6,6 @@ package org.banyan.concurrent.lock.reentrant;
  * Date:2019/4/26
  */
 public class SynReentrantDemo {
-
     public synchronized void methodA() {
         System.out.println("methodA...");
         methodB();
@@ -16,7 +15,6 @@ public class SynReentrantDemo {
     public synchronized void methodB() {
         System.out.println("methodB...");
     }
-
 
     public static void main(String[] args) {
         new Thread(new Runnable() {

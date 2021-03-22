@@ -8,7 +8,6 @@ package org.banyan.concurrent.interrupt;
  * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 14:43
  */
 public class PendingInterrupt {
 

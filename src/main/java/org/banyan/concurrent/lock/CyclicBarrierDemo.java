@@ -15,15 +15,16 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) {
         //存储每个线程生成的随机数
         Map<String, Integer> counter = new ConcurrentHashMap<>();
-
         //固定大小，如果屏障设置的与提交线程数不一致就会一直阻塞
         int threadNum = 4;
 
         //创建一个拥有4个线程数的同步屏障，设置barrier action master,作为聚合执行操作
         CyclicBarrier barrier = new CyclicBarrier(threadNum, new Master(counter));
-
         for (int i = 0; i < threadNum; i++) {
-            new Thread(new Worker(barrier, counter)).start();
+
+            Thread t = new Thread(new Worker(barrier, counter));
+            t.setName(i + "");
+            t.start();
         }
     }
 
@@ -61,7 +62,7 @@ public class CyclicBarrierDemo {
         @Override
         public void run() {
             try {
-                System.out.println(Thread.currentThread().getName() + " 开始计算");
+                System.out.println("Worker-" + Thread.currentThread().getName() + " 开始计算");
                 counter.put(Thread.currentThread().getName(), 1);
                 //执行业务逻辑，到达屏障，等最后一个线程来到这里，继续执行下面的逻辑
                 barrier.await(200, TimeUnit.MILLISECONDS);

@@ -3,10 +3,8 @@ package org.banyan.concurrent.reentrant;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 16:11
  */
 public class SpinLock {
 

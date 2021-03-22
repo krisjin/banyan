@@ -4,8 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Every Java object has an intrinsic lock (or a monitor lock) associated with
- * it.
+ * Every Java object has an intrinsic lock (or a monitor lock) associated with it.
  *
  * Every Java object can be used as a lock.
  *

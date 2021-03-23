@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * CyclicBarrier使用
+ *
  * @author krisjin
  * @date 2020/11/8
  */
@@ -19,9 +21,11 @@ public class CyclicBarrierDemo {
         int threadNum = 4;
 
         //创建一个拥有4个线程数的同步屏障，设置barrier action master,作为聚合执行操作
+        //同步等待线程器
         CyclicBarrier barrier = new CyclicBarrier(threadNum, new Master(counter));
-        for (int i = 0; i < threadNum; i++) {
 
+        //创建一组线程
+        for (int i = 0; i < threadNum; i++) {
             Thread t = new Thread(new Worker(barrier, counter));
             t.setName(i + "");
             t.start();
@@ -49,7 +53,7 @@ public class CyclicBarrierDemo {
     }
 
 
-    //工作线程
+    //
     static class Worker implements Runnable {
         private CyclicBarrier barrier;
         private Map<String, Integer> counter;

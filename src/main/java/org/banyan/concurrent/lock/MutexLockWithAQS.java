@@ -10,8 +10,10 @@ import java.util.concurrent.locks.Lock;
  * @date 2020/11/21
  */
 public class MutexLockWithAQS implements Lock, java.io.Serializable {
+
     // 内部类，自定义同步器
     private static class Sync extends AbstractQueuedSynchronizer {
+
         // 是否处于占用状态
         protected boolean isHeldExclusively() {
             return getState() == 1;

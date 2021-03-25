@@ -1,6 +1,8 @@
 package org.banyan.concurrent.thread;
 
 /**
+ * join线程间写作
+ *
  * @author krisjin
  * @date 2020/11/19
  */

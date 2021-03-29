@@ -4,13 +4,10 @@ package org.banyan.concurrent.threadpool;
  * @author krisjin on 2017/5/20
  */
 public class MyThread implements Runnable {
-
     private String name;
-
     public MyThread(String name) {
         this.name = name;
     }
-
     @Override
     public void run() {
         try {

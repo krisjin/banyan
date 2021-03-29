@@ -5,9 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * @author krisjin on 2017/5/19
- */
 public class ThreadPool {
 
     private static ThreadPool instance = null;
@@ -16,7 +13,6 @@ public class ThreadPool {
 
     //线程总数
     private AtomicInteger threadCount = new AtomicInteger(0);
-
     private boolean isShutdown = false;
 
     public ThreadPool() {
@@ -48,7 +44,6 @@ public class ThreadPool {
         }
     }
 
-
     public synchronized void shutdown() {
         isShutdown = true;
         for (int i = 0; i < idleThreads.size(); i++) {
@@ -56,7 +51,6 @@ public class ThreadPool {
             idleThread.shutdown();
         }
     }
-
 
     public synchronized void start(Runnable runnable) {
         PThread thread = null;

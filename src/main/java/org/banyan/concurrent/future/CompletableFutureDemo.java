@@ -13,6 +13,7 @@ public class CompletableFutureDemo {
         }).thenApplyAsync(v -> v + "world").join();
         System.out.println(result1);
 
+
         // 2.消费
         CompletableFuture.supplyAsync(() -> {
             return "Hello ";

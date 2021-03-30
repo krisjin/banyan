@@ -5,7 +5,7 @@ package org.banyan.concurrent.sync;
  * User:krisjin
  * Date:2019/3/12
  */
-public class SynObject {
+public class SynIntrinsic {
 
     public synchronized void synMethod() {
         for (int i = 0; i < 10; i++) {

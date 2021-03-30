@@ -7,25 +7,23 @@ package org.banyan.concurrent.sync;
 public class SynObjectMain {
 
     public static void main(String[] args) {
-        SynObject synObject = new SynObject();
+        SynIntrinsic synIntrinsic = new SynIntrinsic();
+
         Thread t1 = new Thread(new Runnable() {
-            @Override
             public void run() {
-                synObject.synBlock();
+                synIntrinsic.synBlock();
             }
         });
 
         Thread t2 = new Thread(new Runnable() {
-            @Override
             public void run() {
-                synObject.synMethod();
+                synIntrinsic.synMethod();
             }
         });
 
         Thread t3 = new Thread(new Runnable() {
-            @Override
             public void run() {
-                synObject.normal();
+                synIntrinsic.normal();
             }
         });
 

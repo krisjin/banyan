@@ -11,7 +11,7 @@ public class SynObjectMain {
 
         Thread t1 = new Thread(new Runnable() {
             public void run() {
-                synIntrinsic.synBlock();
+                synIntrinsic.synBlockInVar();
             }
         });
 

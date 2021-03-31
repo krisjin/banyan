@@ -7,7 +7,6 @@ package org.banyan.concurrent.interrupt;
  * <p/>
  * User : krisjin
  * Date: 2015/9/8
- * Time: 15:22
  */
 public class InterruptReset {
 

@@ -24,7 +24,6 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
             Future<V> future = cache.get(arg);
             if (future == null) {
                 Callable<V> callable = new Callable<V>() {
-                    @Override
                     public V call() throws Exception {
                         return computable.compute(arg);
                     }
@@ -40,7 +39,6 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
                 System.out.println("###################cache hit###################");
                 return future.get();
             }
-
         }
     }
 

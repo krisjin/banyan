@@ -6,14 +6,21 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * Integer原子性操作
+ *
  * @author krisjin on 2018/2/21
  */
-public class AtomicCounter {
+public class AtomicIntegerCounter {
     public static int num;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
+        useSyn();
+    }
+
+    public static void useAtomic(String[] args) throws InterruptedException {
         AtomicInteger counter = new AtomicInteger();
         ExecutorService executorService = Executors.newCachedThreadPool();
+
         for (int i = 0; i < 10; i++) {
             executorService.execute(new Runnable() {
                 public void run() {
@@ -24,16 +31,16 @@ public class AtomicCounter {
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
 
-        t();
     }
 
-    public static void t() {
+    public static void useSyn() {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 6; i++) {
             executorService.execute(new Runnable() {
                 public void run() {
                     synchronized (AtomicInteger.class) {
                         ++num;
+                        System.out.println(Thread.currentThread().getName() + ":" + num);
                     }
                 }
             });

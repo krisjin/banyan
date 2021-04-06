@@ -19,7 +19,6 @@ public class DelegatingVehicleTracker {
 
     /**
      * 构造函数初始化，保证线程的安全性。
-     *
      * @param map
      */
     public DelegatingVehicleTracker(Map<String, Point> map) {
@@ -35,7 +34,7 @@ public class DelegatingVehicleTracker {
         return locations.get(id);
     }
 
-    public void setLocaion(String id, int x, int y) {
+    public void setLocation(String id, int x, int y) {
         if (locations.replace(id, new Point(x, y)) == null) {
             throw new IllegalArgumentException("invalid vehicle name : " + id);
         }

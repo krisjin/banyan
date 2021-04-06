@@ -7,10 +7,8 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * <p/>
  * User : krisjin
  * Date: 2015/10/16
- * Time: 15:40
  */
 public class Daemon {
 
@@ -41,12 +39,9 @@ public class Daemon {
         System.out.println(sdf.format(d));
 
 
-
-
         System.out.println("--" + (4 & 124));
 
-        String def = "      \n" +
-                "{\"posid\":\"*6055*24777\",\"matid\":\"轮播banner**\",\"pagid\":\"1\",\"resdata\":{\"cre_id\":\"\",\"rs_id\":\"mc-mkt-cms*6055#24777\",\"res_id\":\"565*4121\",\"str_id\":\"\"},\"ordid\":\"*10*0-0\"}";
+        String def = "{\"posid\":\"*6055*24777\",\"matid\":\"轮播banner**\",\"pagid\":\"1\",\"resdata\":{\"cre_id\":\"\",\"rs_id\":\"mc-mkt-cms*6055#24777\",\"res_id\":\"565*4121\",\"str_id\":\"\"},\"ordid\":\"*10*0-0\"}";
 
 
         Map e = JSONObject.parseObject(def, Map.class);

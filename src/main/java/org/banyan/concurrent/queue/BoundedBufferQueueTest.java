@@ -10,18 +10,14 @@ import java.util.concurrent.Executors;
 public class BoundedBufferQueueTest {
 
     public static void main(String[] args) {
-
         BoundedBufferQueue<Integer> queue = new BoundedBufferQueue<>(1200);
-
         ExecutorService executorService = Executors.newCachedThreadPool();
-
         executorService.execute(new Producer(queue));
         executorService.execute(new Consumer(queue));
-
     }
 
+    //
     static class Producer implements Runnable {
-
         private BoundedBufferQueue queue;
 
         public Producer(BoundedBufferQueue queue) {

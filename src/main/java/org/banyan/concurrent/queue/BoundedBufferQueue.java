@@ -15,9 +15,7 @@ public class BoundedBufferQueue<E> {
     private final Condition notFull;
     private Object[] buffer;
     private int count;
-
     private int putIndex;
-
     private int takeIndex;
 
     /**

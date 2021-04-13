@@ -4,9 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Pattern: Thread Local Confinement
- * <p>
- * Example: Using a thread safe SimpleDateFormat object
+ * Thread Local Confinement
+ * Using a thread safe SimpleDateFormat object
  */
 public class ThreadSafeDateFormat {
 
@@ -21,4 +20,7 @@ public class ThreadSafeDateFormat {
         return threadLocalDateFormat.get().format(date);
     }
 
+    public static void main(String[] args) {
+
+    }
 }

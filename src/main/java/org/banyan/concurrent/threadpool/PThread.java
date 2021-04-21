@@ -6,10 +6,9 @@ package org.banyan.concurrent.threadpool;
 public class PThread extends Thread {
 
     private ThreadPool threadPool;
-
     private Runnable target;
     private volatile boolean isShutdown = false;
-    private boolean isIdle = false;
+    private volatile boolean isIdle = false;
 
     public PThread(Runnable target, String name, ThreadPool threadPool) {
         super(name);

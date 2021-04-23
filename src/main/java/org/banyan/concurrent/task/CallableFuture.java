@@ -5,23 +5,14 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 使用Callable 和 Future 返回线程执行结果
- * Date: 2015/9/22
- * Time: 10:50
  */
 public class CallableFuture {
-   static ExecutorService executorService = Executors.newFixedThreadPool(20);
-   static AtomicLong num = new AtomicLong(1);
+    static ExecutorService executorService = Executors.newFixedThreadPool(20);
+    static AtomicLong num = new AtomicLong(1);
 
     public static void main() throws InterruptedException {
-
-        //创建一个缓冲线程池
-
-        //创建一个任务，实现了Callable接口
-
-        //执行任务
-
         for (int i = 0; i < 100; i++) {
-            Task task = new Task("d排序表达式（Ranking Formula）允许用户为应用自定义搜索结果排序方式，通过在查询请求中指定表达式来对结果排序。排序表达式支持基本运算（算术运算、关系运算、逻辑运算、位运算、条件运算）、数学函数和排序特征（feature）等。Open Search对于几种经典的应用（如论坛、资讯等）提供了表达式模板，用户可根据自己数据的特点，选择合适的表达式模板，并以此为基础进行修改，生成自己的表达式。",num);
+            Task task = new Task("d排序表达式（Ranking Formula）允许用户为应用自定义搜索结果排序方式，通过在查询请求中指定表达式来对结果排序。排序表达式支持基本运算（算术运算、关系运算、逻辑运算、位运算、条件运算）、数学函数和排序特征（feature）等。Open Search对于几种经典的应用（如论坛、资讯等）提供了表达式模板，用户可根据自己数据的特点，选择合适的表达式模板，并以此为基础进行修改，生成自己的表达式。", num);
 
             Future<Long> future = executorService.submit(task);
         }
@@ -44,9 +35,9 @@ public class CallableFuture {
         String msg;
         AtomicLong num;
 
-        public Task(String msg,AtomicLong num) {
+        public Task(String msg, AtomicLong num) {
             this.msg = msg;
-            this.num= num;
+            this.num = num;
         }
 
         @Override

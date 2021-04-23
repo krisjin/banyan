@@ -5,9 +5,6 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * @author krisjin on 2019/5/15
- */
 public class ResourcePoolUsage {
 
     public static void main(String[] args) {

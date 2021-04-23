@@ -8,8 +8,6 @@ import java.util.concurrent.ExecutionException;
  * Date: 2016/2/16
  */
 public class Test {
-
-
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         test1();
     }

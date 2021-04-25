@@ -11,12 +11,10 @@ import java.util.concurrent.Executors;
 /**
  * User:krisjin
  * Date:2019/2/24
- *  
  */
 public class SortMain {
     private final static int maxNum = 10000000;
     private final static int threadNum = 4;
-
 
     public static void main(String[] args) {
         long st = System.currentTimeMillis();

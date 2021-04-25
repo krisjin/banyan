@@ -65,7 +65,6 @@ public class FundNetValue {
 
         Date date = calendar.getTime();
 
-
         FundNetValue fundNetValue = new FundNetValue(new Date(), new BigDecimal(42.424));
         List<FundNetValue> fundNetValues = new ArrayList<>();
         fundNetValues.add(fundNetValue);
@@ -73,8 +72,6 @@ public class FundNetValue {
         fundNetValues.add(fundNetValue2);
 
         FundAnalyseTool.analyse(fundNetValues);
-
-
     }
 }
 

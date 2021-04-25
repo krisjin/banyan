@@ -11,7 +11,6 @@ public class EvenOddOutputThread {
     private volatile boolean flag = false;
 
     public static void main(String[] args) throws Exception {
-
         //加锁类
         EvenOddOutputThread evenOddOutputThread = new EvenOddOutputThread();
 

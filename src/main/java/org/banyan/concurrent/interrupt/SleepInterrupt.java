@@ -16,15 +16,12 @@ public class SleepInterrupt implements Runnable {
             e.printStackTrace();
         }
         System.out.println("main() - interrupting other thread");
-
         thread.interrupt();
-
         System.out.println("main() - end");
     }
 
     @Override
     public void run() {
-
         try {
             System.out.println("run() sleep 10 seconds");
             Thread.sleep(10000);
@@ -34,7 +31,6 @@ public class SleepInterrupt implements Runnable {
             //如果没有return，线程不会实际被中断，它会继续打印下面的信息
             return;
         }
-
         System.out.println("run() - leaving normally");
     }
 

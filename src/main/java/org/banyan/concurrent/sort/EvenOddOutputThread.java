@@ -11,7 +11,6 @@ public class EvenOddOutputThread {
     private volatile boolean flag = false;
 
     public static void main(String[] args) throws Exception {
-        //加锁类
         EvenOddOutputThread evenOddOutputThread = new EvenOddOutputThread();
 
         Thread evenThread = new Thread(new EvenNum(evenOddOutputThread));
@@ -36,7 +35,6 @@ public class EvenOddOutputThread {
 
         @Override
         public void run() {
-
             while (evenOddOutputThread.num <= 100) {
                 synchronized (EvenOddOutputThread.class) {
                     if (evenOddOutputThread.flag) {

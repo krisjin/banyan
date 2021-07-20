@@ -1,5 +1,7 @@
 package com.banyan.test.domain;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,4 +29,14 @@ public class Address {
     }
 
     private List<Detail> detailList;
+
+    public static void main(String[] args) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date d = new Date();
+
+        d.setTime(1584606703684L);
+       String a= simpleDateFormat.format(d);
+        System.err.println(a);
+    }
 }

@@ -10,18 +10,15 @@ import java.util.concurrent.RecursiveTask;
  * Date: 2021/7/19
  */
 public class ForkJoinTest {
-
     public static void main(String[] args) throws Exception {
-        long[] arr = new long[2000];
+        long[] arr = new long[10000];
         long expectedSum = 0;
-
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random();
             expectedSum += arr[i];
         }
 
         System.out.println("Expected sum: " + expectedSum);
-
         ForkJoinTask<Long> task = new SumTask(arr, 0, arr.length);
 
         long startTime = System.currentTimeMillis();
@@ -57,10 +54,10 @@ public class ForkJoinTest {
                 for (int i = start; i < end; i++) {
                     sum += this.array[i];
                     // 故意放慢计算速度:ekk
-                    try {
-                        Thread.sleep(1);
-                    } catch (InterruptedException e) {
-                    }
+//                    try {
+//                        Thread.sleep(1);
+//                    } catch (InterruptedException e) {
+//                    }
                 }
                 return sum;
             }
@@ -73,7 +70,6 @@ public class ForkJoinTest {
             SumTask subtask2 = new SumTask(this.array, middle, end);
 
             invokeAll(subtask1, subtask2);
-
             Long subresult1 = subtask1.join();
             Long subresult2 = subtask2.join();
 

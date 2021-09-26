@@ -2,7 +2,11 @@ package org.banyan.concurrent.combination;
 
 import org.banyan.concurrent.model.Point;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -19,6 +23,7 @@ public class DelegatingVehicleTracker {
 
     /**
      * 构造函数初始化，保证线程的安全性。
+     *
      * @param map
      */
     public DelegatingVehicleTracker(Map<String, Point> map) {
@@ -38,6 +43,17 @@ public class DelegatingVehicleTracker {
         if (locations.replace(id, new Point(x, y)) == null) {
             throw new IllegalArgumentException("invalid vehicle name : " + id);
         }
+    }
+
+    public static void main(String[] args) {
+        List<String> l = new ArrayList<>();
+
+        String s = "1.3641936E7";
+        BigDecimal bd = new BigDecimal(s);
+        bd.setScale(2, RoundingMode.FLOOR);
+        System.err.println(bd.doubleValue());
+
+
     }
 
 }

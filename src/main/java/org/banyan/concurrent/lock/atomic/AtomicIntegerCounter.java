@@ -13,11 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicIntegerCounter {
     public static int num;
 
-    public static void main(String[] args) {
-        useSyn();
-    }
-
-    public static void useAtomic(String[] args) throws InterruptedException {
+    public static void useAtomic() throws InterruptedException {
         AtomicInteger counter = new AtomicInteger();
         ExecutorService executorService = Executors.newCachedThreadPool();
 
@@ -46,5 +42,10 @@ public class AtomicIntegerCounter {
             });
         }
         executorService.shutdown();
+    }
+
+
+    public static void main(String[] args) {
+        useSyn();
     }
 }

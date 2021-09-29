@@ -21,8 +21,8 @@ package org.banyan.concurrent.lock;
  * Date: 2015/10/12
  */
 public class DeadLockDemo {
-    private static String A = "Demo1Main";
-    private static String B = "B";
+    private static String A = "ThreadA";
+    private static String B = "ThreadB";
 
     public static void main(String[] args) {
         new DeadLockDemo().deadLock();

@@ -1,9 +1,5 @@
 package org.banyan.concurrent.future.simple;
 
-/**
- * User krisjin
- * Date 2017/5/6
- */
 public class FutureBizData {
     protected BizData bizData = null;//FutureData是RealData的包装
     protected boolean isReady = false;

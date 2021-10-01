@@ -1,9 +1,5 @@
 package org.banyan.concurrent.future.simple;
 
-/**
- * User krisjin
- * Date 2017/5/6
- */
 public class Client {
     private FutureBizData futureBizData = new FutureBizData();
 

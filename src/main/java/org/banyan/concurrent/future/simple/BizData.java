@@ -2,10 +2,6 @@ package org.banyan.concurrent.future.simple;
 
 import org.banyan.concurrent.util.SleepUtil;
 
-/**
- * User krisjin
- * Date 2017/5/6
- */
 public class BizData {
     private final String result;
 

@@ -8,10 +8,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 将线程安全性委托给多状态变量
- * <p/>
- * User : krisjin
- * Date: 2015/9/9
- * Time: 23:12
  */
 public class VisualComponent {
 

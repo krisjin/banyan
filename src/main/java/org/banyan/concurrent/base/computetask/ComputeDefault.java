@@ -4,8 +4,6 @@ import org.banyan.concurrent.util.SleepUtil;
 
 /**
  * 将计算任务进行独立封装
- * User : krisjin
- * Date: 2015/9/15
  */
 public class ComputeDefault implements Computable<Integer, Integer> {
 

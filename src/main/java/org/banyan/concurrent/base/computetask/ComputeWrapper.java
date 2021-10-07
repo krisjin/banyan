@@ -4,10 +4,9 @@ import java.util.concurrent.*;
 
 /**
  * 计算结果缓存包装器
- * User : krisjin
- * Date: 2015/9/15
  */
 public class ComputeWrapper<A, V> implements Computable<A, V> {
+
     //结果缓存
     private final ConcurrentMap<A, Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();
     //计算接口

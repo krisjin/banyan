@@ -4,9 +4,6 @@ import org.banyan.concurrent.util.SleepUtil;
 
 /**
  * 计算包装器类
- *
- * @author krisjin
- * @date 2021/1/12
  */
 public class Client {
 

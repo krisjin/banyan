@@ -5,10 +5,6 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
-/**
- * User: krisjin
- * Date: 2021/7/19
- */
 public class ForkJoinTest {
     public static void main(String[] args) throws Exception {
         long[] arr = new long[10000];

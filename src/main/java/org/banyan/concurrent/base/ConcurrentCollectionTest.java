@@ -5,7 +5,6 @@ import java.util.UUID;
 import java.util.concurrent.*;
 
 /**
- * @author krisjin
  */
 public class ConcurrentCollectionTest {
 

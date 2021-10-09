@@ -7,10 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Integer原子性操作
- *
- * @author krisjin on 2018/2/21
  */
 public class AtomicIntegerCounter {
+
     public static int num;
 
     public static void useAtomic() throws InterruptedException {
@@ -26,7 +25,6 @@ public class AtomicIntegerCounter {
         }
         executorService.shutdown();
         executorService.awaitTermination(100, TimeUnit.SECONDS);
-
     }
 
     public static void useSyn() {

@@ -30,4 +30,5 @@ public class VisualComponent {
     public boolean removeMouseListener(MouseListener mouseListener) {
         return mouseListeners.remove(mouseListener);
     }
+
 }

@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UsingExecutors {
 
     public static void main(String[] args) {
-        testThreadPool2();
+        usingFixedThreadPool();
     }
 
 
@@ -80,6 +80,7 @@ public class UsingExecutors {
         System.out.println("=== CachedThreadPool ===");
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         List<Future<UUID>> uuids = new LinkedList<>();
+
         for (int i = 0; i < 10; i++) {
             Future<UUID> submitted = cachedThreadPool.submit(() -> {
                 UUID randomUUID = UUID.randomUUID();
@@ -88,6 +89,7 @@ public class UsingExecutors {
             });
             uuids.add(submitted);
         }
+
         cachedThreadPool.execute(() -> uuids.forEach((f) -> {
             try {
                 System.out.println("Result " + f.get() + " from thread " + Thread.currentThread().getName());
@@ -105,10 +107,14 @@ public class UsingExecutors {
 
     }
 
+    /**
+     *
+     */
     public static void usingFixedThreadPool() {
         System.out.println("=== FixedThreadPool ===");
         ExecutorService fixedPool = Executors.newFixedThreadPool(4);
         List<Future<UUID>> uuids = new LinkedList<>();
+
         for (int i = 0; i < 20; i++) {
             Future<UUID> submitted = fixedPool.submit(() -> {
                 UUID randomUUID = UUID.randomUUID();
@@ -117,6 +123,7 @@ public class UsingExecutors {
             });
             uuids.add(submitted);
         }
+
         fixedPool.execute(() -> uuids.forEach((f) -> {
             try {
                 System.out.println("Result " + f.get() + " from " + Thread.currentThread().getName());
@@ -124,13 +131,15 @@ public class UsingExecutors {
                 e.printStackTrace();
             }
         }));
-        fixedPool.shutdown();
-        try {
-            fixedPool.awaitTermination(4, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("\n\n");
+
+        System.out.println("1111");
+//        fixedPool.shutdown();
+//        try {
+//            fixedPool.awaitTermination(4, TimeUnit.SECONDS);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("\n\n");
     }
 
     public static void usingScheduledThreadPool() {

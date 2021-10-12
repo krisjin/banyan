@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Integer原子性操作
  */
 public class AtomicIntegerCounter {
-
     public static int num;
 
     public static void useAtomic() throws InterruptedException {
@@ -17,10 +16,8 @@ public class AtomicIntegerCounter {
         ExecutorService executorService = Executors.newCachedThreadPool();
 
         for (int i = 0; i < 10; i++) {
-            executorService.execute(new Runnable() {
-                public void run() {
-                    System.out.println(Thread.currentThread().getName() + " : " + counter.incrementAndGet());
-                }
+            executorService.execute(() -> {
+                System.out.println(Thread.currentThread().getName() + " : " + counter.incrementAndGet());
             });
         }
         executorService.shutdown();
@@ -30,12 +27,10 @@ public class AtomicIntegerCounter {
     public static void useSyn() {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 6; i++) {
-            executorService.execute(new Runnable() {
-                public void run() {
-                    synchronized (AtomicInteger.class) {
-                        ++num;
-                        System.out.println(Thread.currentThread().getName() + ":" + num);
-                    }
+            executorService.execute(() -> {
+                synchronized (AtomicInteger.class) {
+                    ++num;
+                    System.out.println(Thread.currentThread().getName() + ":" + num);
                 }
             });
         }

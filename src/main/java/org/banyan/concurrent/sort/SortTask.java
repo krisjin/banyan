@@ -7,7 +7,6 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * User:krisjin
  * Date:2019/2/24
- *  
  */
 public class SortTask implements Runnable {
 

@@ -12,15 +12,6 @@ public class FixedThreadPoolScene {
 
     public static void main(String[] args) {
         FixedThreadPoolScene fixedThreadPoolScene = new FixedThreadPoolScene();
-
-        fixedThreadPoolScene.test1();
-//        fixedThreadPoolScene.test2();
-
-
-        List<String> l = new ArrayList<>();
-        l.add("d");
-        System.err.println(l);
-
     }
 
 
@@ -45,34 +36,15 @@ public class FixedThreadPoolScene {
             uuids.add(submitted);
         }
 
-//        System.out.println("" + System.currentTimeMillis());
 
-//        fixedPool.execute(() -> uuids.forEach((f) -> {
-//            try {
-//                System.out.println("Result " + f.get() + " from " + Thread.currentThread().getName());
-//            } catch (InterruptedException | ExecutionException e) {
-//                e.printStackTrace();
-//            }
-//        }));
-//
-//        System.out.println("\n\n");
     }
 
 
     private void page(Map param) {
-
         Integer pageSize = Integer.valueOf(param.get("pageSize") + "");
         Integer pageNum = Integer.valueOf(param.get("pageNum") + "");
-
-
         System.out.println("pageSize=" + pageSize + ",pageNum=" + pageNum);
-
-
     }
 
-
-    public void test2() {
-        System.out.println("222");
-    }
 
 }

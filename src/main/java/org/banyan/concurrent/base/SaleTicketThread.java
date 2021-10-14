@@ -2,9 +2,6 @@ package org.banyan.concurrent.base;
 
 /**
  * 非线程安全
- * User : krisjin
- * Date: 2015/9/15
- * Time: 14:47
  */
 public class SaleTicketThread implements Runnable {
     private int ticketNum = 5;

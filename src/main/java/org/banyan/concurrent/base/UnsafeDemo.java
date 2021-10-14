@@ -15,8 +15,8 @@ public class UnsafeDemo {
     public static void main(String[] args) throws Exception {
 
         //new关键字创建
-        Num num1 = new Num();
-        System.out.println("new关键字创建: n=" + num1.getN());
+        Num num = new Num();
+        System.out.println("new关键字创建: n=" + num.getN());
 
         //反射创建
         Num num2 = Num.class.newInstance();

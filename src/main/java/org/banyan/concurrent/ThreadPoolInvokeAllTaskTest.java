@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class ThreadPoolInvokeAllTaskTest {
-    static int FLAG = 2;
 
     public static void invokeAllTask() throws InterruptedException, ExecutionException {
         ThreadPoolExecutor THREAD_POOL = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 1, TimeUnit.MILLISECONDS, new SynchronousQueue<>());

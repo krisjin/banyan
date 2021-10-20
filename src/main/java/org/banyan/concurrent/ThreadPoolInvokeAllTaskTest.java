@@ -7,16 +7,18 @@ import java.util.concurrent.*;
 public class ThreadPoolInvokeAllTaskTest {
 
     public static void invokeAllTask() throws InterruptedException, ExecutionException {
-        ThreadPoolExecutor THREAD_POOL = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 1, TimeUnit.MILLISECONDS, new SynchronousQueue<>());
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 1, TimeUnit.MILLISECONDS, new SynchronousQueue<>());
         List<Callable<Boolean>> task = new ArrayList<>();
-        for (int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 5; i++) {
             task.add(() -> {
                 new Say().s();
                 return false;
             });
-        List<Future<Boolean>> futures = THREAD_POOL.invokeAll(task);
-        for (Future<Boolean> t : futures) {
-            System.err.println(t.get() + "-----");
+        }
+
+        List<Future<Boolean>> futures = executor.invokeAll(task);
+        for (Future<Boolean> future : futures) {
+            System.err.println(future.get() + "-----");
         }
     }
 

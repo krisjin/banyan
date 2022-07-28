@@ -2,6 +2,9 @@ package org.banyan.concurrent.future;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ *
+ */
 public class CompletableFutureDemo {
 
     public static void main(String[] args) {
@@ -11,6 +14,7 @@ public class CompletableFutureDemo {
         String result1 = CompletableFuture.supplyAsync(() -> {
             return "Hello ";
         }).thenApplyAsync(v -> v + "world").join();
+
         System.out.println(result1);
 
 

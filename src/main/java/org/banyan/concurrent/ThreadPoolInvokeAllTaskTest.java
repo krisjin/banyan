@@ -1,5 +1,6 @@
 package org.banyan.concurrent;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -18,18 +19,25 @@ public class ThreadPoolInvokeAllTaskTest {
 
         List<Future<Boolean>> futures = executor.invokeAll(task);
         for (Future<Boolean> future : futures) {
-            System.err.println(future.get() + "-----");
+            System.out.println(future.get() + "-----");
         }
     }
 
     public static void main(String[] args) {
         try {
             invokeAllTask();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
+//        Double dd=1.3145962650000082E7;13145962.650000082
+//        Double dd=1.314596265E7;       13145962.65
+
+        BigDecimal decimal = new BigDecimal("1.314596265E7");
+        System.err.println(decimal.toString());
+
+
     }
 
     static class Say {

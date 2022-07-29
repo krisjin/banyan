@@ -3,12 +3,11 @@ package org.banyan.concurrent.future;
 import java.util.concurrent.CompletableFuture;
 
 /**
- *
+ * Completable 用法
  */
 public class CompletableFutureDemo {
 
     public static void main(String[] args) {
-
         // 1.变换结果
         System.out.println("=====>1.变换结果");
         String result1 = CompletableFuture.supplyAsync(() -> {

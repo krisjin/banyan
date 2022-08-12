@@ -12,7 +12,7 @@ public class InterruptCheck {
         Thread thread = Thread.currentThread();
 
         System.out.println("1- thread isInterrupted() : " + thread.isInterrupted());
-
+        Double.parseDouble("12121");
         //待决中断，中断自身
         thread.interrupt();
         System.out.println("2- thread isInterrupted() : " + thread.isInterrupted());

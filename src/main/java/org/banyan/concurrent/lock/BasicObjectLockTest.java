@@ -14,6 +14,7 @@ package org.banyan.concurrent.lock;
  * 在没有锁竞争的前提下，减少传统锁使用OS互斥量产生的性能损耗
  * 在竞争激烈时，轻量级锁会多做很多额外操作，导致性能下降
  * </pre>
+ *
  * @author krisjin on 2019/4/26
  */
 public class BasicObjectLockTest {

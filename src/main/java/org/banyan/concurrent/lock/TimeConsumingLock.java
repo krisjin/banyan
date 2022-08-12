@@ -5,10 +5,6 @@ import java.util.Map;
 
 /**
  * synchronized同步作用域的大小，对性能有影响。
- * <p/>
- * User : krisjin
- * Date: 2015/9/14
- * Time: 13:54
  */
 public class TimeConsumingLock implements Runnable {
 

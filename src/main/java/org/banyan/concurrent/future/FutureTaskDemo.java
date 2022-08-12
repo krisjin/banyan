@@ -10,6 +10,7 @@ import java.util.concurrent.*;
  * Date 2017/5/10
  */
 public class FutureTaskDemo {
+
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         FutureTask<String> future = new FutureTask<String>(new StrTask("Hello"));

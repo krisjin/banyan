@@ -1,6 +1,7 @@
 package org.banyan.concurrent.base;
 
 import org.banyan.concurrent.domain.Message;
+import org.banyan.concurrent.domain.UserService;
 
 /**
  * User: krisjin
@@ -11,8 +12,12 @@ public class GenericService {
         GenericService genericService = new GenericService();
         try {
             Message m = genericService.getObject(Message.class);
+            UserService userService = genericService.getObject(UserService.class);
+
+            String u = userService.getUserInfo();
             m.setMsg("test service...");
             System.out.println(m.getMsg());
+            System.out.println(u);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

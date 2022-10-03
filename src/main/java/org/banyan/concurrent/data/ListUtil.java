@@ -8,11 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author krisjin on 2021/8/24
- */
 public class ListUtil {
-
 
     public static void main(String[] args) {
         List<List<UserData>> userList = Lists.partition(getUserData(), 2);
@@ -29,19 +25,16 @@ public class ListUtil {
             e.printStackTrace();
         }
 
-
     }
 
 
     public static List<UserData> getUserData() {
         List<UserData> userDatas = new ArrayList<>();
-
         userDatas.add(new UserData());
         userDatas.add(new UserData());
         userDatas.add(new UserData());
         userDatas.add(new UserData());
         userDatas.add(new UserData());
-
         return userDatas;
 
     }

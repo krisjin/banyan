@@ -5,7 +5,6 @@ package org.banyan.concurrent.domain;
  * Date: 2016/1/11
  */
 public class Message {
-
     private String msg;
 
     public String getMsg() {
@@ -17,3 +16,4 @@ public class Message {
     }
 
 }
+

@@ -13,7 +13,6 @@ public class ListPartition {
 
     public static void main(String[] args) {
         List<String> stringList = new ArrayList<>();
-
         for (int i = 0; i < 10000; i++) {
             stringList.add("s" + i);
         }
@@ -23,7 +22,6 @@ public class ListPartition {
             l.clear();
             new ArrayList<>(l).clear();
 //            listPartition = null;
-
         }
     }
 }

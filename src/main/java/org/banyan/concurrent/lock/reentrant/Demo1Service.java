@@ -3,16 +3,11 @@ package org.banyan.concurrent.lock.reentrant;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * @author krisjin on 2019/2/28
- */
 public class Demo1Service {
-
     private Lock lock = new ReentrantLock();
 
     public void methodA() {
         lock.lock();
-
         for (int i = 0; i < 5; i++) {
             System.out.println("ThreadName=" + Thread.currentThread().getName() + " A method:" + (i + 1));
         }
@@ -21,12 +16,10 @@ public class Demo1Service {
 
     public void methodB() {
         lock.lock();
-
         for (int i = 0; i < 5; i++) {
             System.out.println("ThreadName=" + Thread.currentThread().getName() + " B method:" + (i + 1));
         }
         lock.unlock();
     }
-
 
 }

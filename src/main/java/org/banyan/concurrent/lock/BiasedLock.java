@@ -12,6 +12,7 @@ import java.util.Vector;
  * 将对象头Mark的标记设置为偏向，并将线程ID写入对象头Mark
  * 只要没有竞争，获得偏向锁的线程，在将来进入同步块，不需要做同步
  * 当其他线程请求相同的锁时，偏向模式结束
+ * -XX:+UseBiasedLocking -XX:BiasedLockingStartupDelay=0
  * -XX:+UseBiasedLocking
  * 默认启用
  * 在竞争激烈的场合，偏向锁会增加系统负担

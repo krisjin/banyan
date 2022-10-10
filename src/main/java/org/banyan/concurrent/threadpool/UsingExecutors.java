@@ -15,24 +15,28 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UsingExecutors {
 
     public static void main(String[] args) {
-        testThreadPool2();
+        testThreadPool();
     }
 
-
+    /**
+     * 不使用线程池执行时间
+     */
     public static void testThread() {
         long st = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
-            new Thread(new MyThread("testNoThreadPool" + i)).start();
+            new Thread(new SimpleThread("testNoThreadPool" + i)).start();
         }
         long cost = System.currentTimeMillis() - st;
         System.out.println("cost:" + cost + " ms");
     }
 
-
+    /**
+     * 使用线程池执行时间
+     */
     public static void testThreadPool() {
         long st = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
-            ThreadPool.getInstance().start(new MyThread("TestThreadPool" + i));
+            ThreadPool.getInstance().start(new SimpleThread("TestThreadPool" + i));
         }
         long cost = System.currentTimeMillis() - st;
         System.out.println("cost:" + cost + " ms");
@@ -73,7 +77,6 @@ public class UsingExecutors {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("\n\n");
     }
 
     public static void usingCachedThreadPool() {
@@ -103,8 +106,6 @@ public class UsingExecutors {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("\n\n");
-
     }
 
     /**
@@ -145,10 +146,8 @@ public class UsingExecutors {
     public static void usingScheduledThreadPool() {
         System.out.println("=== ScheduledThreadPool ===");
         ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(4);
-        scheduledThreadPool.scheduleAtFixedRate(
-                () -> System.out.println("Print every 2s"), 0, 2, TimeUnit.SECONDS);
-        scheduledThreadPool.scheduleWithFixedDelay(
-                () -> System.out.println("Print every 2s delay"), 0, 2, TimeUnit.SECONDS);
+        scheduledThreadPool.scheduleAtFixedRate(() -> System.out.println("Print every 2s"), 0, 2, TimeUnit.SECONDS);
+        scheduledThreadPool.scheduleWithFixedDelay(() -> System.out.println("Print every 2s delay"), 0, 2, TimeUnit.SECONDS);
 
         try {
             scheduledThreadPool.awaitTermination(6, TimeUnit.SECONDS);

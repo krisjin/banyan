@@ -23,7 +23,7 @@ public class NamedThreadFactory implements ThreadFactory {
     /**
      * 构造函数，默认非守护线程
      *
-     * @param prefix 前缀，后面会自动加上-SortMain-
+     * @param prefix 前缀
      */
     public NamedThreadFactory(String prefix) {
         this(prefix, false);

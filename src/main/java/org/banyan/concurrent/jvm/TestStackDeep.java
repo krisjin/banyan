@@ -11,6 +11,26 @@ package org.banyan.concurrent.jvm;
  * deep of calling = 1817
  * java.lang.StackOverflowError
  *
+ * -Xss
+ * 通常只有几百K
+ * 决定了函数调用的深度
+ * 每个线程都有独立的栈空间
+ * 局部变量、参数 分配在栈上
+ *
+ * 如果堆空间没有用完也抛出了OOM，有可能是永久区导致的
+ *
+ * Xmx20m -Xms5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/usr/local/a.dump
+ *
+ *
+ * -Xmn
+ *      设置新生代大小
+ * -XX:NewRatio
+ *      新生代（eden+2*s）和老年代（不包含永久区）的比值
+ *      4 表示 新生代:老年代=1:4，即年轻代占堆的1/5
+ * -XX:SurvivorRatio
+ *      设置两个Survivor区和eden的比
+ *      8表示 两个Survivor :eden=2:8，即一个Survivor占年轻代的1/10
+ *
  * </pre>
  */
 public class TestStackDeep {

@@ -1,7 +1,8 @@
 package org.banyan.concurrent.future.simple;
 
 public class FutureBizData {
-    protected BizData bizData = null;//FutureData是RealData的包装
+    //FutureData是RealData的包装
+    protected BizData bizData = null;
     protected boolean isReady = false;
 
     public synchronized void setBizData(BizData bizData) {

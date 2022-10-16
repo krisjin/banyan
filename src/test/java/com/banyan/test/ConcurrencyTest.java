@@ -2,22 +2,16 @@ package com.banyan.test;
 
 /**
  * 多线程一定快吗
- * <p/>
- * User : krisjin
- * Date: 2015/10/10
- * Time: 14:58
  */
 public class ConcurrencyTest {
 
     private static final long count = 100001;
-
     public static void main(String[] args) throws InterruptedException {
         concurrency();
         serial();
     }
 
     private static void concurrency() throws InterruptedException {
-
         long start = System.currentTimeMillis();
 
         Thread thread = new Thread(new Runnable() {

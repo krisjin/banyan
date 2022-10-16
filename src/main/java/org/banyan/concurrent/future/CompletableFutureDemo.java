@@ -13,7 +13,6 @@ public class CompletableFutureDemo {
         String result1 = CompletableFuture.supplyAsync(() -> {
             return "Hello ";
         }).thenApplyAsync(v -> v + "world").join();
-
         System.out.println(result1);
 
 
@@ -46,8 +45,7 @@ public class CompletableFutureDemo {
         }).join();
         System.out.println("thenCombine:" + result3);
 
-        CompletableFuture.supplyAsync(() -> "Hello, java course.")
-                .thenApply(String::toUpperCase).thenCompose(s -> CompletableFuture.supplyAsync(s::toLowerCase)).thenAccept(v -> {
+        CompletableFuture.supplyAsync(() -> "Hello, java course.").thenApply(String::toUpperCase).thenCompose(s -> CompletableFuture.supplyAsync(s::toLowerCase)).thenAccept(v -> {
             System.out.println("thenCompose:" + v);
         });
 
@@ -83,7 +81,6 @@ public class CompletableFutureDemo {
             if (true) {
                 throw new RuntimeException("exception test!");
             }
-
             return "Hi Boy";
         }).exceptionally(e -> {
             System.out.println(e.getMessage());

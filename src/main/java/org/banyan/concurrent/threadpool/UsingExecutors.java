@@ -79,6 +79,14 @@ public class UsingExecutors {
         }
     }
 
+
+    public static void test() {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
+
+
+    }
+
+
     public static void usingCachedThreadPool() {
         System.out.println("=== CachedThreadPool ===");
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
@@ -108,9 +116,6 @@ public class UsingExecutors {
         }
     }
 
-    /**
-     *
-     */
     public static void usingFixedThreadPool() {
         System.out.println("=== FixedThreadPool ===");
         ExecutorService fixedPool = Executors.newFixedThreadPool(4);

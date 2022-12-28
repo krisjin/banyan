@@ -23,7 +23,7 @@ public class DelegatingVehicleTracker {
      * @param map
      */
     public DelegatingVehicleTracker(Map<String, Point> map) {
-        locations = new ConcurrentHashMap<String, Point>(map);
+        locations = new ConcurrentHashMap<>(map);
         unModifyAbleMap = Collections.unmodifiableMap(locations);
     }
 

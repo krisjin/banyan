@@ -2,9 +2,6 @@ package org.banyan.concurrent.model.xml;
 
 import net.sf.json.xml.XMLSerializer;
 
-/**
- * @author shijingui on 2021/10/10
- */
 public class XMLSerializerTest {
 
     static String c = " <?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +

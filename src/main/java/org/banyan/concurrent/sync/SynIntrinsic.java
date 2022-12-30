@@ -5,8 +5,6 @@ import org.banyan.concurrent.util.SleepUtil;
 /**
  * synchronized使用
  * 同步一个方法或一个代码快，同步锁作用对象，没有加同步的方法不会影响
- * User:krisjin
- * Date:2019/3/12
  */
 public class SynIntrinsic {
 

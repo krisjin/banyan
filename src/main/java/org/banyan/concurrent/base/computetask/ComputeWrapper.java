@@ -3,7 +3,7 @@ package org.banyan.concurrent.base.computetask;
 import java.util.concurrent.*;
 
 /**
- * 计算结果缓存包装器
+ * 计算结果缓存包装器,实现Computable接口
  */
 public class ComputeWrapper<A, V> implements Computable<A, V> {
 
@@ -18,17 +18,17 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
     }
 
     @Override
-    public V compute(final A arg) throws InterruptedException, ExecutionException {
+    public V compute(final A number) throws InterruptedException, ExecutionException {
         while (true) {
-            Future<V> future = cache.get(arg);
+            Future<V> future = cache.get(number);
             if (future == null) {
                 Callable<V> callable = new Callable<V>() {
                     public V call() throws Exception {
-                        return computable.compute(arg);
+                        return computable.compute(number);
                     }
                 };
                 FutureTask<V> futureTask = new FutureTask<V>(callable);
-                future = cache.putIfAbsent(arg, futureTask);
+                future = cache.putIfAbsent(number, futureTask);
                 if (future == null) {
                     future = futureTask;
                     futureTask.run();

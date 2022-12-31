@@ -4,12 +4,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.IntStream;
 
 /**
  * Integer原子性操作
  */
 public class AtomicIntegerCounter {
     public static int num;
+
+    public static void main(String[] args) {
+//        useSyn();
+        testIncrement();
+    }
 
     public static void useAtomic() throws InterruptedException {
         AtomicInteger counter = new AtomicInteger();
@@ -37,8 +43,11 @@ public class AtomicIntegerCounter {
         executorService.shutdown();
     }
 
+    public static void testIncrement() {
+        IntStream.range(0, 10).forEach(i -> {
+            System.out.println(i);
+        });
 
-    public static void main(String[] args) {
-        useSyn();
     }
+
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 /**
- * Integer原子性操作
+ * Atomic Integer原子操作
  */
 public class AtomicIntegerCounter {
     public static int num;
@@ -15,7 +15,7 @@ public class AtomicIntegerCounter {
     private static AtomicInteger atomicInt = new AtomicInteger(0);
 
     public static void main(String[] args) {
-        useSyn();
+//        useSyn();
         testIncrement();
     }
 
@@ -47,12 +47,10 @@ public class AtomicIntegerCounter {
 
     public static void testIncrement() {
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
-
-        IntStream.range(0, 10).forEach(i -> {
-            System.out.println(i);
-        });
-
+        atomicInt.set(0);
+        IntStream.range(0, 10).forEach(i -> executor.submit(atomicInt::incrementAndGet));
+        System.out.println("increment int: " + atomicInt.get());
+        executor.shutdownNow();
     }
 
 }

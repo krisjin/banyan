@@ -17,9 +17,10 @@ public class AtomicIntegerCounter {
     private static AtomicInteger atomicInt = new AtomicInteger(0);
 
     public static void main(String[] args) {
-//        useSyn();
-//        testIncrement();
+        useSyn();
+        testIncrement();
         testAccumulate();
+        testUpdate();
     }
 
     public static void useAtomic() throws InterruptedException {
@@ -60,13 +61,23 @@ public class AtomicIntegerCounter {
     private static void testAccumulate() {
         atomicInt.set(0);
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
         IntStream.range(0, 101).forEach(i -> {
             Runnable task = () -> atomicInt.accumulateAndGet(i, (n, m) -> n + m);
             executor.submit(task);
         });
         ConcurrentUtils.stop(executor);
         System.out.format("Accumulate: %d\n", atomicInt.get());
+    }
+
+    private static void testUpdate() {
+        atomicInt.set(0);
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        IntStream.range(0, 100).forEach(i -> {
+            Runnable task = () -> atomicInt.updateAndGet(n -> n + 2);
+            executor.submit(task);
+        });
+        ConcurrentUtils.stop(executor);
+        System.out.format("update: %d\n", atomicInt.get());
     }
 
 

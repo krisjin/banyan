@@ -12,8 +12,10 @@ import java.util.stream.IntStream;
 public class AtomicIntegerCounter {
     public static int num;
 
+    private static AtomicInteger atomicInt = new AtomicInteger(0);
+
     public static void main(String[] args) {
-//        useSyn();
+        useSyn();
         testIncrement();
     }
 
@@ -44,6 +46,9 @@ public class AtomicIntegerCounter {
     }
 
     public static void testIncrement() {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+
         IntStream.range(0, 10).forEach(i -> {
             System.out.println(i);
         });

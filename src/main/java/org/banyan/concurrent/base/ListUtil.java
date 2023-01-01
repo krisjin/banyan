@@ -1,4 +1,4 @@
-package org.banyan.concurrent.data;
+package org.banyan.concurrent.base;
 
 import com.google.common.collect.Lists;
 

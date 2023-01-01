@@ -1,5 +1,7 @@
 package org.banyan.concurrent.lock.atomic;
 
+import org.banyan.concurrent.base.ConcurrentUtils;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +18,8 @@ public class AtomicIntegerCounter {
 
     public static void main(String[] args) {
 //        useSyn();
-        testIncrement();
+//        testIncrement();
+        testAccumulate();
     }
 
     public static void useAtomic() throws InterruptedException {
@@ -52,5 +55,19 @@ public class AtomicIntegerCounter {
         System.out.println("increment int: " + atomicInt.get());
         executor.shutdownNow();
     }
+
+
+    private static void testAccumulate() {
+        atomicInt.set(0);
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        IntStream.range(0, 101).forEach(i -> {
+            Runnable task = () -> atomicInt.accumulateAndGet(i, (n, m) -> n + m);
+            executor.submit(task);
+        });
+        ConcurrentUtils.stop(executor);
+        System.out.format("Accumulate: %d\n", atomicInt.get());
+    }
+
 
 }

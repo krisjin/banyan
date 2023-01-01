@@ -1,14 +1,7 @@
 package org.banyan.concurrent.base;
 
-/**
- * <p/>
- * User : krisjin
- * Date: 2015/9/15
- * Time: 16:00
- */
 public class DeprecatedSuspendResume implements Runnable {
     private volatile int firstVal;
-
     private volatile int secondVal;
 
     public static void main(String[] args) {

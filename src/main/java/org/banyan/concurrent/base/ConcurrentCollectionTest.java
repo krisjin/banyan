@@ -4,8 +4,6 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.*;
 
-/**
- */
 public class ConcurrentCollectionTest {
 
     public static void usingConcurrentHashMap() {

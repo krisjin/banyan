@@ -44,7 +44,6 @@ public class UnsafeDemo {
 
     }
 
-
     public static Unsafe getUnsafe() {
         Field f;
         Unsafe unsafe;

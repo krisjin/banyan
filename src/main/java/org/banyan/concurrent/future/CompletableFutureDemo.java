@@ -8,6 +8,12 @@ import java.util.concurrent.CompletableFuture;
 public class CompletableFutureDemo {
 
     public static void main(String[] args) {
+//        test2();
+        test3();
+    }
+
+
+    public static void test2() {
         // 1.变换结果
         System.out.println("=====>1.变换结果");
         String result1 = CompletableFuture.supplyAsync(() -> {
@@ -90,5 +96,12 @@ public class CompletableFutureDemo {
 
 
     }
+
+    public static void test3() {
+        CompletableFuture<String> future = new CompletableFuture<>();
+        future.complete("11");
+        future.thenAccept(System.out::println).thenAccept(v -> System.out.println("done"));
+    }
+
 
 }

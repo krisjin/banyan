@@ -25,8 +25,6 @@ public class Interface1 {
         formula1.sqrt(-23);
         Formula.positive(-4);
         System.err.println(v1);
-
-//        Formula formula2 = (a) -> sqrt( a * 100);
     }
 
 }

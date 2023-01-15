@@ -2,7 +2,6 @@ package org.banyan.concurrent.objectshare;
 
 /**
  * 存在可变的共享变量，非线程安全类。
- * User : krisjin
  */
 public class NoVisibility {
     private static boolean ready;

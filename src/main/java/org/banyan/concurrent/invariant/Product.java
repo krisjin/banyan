@@ -1,9 +1,6 @@
 package org.banyan.concurrent.invariant;
 
-/**
- * @author krisjin on 2017/5/15
- */
-public final class Product {//确保没有子类
+public final class Product {
 
     private final String code;//私有属性不会被其它对象获取
     private final String name;//final 保证不会被两次赋值

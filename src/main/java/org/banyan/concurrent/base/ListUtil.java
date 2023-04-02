@@ -17,14 +17,12 @@ public class ListUtil {
 
         String dt = "2021-09-17";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         try {
             Date d = sdf.parse(dt);
             System.err.println(d);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
 
 

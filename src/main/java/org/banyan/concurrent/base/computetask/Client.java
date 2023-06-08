@@ -5,6 +5,7 @@ import org.banyan.concurrent.util.SleepUtil;
 public class Client {
 
     public static void main(String[] args) {
+
         Computable computable = new ComputeDefault();
         ComputeWrapper<Integer, Integer> computeWrapper = new ComputeWrapper<Integer, Integer>(computable);
         try {

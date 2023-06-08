@@ -1,7 +1,5 @@
 package org.banyan.concurrent.future;
 
-import org.banyan.concurrent.util.SleepUtil;
-
 import java.util.concurrent.*;
 
 /**
@@ -10,14 +8,13 @@ import java.util.concurrent.*;
 public class FutureTaskDemo {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-
         FutureTask<String> future = new FutureTask<String>(new StrTask("Hello"));
-
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         executorService.submit(future);
-        System.err.println("任务已提交");
-
+        System.out.println("任务已提交");
+        System.out.println(getName());
         System.out.println(future.get());
+
         executorService.shutdown();
     }
 
@@ -29,10 +26,15 @@ public class FutureTaskDemo {
         }
 
         @Override
-        public String call() throws Exception {
-            SleepUtil.second(3);
-            return "hi," + this.str;
+        public String call() throws InterruptedException {
+            TimeUnit.SECONDS.sleep(5);
+            return this.str + " world!";
         }
+    }
+
+    static String getName() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(2);
+        return "kris";
     }
 
 }

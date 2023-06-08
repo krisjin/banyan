@@ -18,17 +18,17 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
     }
 
     @Override
-    public V compute(final A number) throws InterruptedException, ExecutionException {
+    public V compute(final A param) throws InterruptedException, ExecutionException {
         while (true) {
-            Future<V> future = cache.get(number);
+            Future<V> future = cache.get(param);
             if (future == null) {
                 Callable<V> callable = new Callable<V>() {
                     public V call() throws Exception {
-                        return computable.compute(number);
+                        return computable.compute(param);
                     }
                 };
                 FutureTask<V> futureTask = new FutureTask<V>(callable);
-                future = cache.putIfAbsent(number, futureTask);
+                future = cache.putIfAbsent(param, futureTask);
                 if (future == null) {
                     future = futureTask;
                     futureTask.run();

@@ -1,6 +1,10 @@
 package org.banyan.concurrent.base.computetask;
 
+import com.alibaba.fastjson.JSONObject;
 import org.banyan.concurrent.util.SleepUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Client {
 
@@ -18,5 +22,16 @@ public class Client {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Map<String, Object> m = new HashMap<String, Object>();
+        Map<String, Object> m1 = new HashMap<String, Object>();
+        Map<String, Object> m2 = new HashMap<String, Object>();
+        m.put("chooseRouteValue", m1);
+        m1.put("law_verify", m2);
+        m2.put("asdf", 1);
+
+        System.err.println(JSONObject.toJSONString(m));
+
+
     }
 }

@@ -2,6 +2,9 @@ package org.banyan.concurrent.base.computetask;
 
 import org.banyan.concurrent.util.SleepUtil;
 
+/**
+ * 默认计算功能实现
+ */
 public class ComputeDefault implements Computable<Integer, Integer> {
 
     @Override

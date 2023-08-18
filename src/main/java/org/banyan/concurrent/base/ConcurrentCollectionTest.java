@@ -8,7 +8,6 @@ public class ConcurrentCollectionTest {
 
     public static void usingConcurrentHashMap() {
         ExecutorService executor = Executors.newCachedThreadPool();
-        System.out.println("=== ConcurrentHashMap ===");
         Random random = new Random();
         ConcurrentHashMap<UUID, Integer> valuesPerUuid = new ConcurrentHashMap<>();
         // atomic operations

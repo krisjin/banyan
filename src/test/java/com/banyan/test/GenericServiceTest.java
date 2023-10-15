@@ -14,9 +14,9 @@ public class GenericServiceTest {
     public void test1() {
         GenericService genericService = new GenericService();
         try {
-            Message m = genericService.getObject(Message.class);
-            m.setMsg("hello world!!");
-            System.out.println(m.getMsg());
+            Message inst = genericService.getObject(Message.class);
+            inst.setMsg("hello world!!");
+            System.out.println(inst.getMsg());
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

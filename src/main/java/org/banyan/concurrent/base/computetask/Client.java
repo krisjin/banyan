@@ -4,9 +4,6 @@ import org.banyan.concurrent.util.SleepUtil;
 
 import java.util.concurrent.ExecutionException;
 
-/**
- * 这是什么
- */
 public class Client {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {

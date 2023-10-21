@@ -3,6 +3,7 @@ package org.banyan.concurrent.base.computetask;
 import java.util.concurrent.*;
 
 /**
+ * 包装器模式
  * 计算结果缓存包装器,实现Computable接口
  */
 public class ComputeWrapper<A, V> implements Computable<A, V> {

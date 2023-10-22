@@ -34,11 +34,10 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
                     future = futureTask;
                     futureTask.run();
                 }
-                return future.get();
             } else {
                 System.out.println("###################cache hit###################");
-                return future.get();
             }
+            return future.get();
         }
     }
 

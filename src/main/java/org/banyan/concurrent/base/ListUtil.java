@@ -25,7 +25,6 @@ public class ListUtil {
         }
     }
 
-
     public static List<UserData> getUserData() {
         List<UserData> userDatas = new ArrayList<>();
         userDatas.add(new UserData());

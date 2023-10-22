@@ -23,11 +23,7 @@ public class ComputeWrapper<A, V> implements Computable<A, V> {
         while (true) {
             Future<V> future = cache.get(param);
             if (future == null) {
-                Callable<V> callable = new Callable<V>() {
-                    public V call() throws Exception {
-                        return computable.compute(param);
-                    }
-                };
+                Callable<V> callable = (() -> computable.compute(param));
                 FutureTask<V> futureTask = new FutureTask<V>(callable);
                 future = cache.putIfAbsent(param, futureTask);
                 if (future == null) {

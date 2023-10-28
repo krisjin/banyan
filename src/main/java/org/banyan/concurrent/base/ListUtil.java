@@ -12,9 +12,7 @@ public class ListUtil {
 
     public static void main(String[] args) {
         List<List<UserData>> userList = Lists.partition(getUserData(), 2);
-
         System.out.println(userList.size());
-
         String dt = "2021-09-17";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {

@@ -16,9 +16,7 @@ public class CompletableFutureDemo {
     public static void test2() {
         // 1.变换结果
         System.out.println("=====>1.变换结果");
-        String result1 = CompletableFuture.supplyAsync(() -> {
-            return "Hello ";
-        }).thenApplyAsync(v -> v + "world").join();
+        String result1 = CompletableFuture.supplyAsync(() -> "Hello ").thenApplyAsync(v -> v + "world").join();
         System.out.println(result1);
 
 

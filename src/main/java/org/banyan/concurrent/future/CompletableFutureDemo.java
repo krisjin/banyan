@@ -3,7 +3,7 @@ package org.banyan.concurrent.future;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Completable 用法
+ * Completable 用法，
  */
 public class CompletableFutureDemo {
 

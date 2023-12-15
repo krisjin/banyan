@@ -136,6 +136,7 @@ public class UsingCompletableFuture {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         Random random = new Random();
         ExecutorService executor = Executors.newCachedThreadPool();
+
         // Creating
         CompletableFuture<Integer> randomNum = CompletableFuture.supplyAsync(() -> random.nextInt(140), executor);
 
@@ -194,9 +195,7 @@ public class UsingCompletableFuture {
             }
             return "Second";
         };
-        CompletableFuture
-                .supplyAsync(getVal)
-                .acceptEitherAsync(CompletableFuture.supplyAsync(getVal2, executor), (firstToBeReady) -> System.out.println(firstToBeReady), executor);
+        CompletableFuture.supplyAsync(getVal).acceptEitherAsync(CompletableFuture.supplyAsync(getVal2, executor), (firstToBeReady) -> System.out.println(firstToBeReady), executor);
         executor.shutdown();
         executor.awaitTermination(3000, TimeUnit.SECONDS);
     }

@@ -25,7 +25,7 @@ public class ConcurrentCollectionTest {
                 });
             } else {
                 // read
-                executor.execute(() -> System.out.println("Printed " + valuesPerUuid.values().toString() + "==" + valuesPerUuid.size()));
+                executor.execute(() -> System.out.println("Printed " + valuesPerUuid.values() + "==" + valuesPerUuid.size()));
             }
         }
         // Finishing

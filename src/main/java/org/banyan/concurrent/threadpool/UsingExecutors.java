@@ -71,6 +71,7 @@ public class UsingExecutors {
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
         singleThreadExecutor.execute(() -> System.out.println("Print this."));
         singleThreadExecutor.execute(() -> System.out.println("and this one to."));
+        singleThreadExecutor.invokeAll()
         singleThreadExecutor.shutdown();
         try {
             singleThreadExecutor.awaitTermination(4, TimeUnit.SECONDS);
